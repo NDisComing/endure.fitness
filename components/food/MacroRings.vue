@@ -29,14 +29,14 @@ const proStrokeDashoffset = computed(() => proCircumference - (proPercent.value 
 </script>
 
 <template>
-  <div class="bg-brand-gray border border-white/10 rounded-3xl p-6 shadow-xl relative overflow-hidden">
+  <div class="bg-brand-gray border border-brand-charcoal/10 rounded-3xl p-6 shadow-md relative overflow-hidden">
     <!-- Ambient glow -->
     <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="flex items-center justify-between mb-4">
       <div>
         <span class="text-[10px] font-bold uppercase tracking-widest text-brand-accent">Today's Nutrition</span>
-        <h3 class="font-heading font-black text-lg uppercase tracking-tight text-white">Macro Snapshot</h3>
+        <h3 class="font-heading font-black text-lg uppercase tracking-tight text-brand-charcoal">Macro Snapshot</h3>
       </div>
       <NuxtLink 
         to="/client/food" 
@@ -60,14 +60,14 @@ const proStrokeDashoffset = computed(() => proCircumference - (proPercent.value 
             stroke="currentColor"
             stroke-width="10"
             fill="transparent"
-            class="text-white/5"
+            class="text-brand-charcoal/10"
           />
           <!-- Progress Outer (Calories) -->
           <circle
             cx="80"
             cy="80"
             :r="calRadius"
-            stroke="var(--tw-color-brand-accent, #ccff00)"
+            stroke="#FA8112"
             stroke-width="10"
             stroke-linecap="round"
             fill="transparent"
@@ -84,14 +84,14 @@ const proStrokeDashoffset = computed(() => proCircumference - (proPercent.value 
             stroke="currentColor"
             stroke-width="8"
             fill="transparent"
-            class="text-white/5"
+            class="text-brand-charcoal/10"
           />
           <!-- Progress Inner (Protein) -->
           <circle
             cx="80"
             cy="80"
             :r="proRadius"
-            stroke="#38bdf8"
+            stroke="#0284c7"
             stroke-width="8"
             stroke-linecap="round"
             fill="transparent"
@@ -103,10 +103,10 @@ const proStrokeDashoffset = computed(() => proCircumference - (proPercent.value 
 
         <!-- Center Numbers -->
         <div class="absolute inset-0 flex flex-col items-center justify-center text-center select-none pointer-events-none">
-          <span class="font-heading font-black text-2xl text-white tracking-tight leading-none">
+          <span class="font-heading font-black text-2xl text-brand-charcoal tracking-tight leading-none">
             {{ consumedCalories }}
           </span>
-          <span class="text-[9px] uppercase font-bold text-gray-400 mt-0.5">/ {{ targetCalories }} kcal</span>
+          <span class="text-[9px] uppercase font-bold text-brand-charcoal/60 mt-0.5">/ {{ targetCalories }} kcal</span>
           <span class="text-[10px] font-bold text-brand-accent mt-0.5">{{ calPercent }}% Goal</span>
         </div>
       </div>
@@ -114,57 +114,57 @@ const proStrokeDashoffset = computed(() => proCircumference - (proPercent.value 
       <!-- Macro Details Grid -->
       <div class="w-full space-y-3">
         <!-- Protein Bar -->
-        <div class="bg-brand-dark/80 rounded-xl p-2.5 border border-white/5">
+        <div class="bg-brand-dark rounded-xl p-2.5 border border-brand-charcoal/10 shadow-sm">
           <div class="flex items-center justify-between text-xs mb-1.5">
-            <span class="font-bold text-sky-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            <span class="font-bold text-sky-700 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-sky-600"></span>
               Protein Target
             </span>
-            <span class="font-mono font-bold text-white">
-              {{ consumedProtein }}g <span class="text-gray-500 font-normal">/ {{ targetProtein }}g</span>
+            <span class="font-mono font-bold text-brand-charcoal">
+              {{ consumedProtein }}g <span class="text-brand-charcoal/50 font-normal">/ {{ targetProtein }}g</span>
             </span>
           </div>
-          <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+          <div class="w-full h-2 bg-brand-charcoal/10 rounded-full overflow-hidden">
             <div 
-              class="h-full bg-sky-400 rounded-full transition-all duration-700" 
+              class="h-full bg-sky-600 rounded-full transition-all duration-700" 
               :style="{ width: `${proPercent}%` }"
             ></div>
           </div>
         </div>
 
         <!-- Carbs Bar -->
-        <div class="bg-brand-dark/80 rounded-xl p-2.5 border border-white/5">
+        <div class="bg-brand-dark rounded-xl p-2.5 border border-brand-charcoal/10 shadow-sm">
           <div class="flex items-center justify-between text-xs mb-1.5">
-            <span class="font-bold text-amber-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span class="font-bold text-amber-700 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-amber-600"></span>
               Carbohydrates
             </span>
-            <span class="font-mono font-bold text-white">
-              {{ consumedCarbs }}g <span class="text-gray-500 font-normal">/ {{ targetCarbs }}g</span>
+            <span class="font-mono font-bold text-brand-charcoal">
+              {{ consumedCarbs }}g <span class="text-brand-charcoal/50 font-normal">/ {{ targetCarbs }}g</span>
             </span>
           </div>
-          <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+          <div class="w-full h-2 bg-brand-charcoal/10 rounded-full overflow-hidden">
             <div 
-              class="h-full bg-amber-400 rounded-full transition-all duration-700" 
+              class="h-full bg-amber-600 rounded-full transition-all duration-700" 
               :style="{ width: `${carbPercent}%` }"
             ></div>
           </div>
         </div>
 
         <!-- Fats Bar -->
-        <div class="bg-brand-dark/80 rounded-xl p-2.5 border border-white/5">
+        <div class="bg-brand-dark rounded-xl p-2.5 border border-brand-charcoal/10 shadow-sm">
           <div class="flex items-center justify-between text-xs mb-1.5">
-            <span class="font-bold text-rose-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-rose-400"></span>
+            <span class="font-bold text-rose-700 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-rose-600"></span>
               Healthy Fats
             </span>
-            <span class="font-mono font-bold text-white">
-              {{ consumedFat }}g <span class="text-gray-500 font-normal">/ {{ targetFat }}g</span>
+            <span class="font-mono font-bold text-brand-charcoal">
+              {{ consumedFat }}g <span class="text-brand-charcoal/50 font-normal">/ {{ targetFat }}g</span>
             </span>
           </div>
-          <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+          <div class="w-full h-2 bg-brand-charcoal/10 rounded-full overflow-hidden">
             <div 
-              class="h-full bg-rose-400 rounded-full transition-all duration-700" 
+              class="h-full bg-rose-600 rounded-full transition-all duration-700" 
               :style="{ width: `${fatPercent}%` }"
             ></div>
           </div>

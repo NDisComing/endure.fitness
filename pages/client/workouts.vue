@@ -37,8 +37,8 @@ const openVideo = (ex: Exercise) => {
     <!-- Header -->
     <div>
       <span class="text-[10px] font-bold uppercase tracking-widest text-brand-accent">Training Routine</span>
-      <h2 class="font-heading font-black text-xl uppercase tracking-tight text-white">Assigned Workouts</h2>
-      <p class="text-xs text-gray-400 mt-0.5">Biomechanical video cues & progressive set tracking</p>
+      <h2 class="font-heading font-black text-xl uppercase tracking-tight text-brand-charcoal">Assigned Workouts</h2>
+      <p class="text-xs text-brand-charcoal/70 mt-0.5">Biomechanical video cues & progressive set tracking</p>
     </div>
 
     <!-- Split Day Selector Tabs -->
@@ -47,28 +47,28 @@ const openVideo = (ex: Exercise) => {
         v-for="split in splits"
         :key="split.id"
         @click="activeSplitId = split.id"
-        class="py-2.5 px-4 rounded-xl text-left border transition-all shrink-0"
+        class="py-2.5 px-4 rounded-xl text-left border transition-all shrink-0 shadow-sm"
         :class="activeSplitId === split.id 
-          ? 'bg-brand-accent text-black border-brand-accent font-bold shadow-[0_0_15px_rgba(204,255,0,0.3)]' 
-          : 'bg-brand-gray border-white/10 text-gray-300 hover:border-white/30'"
+          ? 'bg-brand-accent text-white border-brand-accent font-bold shadow-[0_4px_15px_rgba(250,129,18,0.35)]' 
+          : 'bg-brand-gray border-brand-charcoal/15 text-brand-charcoal hover:border-brand-accent'"
       >
-        <p class="text-[10px] uppercase opacity-75 font-semibold">{{ split.day }}</p>
+        <p class="text-[10px] uppercase opacity-80 font-semibold">{{ split.day }}</p>
         <p class="font-heading font-black text-xs uppercase mt-0.5">{{ split.title }}</p>
       </button>
     </div>
 
     <!-- Workout Routine Overview Banner -->
-    <div class="bg-brand-gray border border-white/10 rounded-2xl p-4 flex items-center justify-between">
+    <div class="bg-brand-gray border border-brand-charcoal/10 rounded-2xl p-4 flex items-center justify-between shadow-sm">
       <div>
-        <h3 class="font-heading font-black text-base text-white">
+        <h3 class="font-heading font-black text-base text-brand-charcoal">
           {{ splits.find(s => s.id === activeSplitId)?.title }}
         </h3>
-        <p class="text-xs text-gray-400">
+        <p class="text-xs text-brand-charcoal/70">
           Focus: {{ splits.find(s => s.id === activeSplitId)?.focus }}
         </p>
       </div>
 
-      <span class="bg-brand-accent/20 border border-brand-accent/40 text-brand-accent text-xs font-bold px-3 py-1 rounded-full">
+      <span class="bg-brand-accent/15 border border-brand-accent/40 text-brand-accent text-xs font-bold px-3 py-1 rounded-full">
         {{ store.exercisesList.value.length }} Exercises
       </span>
     </div>

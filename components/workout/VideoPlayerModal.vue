@@ -44,10 +44,10 @@ onUnmounted(() => {
 <template>
   <div class="fixed inset-0 z-50 flex items-center justify-center p-4">
     <!-- Backdrop -->
-    <div class="fixed inset-0 bg-black/90 backdrop-blur-md" @click="emit('close')"></div>
+    <div class="fixed inset-0 bg-black/70 backdrop-blur-sm" @click="emit('close')"></div>
 
     <!-- Video Modal Card -->
-    <div class="relative w-full max-w-2xl bg-brand-gray border border-white/20 rounded-3xl overflow-hidden shadow-2xl z-10 max-h-[92vh] flex flex-col">
+    <div class="relative w-full max-w-2xl bg-brand-gray border border-brand-charcoal/15 rounded-3xl overflow-hidden shadow-2xl z-10 max-h-[92vh] flex flex-col">
       <!-- Video Player Frame -->
       <div class="relative aspect-video bg-black flex items-center justify-center">
         <video 
@@ -69,34 +69,34 @@ onUnmounted(() => {
       <!-- Exercise Content Details -->
       <div class="p-6 overflow-y-auto space-y-6">
         <!-- Title & Target Sets -->
-        <div class="flex items-start justify-between gap-4 pb-4 border-b border-white/10">
+        <div class="flex items-start justify-between gap-4 pb-4 border-b border-brand-charcoal/10">
           <div>
             <div class="flex items-center gap-2 mb-1">
               <span class="text-xs font-bold text-brand-accent uppercase tracking-wider">{{ exercise.category }}</span>
-              <span class="text-gray-500">•</span>
-              <span class="text-xs font-bold text-gray-300">{{ exercise.target_sets }} Sets × {{ exercise.target_reps }}</span>
+              <span class="text-brand-charcoal/40">•</span>
+              <span class="text-xs font-bold text-brand-charcoal/70">{{ exercise.target_sets }} Sets × {{ exercise.target_reps }}</span>
             </div>
-            <h3 class="font-heading font-black text-2xl uppercase tracking-tight text-white">
+            <h3 class="font-heading font-black text-2xl uppercase tracking-tight text-brand-charcoal">
               {{ exercise.title }}
             </h3>
           </div>
 
           <!-- Rest Timer Widget -->
-          <div class="bg-brand-dark rounded-xl p-2.5 border border-white/10 text-center shrink-0">
-            <span class="text-[9px] uppercase font-bold text-gray-400 block">Rest Clock</span>
+          <div class="bg-brand-dark rounded-xl p-2.5 border border-brand-charcoal/10 text-center shrink-0 shadow-sm">
+            <span class="text-[9px] uppercase font-bold text-brand-charcoal/60 block">Rest Clock</span>
             <span class="font-mono font-black text-lg text-brand-accent">
               {{ Math.floor(remainingTime / 60) }}:{{ (remainingTime % 60).toString().padStart(2, '0') }}
             </span>
             <div class="flex gap-1 mt-1 justify-center">
               <button 
                 @click="startRestTimer" 
-                class="bg-brand-accent text-black text-[9px] font-bold px-2 py-0.5 rounded hover:bg-white transition-colors"
+                class="bg-brand-accent text-white text-[9px] font-bold px-2 py-0.5 rounded hover:bg-brand-charcoal transition-colors shadow-sm"
               >
                 {{ isTimerRunning ? 'Running' : 'Start' }}
               </button>
               <button 
                 @click="resetTimer" 
-                class="bg-white/10 text-gray-300 text-[9px] font-bold px-2 py-0.5 rounded hover:bg-white/20 transition-colors"
+                class="bg-brand-gray text-brand-charcoal text-[9px] font-bold px-2 py-0.5 rounded hover:bg-brand-sand transition-colors border border-brand-charcoal/10"
               >
                 Reset
               </button>
@@ -106,10 +106,10 @@ onUnmounted(() => {
 
         <!-- Biomechanical Instructions -->
         <div class="space-y-2">
-          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-gray-300">
+          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-brand-charcoal/80">
             Biomechanical Instructions
           </h4>
-          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed bg-brand-dark/60 p-3.5 rounded-xl border border-white/5">
+          <p class="text-xs sm:text-sm text-brand-charcoal/80 leading-relaxed bg-brand-dark p-3.5 rounded-xl border border-brand-charcoal/10 shadow-sm">
             {{ exercise.instructions }}
           </p>
         </div>
@@ -124,7 +124,7 @@ onUnmounted(() => {
             <li 
               v-for="(cue, i) in exercise.form_cues" 
               :key="i"
-              class="flex items-start gap-2 bg-brand-dark/40 p-2.5 rounded-lg border border-white/5 text-gray-300"
+              class="flex items-start gap-2 bg-brand-dark p-2.5 rounded-lg border border-brand-charcoal/10 text-brand-charcoal/85 shadow-sm"
             >
               <Icon name="ph:check-circle-fill" class="w-3.5 h-3.5 text-brand-accent shrink-0 mt-0.5" />
               <span>{{ cue }}</span>

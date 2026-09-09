@@ -52,7 +52,7 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-brand-dark text-white font-sans flex flex-col">
+  <div class="min-h-screen bg-brand-dark text-brand-charcoal font-sans flex flex-col selection:bg-brand-accent selection:text-white">
     <!-- Subtle Custom Cursor for Desktop -->
     <div ref="cursor" class="custom-cursor hidden md:block"></div>
 
@@ -66,7 +66,7 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
       <div class="relative">
         <button
           @click="showQuickSwitcher = !showQuickSwitcher"
-          class="w-12 h-12 rounded-full bg-brand-dark border-2 border-brand-accent text-brand-accent shadow-[0_0_20px_rgba(204,255,0,0.4)] flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300"
+          class="w-12 h-12 rounded-full bg-brand-sand border-2 border-brand-accent text-brand-accent shadow-[0_4px_20px_rgba(250,129,18,0.35)] flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300"
           title="Switch Platform Space"
         >
           <Icon name="ph:arrows-left-right-bold" class="w-6 h-6" />
@@ -74,11 +74,11 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
 
         <div
           v-if="showQuickSwitcher"
-          class="absolute bottom-14 right-0 w-64 bg-brand-gray border border-white/20 rounded-2xl p-3 shadow-2xl space-y-2 backdrop-blur-xl animate-fade-in-up"
+          class="absolute bottom-14 right-0 w-64 bg-brand-sand border border-brand-charcoal/15 rounded-2xl p-3 shadow-2xl space-y-2 backdrop-blur-xl animate-fade-in-up"
         >
-          <div class="flex items-center justify-between pb-2 border-b border-white/10 px-1">
-            <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Endure Spaces</span>
-            <button @click="showQuickSwitcher = false" class="text-gray-400 hover:text-white">
+          <div class="flex items-center justify-between pb-2 border-b border-brand-charcoal/10 px-1">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-charcoal/70">Endure Spaces</span>
+            <button @click="showQuickSwitcher = false" class="text-brand-charcoal/60 hover:text-brand-charcoal">
               <Icon name="ph:x-bold" class="w-4 h-4" />
             </button>
           </div>
@@ -86,7 +86,7 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
           <button
             @click="navigateToView('/')"
             class="w-full text-left px-3 py-2 rounded-xl text-xs flex items-center gap-2.5 transition-colors"
-            :class="route.path === '/' ? 'bg-brand-accent text-black font-bold' : 'text-gray-300 hover:bg-white/10'"
+            :class="route.path === '/' ? 'bg-brand-accent text-white font-bold' : 'text-brand-charcoal hover:bg-brand-dark'"
           >
             <Icon name="ph:globe-bold" class="w-4 h-4" />
             <div>
@@ -98,7 +98,7 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
           <button
             @click="navigateToView('/book')"
             class="w-full text-left px-3 py-2 rounded-xl text-xs flex items-center gap-2.5 transition-colors"
-            :class="route.path === '/book' ? 'bg-brand-accent text-black font-bold' : 'text-gray-300 hover:bg-white/10'"
+            :class="route.path === '/book' ? 'bg-brand-accent text-white font-bold' : 'text-brand-charcoal hover:bg-brand-dark'"
           >
             <Icon name="ph:calendar-check-bold" class="w-4 h-4" />
             <div>
@@ -110,7 +110,7 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
           <button
             @click="navigateToView('/client', 'client')"
             class="w-full text-left px-3 py-2 rounded-xl text-xs flex items-center gap-2.5 transition-colors"
-            :class="route.path.startsWith('/client') ? 'bg-brand-accent text-black font-bold' : 'text-gray-300 hover:bg-white/10'"
+            :class="route.path.startsWith('/client') ? 'bg-brand-accent text-white font-bold' : 'text-brand-charcoal hover:bg-brand-dark'"
           >
             <Icon name="ph:device-mobile-camera-bold" class="w-4 h-4" />
             <div>
@@ -122,7 +122,7 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
           <button
             @click="navigateToView('/coach', 'coach')"
             class="w-full text-left px-3 py-2 rounded-xl text-xs flex items-center gap-2.5 transition-colors"
-            :class="route.path.startsWith('/coach') ? 'bg-brand-accent text-black font-bold' : 'text-gray-300 hover:bg-white/10'"
+            :class="route.path.startsWith('/coach') ? 'bg-brand-accent text-white font-bold' : 'text-brand-charcoal hover:bg-brand-dark'"
           >
             <Icon name="ph:shield-star-bold" class="w-4 h-4" />
             <div>
@@ -142,22 +142,23 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
   position: fixed;
   top: 0;
   left: 0;
-  width: 16px;
-  height: 16px;
-  background-color: var(--tw-color-brand-accent, #ccff00);
+  width: 14px;
+  height: 14px;
+  background-color: #FA8112;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
-  transition: width 0.25s, height 0.25s;
+  opacity: 0.85;
+  box-shadow: 0 0 10px rgba(250, 129, 18, 0.4);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
 
 .custom-cursor.cursor-hover {
-  width: 48px;
-  height: 48px;
-  background-color: #ffffff;
-  mix-blend-mode: difference;
+  width: 38px;
+  height: 38px;
+  background-color: rgba(250, 129, 18, 0.25);
+  border: 2px solid #FA8112;
 }
 
 /* Page & Layout Transitions */

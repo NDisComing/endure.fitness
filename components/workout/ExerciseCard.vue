@@ -34,22 +34,22 @@ const toggleSet = (idx: number) => {
 
 <template>
   <div 
-    class="bg-brand-gray border rounded-2xl p-5 transition-all duration-300 relative overflow-hidden"
-    :class="isAllCompleted ? 'border-brand-accent/60 shadow-[0_0_20px_rgba(204,255,0,0.1)]' : 'border-white/10 hover:border-white/20'"
+    class="bg-brand-gray border rounded-2xl p-5 transition-all duration-300 relative overflow-hidden shadow-sm"
+    :class="isAllCompleted ? 'border-brand-accent/60 shadow-[0_4px_20px_rgba(250,129,18,0.2)]' : 'border-brand-charcoal/10 hover:border-brand-charcoal/25'"
   >
     <!-- Top Header -->
     <div class="flex items-start justify-between gap-3 mb-4">
       <div class="flex items-start gap-3">
-        <span class="w-7 h-7 rounded-lg bg-white/5 border border-white/10 text-xs font-mono font-bold flex items-center justify-center shrink-0 mt-0.5 text-gray-300">
+        <span class="w-7 h-7 rounded-lg bg-brand-dark border border-brand-charcoal/10 text-xs font-mono font-bold flex items-center justify-center shrink-0 mt-0.5 text-brand-charcoal">
           0{{ index + 1 }}
         </span>
         <div>
           <div class="flex items-center gap-2 mb-0.5">
             <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider">{{ exercise.category }}</span>
-            <span class="text-gray-500">•</span>
-            <span class="text-[11px] text-gray-400">{{ exercise.target_sets }} Sets × {{ exercise.target_reps }}</span>
+            <span class="text-brand-charcoal/40">•</span>
+            <span class="text-[11px] text-brand-charcoal/70">{{ exercise.target_sets }} Sets × {{ exercise.target_reps }}</span>
           </div>
-          <h4 class="font-heading font-black text-lg text-white leading-tight">
+          <h4 class="font-heading font-black text-lg text-brand-charcoal leading-tight">
             {{ exercise.title }}
           </h4>
         </div>
@@ -58,7 +58,7 @@ const toggleSet = (idx: number) => {
       <!-- Video Watch Button -->
       <button
         @click="emit('playVideo', exercise)"
-        class="bg-brand-dark hover:bg-white/10 text-brand-accent border border-brand-accent/40 hover:border-brand-accent p-2 rounded-xl transition-colors flex items-center gap-1.5 text-xs font-bold shrink-0"
+        class="bg-brand-dark hover:bg-brand-sand/80 text-brand-accent border border-brand-accent/40 hover:border-brand-accent p-2 rounded-xl transition-colors flex items-center gap-1.5 text-xs font-bold shrink-0 shadow-sm"
         title="Watch Form Video & Cues"
       >
         <Icon name="ph:play-fill" class="w-4 h-4" />
@@ -67,8 +67,8 @@ const toggleSet = (idx: number) => {
     </div>
 
     <!-- Sets Logger Table -->
-    <div class="bg-brand-dark/80 rounded-xl p-3 border border-white/5 space-y-2">
-      <div class="grid grid-cols-12 text-[10px] uppercase font-bold text-gray-400 px-2 pb-1 border-b border-white/5">
+    <div class="bg-brand-dark rounded-xl p-3 border border-brand-charcoal/10 space-y-2 shadow-sm">
+      <div class="grid grid-cols-12 text-[10px] uppercase font-bold text-brand-charcoal/60 px-2 pb-1 border-b border-brand-charcoal/10">
         <span class="col-span-2">Set</span>
         <span class="col-span-4 text-center">Load (kg)</span>
         <span class="col-span-3 text-center">Reps</span>
@@ -79,15 +79,15 @@ const toggleSet = (idx: number) => {
         v-for="(set, idx) in setsData"
         :key="idx"
         class="grid grid-cols-12 items-center px-2 py-1.5 rounded-lg transition-colors"
-        :class="set.completed ? 'bg-brand-accent/10 border border-brand-accent/30' : 'hover:bg-white/5'"
+        :class="set.completed ? 'bg-brand-accent/15 border border-brand-accent/40' : 'hover:bg-brand-charcoal/5'"
       >
-        <span class="col-span-2 font-mono text-xs font-bold text-gray-300">#{{ set.setNum }}</span>
+        <span class="col-span-2 font-mono text-xs font-bold text-brand-charcoal">#{{ set.setNum }}</span>
         
         <div class="col-span-4 flex justify-center">
           <input 
             v-model.number="set.weight" 
             type="number"
-            class="w-16 bg-brand-gray border border-white/10 rounded-md py-1 text-center font-mono text-xs font-bold text-white focus:outline-none focus:border-brand-accent"
+            class="w-16 bg-brand-gray border border-brand-charcoal/15 rounded-md py-1 text-center font-mono text-xs font-bold text-brand-charcoal focus:outline-none focus:border-brand-accent"
           />
         </div>
 
@@ -95,7 +95,7 @@ const toggleSet = (idx: number) => {
           <input 
             v-model.number="set.reps" 
             type="number"
-            class="w-12 bg-brand-gray border border-white/10 rounded-md py-1 text-center font-mono text-xs font-bold text-white focus:outline-none focus:border-brand-accent"
+            class="w-12 bg-brand-gray border border-brand-charcoal/15 rounded-md py-1 text-center font-mono text-xs font-bold text-brand-charcoal focus:outline-none focus:border-brand-accent"
           />
         </div>
 
@@ -103,7 +103,7 @@ const toggleSet = (idx: number) => {
           <button
             @click="toggleSet(idx)"
             class="w-7 h-7 rounded-lg border flex items-center justify-center transition-all duration-200"
-            :class="set.completed ? 'bg-brand-accent border-brand-accent text-black shadow-sm' : 'border-white/20 text-gray-500 hover:border-white/40'"
+            :class="set.completed ? 'bg-brand-accent border-brand-accent text-white shadow-sm' : 'border-brand-charcoal/20 text-brand-charcoal/40 hover:border-brand-charcoal/40'"
           >
             <Icon name="ph:check-bold" class="w-4 h-4" />
           </button>

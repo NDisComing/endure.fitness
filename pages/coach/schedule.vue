@@ -64,7 +64,7 @@ const cancelClientSession = (bookingId: string) => {
     <div class="flex items-center justify-between">
       <div>
         <span class="text-xs font-bold text-brand-accent uppercase tracking-widest">Calendar & Time Slots</span>
-        <h1 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-white">
+        <h1 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-brand-charcoal">
           Schedule & Availability
         </h1>
       </div>
@@ -72,7 +72,7 @@ const cancelClientSession = (bookingId: string) => {
       <NuxtLink
         to="/book"
         target="_blank"
-        class="bg-white/10 hover:bg-white/20 text-white font-bold text-xs px-4 py-2 rounded-xl flex items-center gap-2 border border-white/15"
+        class="bg-brand-dark hover:bg-brand-sand text-brand-charcoal font-bold text-xs px-4 py-2 rounded-xl flex items-center gap-2 border border-brand-charcoal/15 shadow-sm"
       >
         <Icon name="ph:arrow-square-out-bold" class="w-4 h-4 text-brand-accent" />
         <span>View Public Booking Engine</span>
@@ -80,11 +80,11 @@ const cancelClientSession = (bookingId: string) => {
     </div>
 
     <!-- Upcoming Confirmed Sessions Table -->
-    <div class="bg-brand-gray border border-white/10 rounded-3xl p-6 shadow-xl space-y-4">
+    <div class="bg-brand-gray border border-brand-charcoal/10 rounded-3xl p-6 shadow-md space-y-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <Icon name="ph:calendar-check-fill" class="w-5 h-5 text-brand-accent" />
-          <h2 class="font-heading font-black text-lg uppercase text-white">
+          <h2 class="font-heading font-black text-lg uppercase text-brand-charcoal">
             Upcoming Booked Appointments
           </h2>
         </div>
@@ -95,7 +95,7 @@ const cancelClientSession = (bookingId: string) => {
 
       <div class="overflow-x-auto">
         <table class="w-full text-left text-xs">
-          <thead class="bg-brand-dark text-gray-400 uppercase font-bold text-[10px] border-b border-white/10">
+          <thead class="bg-brand-sand/70 text-brand-charcoal/70 uppercase font-bold text-[10px] border-b border-brand-charcoal/10">
             <tr>
               <th class="py-3 px-4">Client</th>
               <th class="py-3 px-4">Session Type</th>
@@ -104,30 +104,30 @@ const cancelClientSession = (bookingId: string) => {
               <th class="py-3 px-4 text-right">Actions</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-white/5">
+          <tbody class="divide-y divide-brand-charcoal/10">
             <tr 
               v-for="booking in store.coachUpcomingSessions.value"
               :key="booking.id"
-              class="hover:bg-white/[0.02]"
+              class="hover:bg-brand-dark/40"
             >
-              <td class="py-3.5 px-4 font-bold text-white">
+              <td class="py-3.5 px-4 font-bold text-brand-charcoal">
                 <p>{{ booking.client_name }}</p>
-                <p class="text-[10px] font-mono text-gray-400">{{ booking.client_phone || 'No phone' }}</p>
+                <p class="text-[10px] font-mono text-brand-charcoal/60">{{ booking.client_phone || 'No phone' }}</p>
               </td>
-              <td class="py-3.5 px-4 text-brand-accent font-medium">
+              <td class="py-3.5 px-4 text-brand-accent font-bold">
                 {{ booking.session_type }}
               </td>
               <td class="py-3.5 px-4 font-mono">
-                <p class="text-white">{{ new Date(booking.start_time).toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' }) }}</p>
-                <p class="text-gray-400">{{ new Date(booking.start_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }} - {{ new Date(booking.end_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }}</p>
+                <p class="text-brand-charcoal font-bold">{{ new Date(booking.start_time).toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' }) }}</p>
+                <p class="text-brand-charcoal/60">{{ new Date(booking.start_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }} - {{ new Date(booking.end_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }}</p>
               </td>
-              <td class="py-3.5 px-4 text-gray-300 max-w-xs">
+              <td class="py-3.5 px-4 text-brand-charcoal/80 max-w-xs">
                 <p class="truncate">{{ booking.notes || 'Routine session' }}</p>
               </td>
               <td class="py-3.5 px-4 text-right space-x-2">
                 <button
                   @click="cancelClientSession(booking.id)"
-                  class="bg-red-500/10 hover:bg-red-500/20 text-red-400 px-3 py-1.5 rounded-lg border border-red-500/20 text-[11px] font-bold transition-colors"
+                  class="bg-red-500/10 hover:bg-red-500/20 text-red-600 px-3 py-1.5 rounded-lg border border-red-500/20 text-[11px] font-bold transition-colors"
                 >
                   Cancel
                 </button>
@@ -141,22 +141,22 @@ const cancelClientSession = (bookingId: string) => {
     <!-- Recurring Working Hours & Block-Out Dates Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       <!-- Recurring Hours -->
-      <div class="lg:col-span-7 bg-brand-gray border border-white/10 rounded-3xl p-6 shadow-xl space-y-4">
-        <div class="flex items-center justify-between pb-3 border-b border-white/10">
+      <div class="lg:col-span-7 bg-brand-gray border border-brand-charcoal/10 rounded-3xl p-6 shadow-md space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-brand-charcoal/10">
           <div class="flex items-center gap-2">
             <Icon name="ph:clock-bold" class="w-5 h-5 text-brand-accent" />
-            <h3 class="font-heading font-black text-base uppercase text-white">
+            <h3 class="font-heading font-black text-base uppercase text-brand-charcoal">
               Weekly Working Hours Template
             </h3>
           </div>
-          <span class="text-[10px] text-gray-400 font-bold uppercase">Automated Slots</span>
+          <span class="text-[10px] text-brand-charcoal/60 font-bold uppercase">Automated Slots</span>
         </div>
 
         <div class="space-y-2.5">
           <div 
             v-for="item in recurringSchedule" 
             :key="item.day"
-            class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/80 border border-white/5 text-xs"
+            class="flex items-center justify-between p-3 rounded-xl bg-brand-dark border border-brand-charcoal/10 text-xs shadow-sm"
           >
             <div class="flex items-center gap-3 w-32">
               <input 
@@ -164,10 +164,10 @@ const cancelClientSession = (bookingId: string) => {
                 type="checkbox" 
                 class="accent-brand-accent rounded w-4 h-4"
               />
-              <span class="font-bold text-white">{{ item.day }}</span>
+              <span class="font-bold text-brand-charcoal">{{ item.day }}</span>
             </div>
 
-            <div class="flex items-center gap-3 font-mono text-gray-300 text-[11px]">
+            <div class="flex items-center gap-3 font-mono text-brand-charcoal/75 text-[11px]">
               <span>AM: {{ item.morning }}</span>
               <span>•</span>
               <span>PM: {{ item.evening }}</span>
@@ -175,7 +175,7 @@ const cancelClientSession = (bookingId: string) => {
 
             <span 
               class="text-[10px] font-bold px-2 py-0.5 rounded uppercase"
-              :class="item.enabled ? 'bg-emerald-500/10 text-emerald-400' : 'bg-red-500/10 text-red-400'"
+              :class="item.enabled ? 'bg-emerald-500/15 text-emerald-800' : 'bg-red-500/15 text-red-700'"
             >
               {{ item.enabled ? 'Active' : 'Off' }}
             </span>
@@ -184,15 +184,15 @@ const cancelClientSession = (bookingId: string) => {
       </div>
 
       <!-- Block-Out Dates -->
-      <div class="lg:col-span-5 bg-brand-gray border border-white/10 rounded-3xl p-6 shadow-xl space-y-4">
-        <div class="flex items-center gap-2 pb-3 border-b border-white/10">
-          <Icon name="ph:prohibit-bold" class="w-5 h-5 text-red-400" />
-          <h3 class="font-heading font-black text-base uppercase text-white">
+      <div class="lg:col-span-5 bg-brand-gray border border-brand-charcoal/10 rounded-3xl p-6 shadow-md space-y-4">
+        <div class="flex items-center gap-2 pb-3 border-b border-brand-charcoal/10">
+          <Icon name="ph:prohibit-bold" class="w-5 h-5 text-red-500" />
+          <h3 class="font-heading font-black text-base uppercase text-brand-charcoal">
             Block-Out Dates
           </h3>
         </div>
 
-        <p class="text-xs text-gray-400">
+        <p class="text-xs text-brand-charcoal/70">
           Mark vacation periods, travel, or coaching conferences to automatically close booking slots.
         </p>
 
@@ -201,15 +201,15 @@ const cancelClientSession = (bookingId: string) => {
           <div 
             v-for="(block, idx) in blockedDates" 
             :key="idx"
-            class="p-3 rounded-xl bg-brand-dark border border-white/5 flex items-center justify-between text-xs"
+            class="p-3 rounded-xl bg-brand-dark border border-brand-charcoal/10 flex items-center justify-between text-xs shadow-sm"
           >
             <div>
-              <p class="font-mono font-bold text-white">{{ block.date }}</p>
-              <p class="text-[11px] text-gray-400">{{ block.label }}</p>
+              <p class="font-mono font-bold text-brand-charcoal">{{ block.date }}</p>
+              <p class="text-[11px] text-brand-charcoal/60">{{ block.label }}</p>
             </div>
             <button 
               @click="removeBlockout(idx)"
-              class="text-gray-500 hover:text-red-400 p-1"
+              class="text-brand-charcoal/40 hover:text-red-600 p-1"
               title="Remove Block"
             >
               <Icon name="ph:trash-bold" class="w-4 h-4" />
@@ -218,28 +218,28 @@ const cancelClientSession = (bookingId: string) => {
         </div>
 
         <!-- Add New Block -->
-        <div class="pt-3 border-t border-white/10 space-y-2">
+        <div class="pt-3 border-t border-brand-charcoal/10 space-y-2">
           <div class="space-y-1">
-            <label class="text-[10px] uppercase font-bold text-gray-400">Date to Lock</label>
+            <label class="text-[10px] uppercase font-bold text-brand-charcoal/70">Date to Lock</label>
             <input 
               v-model="newBlockDate"
               type="date" 
-              class="w-full bg-brand-dark border border-white/15 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-accent"
+              class="w-full bg-brand-dark border border-brand-charcoal/15 rounded-xl px-3 py-2 text-xs text-brand-charcoal focus:outline-none focus:border-brand-accent shadow-sm"
             />
           </div>
           <div class="space-y-1">
-            <label class="text-[10px] uppercase font-bold text-gray-400">Reason</label>
+            <label class="text-[10px] uppercase font-bold text-brand-charcoal/70">Reason</label>
             <input 
               v-model="newBlockReason"
               type="text" 
               placeholder="e.g. Travel / Competition"
-              class="w-full bg-brand-dark border border-white/15 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-accent"
+              class="w-full bg-brand-dark border border-brand-charcoal/15 rounded-xl px-3 py-2 text-xs text-brand-charcoal focus:outline-none focus:border-brand-accent shadow-sm"
             />
           </div>
           <button
             @click="addBlockout"
             :disabled="!newBlockDate || !newBlockReason"
-            class="w-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs py-2.5 rounded-xl transition-all disabled:opacity-40"
+            class="w-full bg-brand-charcoal hover:bg-brand-charcoal/90 text-white font-bold text-xs py-2.5 rounded-xl transition-all disabled:opacity-40 shadow-sm"
           >
             + Add Blockout Date
           </button>

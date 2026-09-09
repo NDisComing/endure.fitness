@@ -35,7 +35,6 @@ const installPwa = async () => {
     }
     deferredPrompt.value = null
   } else {
-    // Show instruction tooltip for iOS / manual browsers
     alert('To install Endure PWA:\n1. Tap the Share button in Safari/Chrome\n2. Select "Add to Home Screen" [➕]')
   }
 }
@@ -54,27 +53,27 @@ const switchToCoach = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-brand-dark text-white font-sans flex flex-col selection:bg-brand-accent selection:text-black">
+  <div class="min-h-screen bg-brand-dark text-brand-charcoal font-sans flex flex-col selection:bg-brand-accent selection:text-white">
     <!-- Top Client Bar -->
-    <header class="sticky top-0 z-40 bg-brand-gray/95 backdrop-blur-md border-b border-white/10 px-4 py-3">
+    <header class="sticky top-0 z-40 bg-brand-gray/90 backdrop-blur-md border-b border-brand-charcoal/10 px-4 py-3">
       <div class="max-w-md mx-auto flex items-center justify-between">
         <div class="flex items-center gap-3">
           <div class="relative">
             <img 
               :src="store.currentUser.value.avatar_url || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80'" 
               :alt="store.currentUser.value.full_name"
-              class="w-10 h-10 rounded-full object-cover border-2 border-brand-accent shadow-[0_0_10px_rgba(204,255,0,0.3)]"
+              class="w-10 h-10 rounded-full object-cover border-2 border-brand-accent shadow-[0_0_10px_rgba(250,129,18,0.25)]"
             />
             <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-brand-accent rounded-full ring-2 ring-brand-gray"></span>
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <h2 class="font-heading font-bold text-sm tracking-tight">{{ store.currentUser.value.full_name }}</h2>
+              <h2 class="font-heading font-bold text-sm tracking-tight text-brand-charcoal">{{ store.currentUser.value.full_name }}</h2>
               <span class="bg-brand-accent/20 text-brand-accent text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">
                 PWA Client
               </span>
             </div>
-            <p class="text-xs text-gray-400 truncate max-w-[170px]">
+            <p class="text-xs text-brand-charcoal/65 truncate max-w-[170px]">
               Coach: Marcus Vance
             </p>
           </div>
@@ -84,7 +83,7 @@ const switchToCoach = () => {
           <!-- Role Switcher -->
           <button 
             @click="switchToCoach"
-            class="text-[11px] font-bold bg-white/10 hover:bg-white/20 text-gray-200 px-2.5 py-1.5 rounded-lg border border-white/10 transition-all flex items-center gap-1 active:scale-95"
+            class="text-[11px] font-bold bg-brand-dark hover:bg-brand-charcoal/5 text-brand-charcoal px-2.5 py-1.5 rounded-lg border border-brand-charcoal/15 transition-all flex items-center gap-1 active:scale-95 shadow-sm"
             title="Switch to Coach Portal"
           >
             <Icon name="ph:arrows-clockwise-bold" class="w-3.5 h-3.5 text-brand-accent" />
@@ -97,28 +96,28 @@ const switchToCoach = () => {
     <!-- PWA Installation Banner -->
     <div 
       v-if="showInstallBanner && !isInstalled"
-      class="bg-gradient-to-r from-brand-gray to-brand-dark border-b border-brand-accent/30 px-4 py-2.5 animate-fade-in-up"
+      class="bg-gradient-to-r from-brand-sand to-brand-cream border-b border-brand-accent/30 px-4 py-2.5 animate-fade-in-up"
     >
       <div class="max-w-md mx-auto flex items-center justify-between gap-3">
-        <div class="flex items-center gap-2.5 text-xs text-gray-200">
+        <div class="flex items-center gap-2.5 text-xs text-brand-charcoal">
           <div class="w-8 h-8 rounded-lg bg-brand-accent/20 border border-brand-accent flex items-center justify-center shrink-0">
             <Icon name="ph:download-simple-bold" class="w-4 h-4 text-brand-accent" />
           </div>
           <div>
-            <p class="font-bold text-white leading-tight">Install Endure PWA</p>
-            <p class="text-[11px] text-gray-400">Add to home screen for native full-screen feel</p>
+            <p class="font-bold text-brand-charcoal leading-tight">Install Endure PWA</p>
+            <p class="text-[11px] text-brand-charcoal/70">Add to home screen for native app experience</p>
           </div>
         </div>
         <div class="flex items-center gap-2">
           <button 
             @click="installPwa"
-            class="bg-brand-accent text-black font-heading font-black text-xs px-3 py-1.5 rounded-md hover:bg-white transition-all shadow-[0_0_10px_rgba(204,255,0,0.4)] whitespace-nowrap"
+            class="bg-brand-accent text-white font-heading font-black text-xs px-3 py-1.5 rounded-md hover:bg-brand-charcoal transition-all shadow-[0_2px_10px_rgba(250,129,18,0.3)] whitespace-nowrap"
           >
             Install
           </button>
           <button 
             @click="showInstallBanner = false"
-            class="text-gray-400 hover:text-white p-1"
+            class="text-brand-charcoal/60 hover:text-brand-charcoal p-1"
           >
             <Icon name="ph:x-bold" class="w-3.5 h-3.5" />
           </button>
@@ -132,20 +131,20 @@ const switchToCoach = () => {
     </main>
 
     <!-- Bottom Floating PWA Navigation Bar -->
-    <nav class="fixed bottom-0 left-0 right-0 z-40 bg-brand-gray/95 backdrop-blur-xl border-t border-white/10 pb-safe">
+    <nav class="fixed bottom-0 left-0 right-0 z-40 bg-brand-gray/95 backdrop-blur-xl border-t border-brand-charcoal/10 pb-safe shadow-lg">
       <div class="max-w-md mx-auto flex items-center justify-around py-2 px-3">
         <NuxtLink
           v-for="tab in navTabs"
           :key="tab.path"
           :to="tab.path"
           class="flex flex-col items-center justify-center py-1.5 px-3 rounded-xl transition-all relative group"
-          :class="route.path === tab.path ? 'text-brand-accent' : 'text-gray-400 hover:text-gray-200'"
+          :class="route.path === tab.path ? 'text-brand-accent' : 'text-brand-charcoal/60 hover:text-brand-charcoal'"
         >
           <!-- Special highlight styling for AI food scanner camera -->
           <div 
             v-if="tab.highlight"
-            class="w-11 h-11 -mt-5 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110"
-            :class="route.path === tab.path ? 'bg-brand-accent text-black shadow-[0_0_20px_rgba(204,255,0,0.6)]' : 'bg-brand-accent/20 border border-brand-accent text-brand-accent'"
+            class="w-11 h-11 -mt-5 rounded-full flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-110"
+            :class="route.path === tab.path ? 'bg-brand-accent text-white shadow-[0_4px_15px_rgba(250,129,18,0.5)]' : 'bg-brand-accent/20 border border-brand-accent text-brand-accent'"
           >
             <Icon :name="tab.icon" class="w-6 h-6" />
           </div>

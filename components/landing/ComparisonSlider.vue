@@ -66,7 +66,7 @@ const transformations: Transformation[] = [
 ]
 
 const currentIndex = ref(0)
-const sliderPosition = ref(50) // percentage 0 to 100
+const sliderPosition = ref(50)
 const isDragging = ref(false)
 const sliderRef = ref<HTMLElement | null>(null)
 
@@ -104,7 +104,7 @@ const onTouchMove = (e: TouchEvent) => {
 </script>
 
 <template>
-  <section id="transformations" class="py-24 bg-brand-dark border-b border-white/10 relative">
+  <section id="transformations" class="py-24 bg-brand-dark border-b border-brand-charcoal/10 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -113,29 +113,29 @@ const onTouchMove = (e: TouchEvent) => {
             <span class="w-8 h-px bg-brand-accent"></span>
             Real Measured Transformations
           </div>
-          <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight">
+          <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal">
             Proof Over <span class="text-brand-accent">Promises.</span>
           </h2>
-          <p class="text-gray-400 mt-2 text-base max-w-xl">
+          <p class="text-brand-charcoal/70 mt-2 text-base max-w-xl">
             Drag the interactive slider horizontally to compare verified client results.
           </p>
         </div>
 
         <!-- Carousel Switcher Controls -->
         <div class="flex items-center gap-3">
-          <span class="text-xs text-gray-400 font-mono">
+          <span class="text-xs text-brand-charcoal/70 font-mono font-bold">
             {{ currentIndex + 1 }} / {{ transformations.length }}
           </span>
           <button 
             @click="prevItem"
-            class="w-12 h-12 rounded-xl bg-brand-gray border border-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-black hover:border-transparent transition-all"
+            class="w-12 h-12 rounded-xl bg-brand-gray border border-brand-charcoal/15 flex items-center justify-center text-brand-charcoal hover:bg-brand-accent hover:text-white transition-all shadow-sm"
             aria-label="Previous Transformation"
           >
             <Icon name="ph:caret-left-bold" class="w-5 h-5" />
           </button>
           <button 
             @click="nextItem"
-            class="w-12 h-12 rounded-xl bg-brand-gray border border-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-black hover:border-transparent transition-all"
+            class="w-12 h-12 rounded-xl bg-brand-gray border border-brand-charcoal/15 flex items-center justify-center text-brand-charcoal hover:bg-brand-accent hover:text-white transition-all shadow-sm"
             aria-label="Next Transformation"
           >
             <Icon name="ph:caret-right-bold" class="w-5 h-5" />
@@ -149,7 +149,7 @@ const onTouchMove = (e: TouchEvent) => {
         <div class="lg:col-span-7">
           <div 
             ref="sliderRef"
-            class="relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden border-2 border-white/15 bg-black select-none shadow-[0_20px_50px_rgba(0,0,0,0.8)] cursor-ew-resize touch-none"
+            class="relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden border-2 border-brand-charcoal/15 bg-black select-none shadow-2xl cursor-ew-resize touch-none"
             @mousedown="isDragging = true"
             @mouseup="isDragging = false"
             @mouseleave="isDragging = false"
@@ -178,23 +178,23 @@ const onTouchMove = (e: TouchEvent) => {
                 :alt="`${currentItem.name} Before`"
                 class="absolute inset-0 w-full h-full object-cover filter brightness-95"
               />
-              <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-gray-300 font-heading font-bold text-xs px-3 py-1.5 rounded-md border border-white/20 uppercase tracking-wider">
+              <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-white font-heading font-bold text-xs px-3 py-1.5 rounded-md border border-white/20 uppercase tracking-wider">
                 Before
               </div>
             </div>
 
             <!-- Draggable Divider Line & Knob -->
             <div 
-              class="absolute top-0 bottom-0 w-1 bg-brand-accent shadow-[0_0_15px_rgba(204,255,0,0.8)] pointer-events-none"
+              class="absolute top-0 bottom-0 w-1 bg-brand-accent shadow-[0_0_15px_rgba(250,129,18,0.8)] pointer-events-none"
               :style="{ left: `${sliderPosition}%` }"
             >
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-accent text-black flex items-center justify-center shadow-2xl border-2 border-black">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center shadow-xl border-2 border-white">
                 <Icon name="ph:arrows-left-right-bold" class="w-5 h-5" />
               </div>
             </div>
 
             <!-- Bottom Instruction Pill -->
-            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-md text-[11px] text-gray-300 font-medium px-4 py-1.5 rounded-full border border-white/10 pointer-events-none flex items-center gap-1.5">
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-md text-[11px] text-gray-200 font-medium px-4 py-1.5 rounded-full border border-white/15 pointer-events-none flex items-center gap-1.5">
               <Icon name="ph:hand-pointing-bold" class="w-3.5 h-3.5 text-brand-accent" />
               <span>Drag slider or click anywhere to inspect</span>
             </div>
@@ -206,49 +206,49 @@ const onTouchMove = (e: TouchEvent) => {
           <!-- Client Header -->
           <div class="flex items-center justify-between">
             <div>
-              <h3 class="font-heading font-black text-2xl uppercase tracking-tight text-white">
+              <h3 class="font-heading font-black text-2xl uppercase tracking-tight text-brand-charcoal">
                 {{ currentItem.name }}
               </h3>
               <p class="text-xs font-bold text-brand-accent uppercase tracking-wider">
                 {{ currentItem.program }} • {{ currentItem.duration }}
               </p>
             </div>
-            <span class="bg-brand-accent/10 border border-brand-accent/30 text-brand-accent text-xs font-bold px-3 py-1 rounded-full">
+            <span class="bg-brand-accent/15 border border-brand-accent/40 text-brand-accent text-xs font-bold px-3 py-1 rounded-full">
               Verified Client
             </span>
           </div>
 
           <!-- Quote -->
-          <div class="relative bg-brand-gray p-6 rounded-2xl border border-white/10">
-            <Icon name="ph:quotes-fill" class="w-8 h-8 text-brand-accent/20 absolute top-4 right-4" />
-            <p class="text-gray-300 italic text-sm leading-relaxed relative z-10">
+          <div class="relative bg-brand-gray p-6 rounded-2xl border border-brand-charcoal/10 shadow-sm">
+            <Icon name="ph:quotes-fill" class="w-8 h-8 text-brand-accent/25 absolute top-4 right-4" />
+            <p class="text-brand-charcoal/85 italic text-sm leading-relaxed relative z-10">
               "{{ currentItem.quote }}"
             </p>
           </div>
 
           <!-- Metrics Bento Box -->
           <div class="grid grid-cols-2 gap-3">
-            <div class="p-4 rounded-xl bg-brand-gray/80 border border-white/10">
-              <p class="text-[10px] uppercase font-bold text-gray-400">Scale Weight</p>
+            <div class="p-4 rounded-xl bg-brand-gray border border-brand-charcoal/10 shadow-sm">
+              <p class="text-[10px] uppercase font-bold text-brand-charcoal/60">Scale Weight</p>
               <p class="font-heading font-black text-xl text-brand-accent mt-0.5">
                 {{ currentItem.metrics.weightChange }}
               </p>
             </div>
-            <div class="p-4 rounded-xl bg-brand-gray/80 border border-white/10">
-              <p class="text-[10px] uppercase font-bold text-gray-400">Body Fat %</p>
-              <p class="font-heading font-black text-xl text-white mt-0.5">
+            <div class="p-4 rounded-xl bg-brand-gray border border-brand-charcoal/10 shadow-sm">
+              <p class="text-[10px] uppercase font-bold text-brand-charcoal/60">Body Fat %</p>
+              <p class="font-heading font-black text-xl text-brand-charcoal mt-0.5">
                 {{ currentItem.metrics.bodyFat }}
               </p>
             </div>
-            <div class="p-4 rounded-xl bg-brand-gray/80 border border-white/10">
-              <p class="text-[10px] uppercase font-bold text-gray-400">Strength Indicator</p>
+            <div class="p-4 rounded-xl bg-brand-gray border border-brand-charcoal/10 shadow-sm">
+              <p class="text-[10px] uppercase font-bold text-brand-charcoal/60">Strength Indicator</p>
               <p class="font-heading font-black text-base text-brand-accent mt-0.5">
                 {{ currentItem.metrics.strengthGain }}
               </p>
             </div>
-            <div class="p-4 rounded-xl bg-brand-gray/80 border border-white/10">
-              <p class="text-[10px] uppercase font-bold text-gray-400">Key Milestone</p>
-              <p class="font-heading font-bold text-xs text-gray-200 mt-0.5 leading-snug">
+            <div class="p-4 rounded-xl bg-brand-gray border border-brand-charcoal/10 shadow-sm">
+              <p class="text-[10px] uppercase font-bold text-brand-charcoal/60">Key Milestone</p>
+              <p class="font-heading font-bold text-xs text-brand-charcoal mt-0.5 leading-snug">
                 {{ currentItem.metrics.highlight }}
               </p>
             </div>
@@ -258,7 +258,7 @@ const onTouchMove = (e: TouchEvent) => {
           <div class="pt-2">
             <NuxtLink 
               to="/book" 
-              class="w-full bg-brand-accent text-black font-heading font-black text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl hover:bg-white transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(204,255,0,0.3)]"
+              class="w-full bg-brand-accent text-white font-heading font-black text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl hover:bg-brand-charcoal transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(250,129,18,0.3)]"
             >
               <span>Get Similar Results — Book Consultation</span>
               <Icon name="ph:arrow-right-bold" class="w-4 h-4" />

@@ -37,7 +37,7 @@ const toggleFaq = (index: number) => {
 </script>
 
 <template>
-  <section id="faq" class="py-24 bg-brand-dark border-b border-white/10 relative">
+  <section id="faq" class="py-24 bg-brand-dark border-b border-brand-charcoal/10 relative">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 space-y-3">
         <div class="inline-flex items-center gap-2 text-brand-accent font-bold tracking-widest uppercase text-xs">
@@ -45,10 +45,10 @@ const toggleFaq = (index: number) => {
           Clarity & Expectations
           <span class="w-8 h-px bg-brand-accent"></span>
         </div>
-        <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight">
+        <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal">
           Frequently Asked <span class="text-brand-accent">Questions.</span>
         </h2>
-        <p class="text-gray-400 text-sm sm:text-base">
+        <p class="text-brand-charcoal/70 text-sm sm:text-base">
           Everything you need to know about coaching, the PWA, and session rules.
         </p>
       </div>
@@ -57,17 +57,17 @@ const toggleFaq = (index: number) => {
         <div 
           v-for="(faq, i) in faqs" 
           :key="i"
-          class="rounded-2xl border transition-all duration-200 overflow-hidden"
-          :class="openIndex === i ? 'bg-brand-gray border-brand-accent/50' : 'bg-brand-gray/50 border-white/10 hover:border-white/20'"
+          class="rounded-2xl border transition-all duration-200 overflow-hidden shadow-sm"
+          :class="openIndex === i ? 'bg-brand-gray border-brand-accent/60 shadow-md' : 'bg-brand-gray/60 border-brand-charcoal/10 hover:border-brand-charcoal/25'"
         >
           <button 
             @click="toggleFaq(i)"
-            class="w-full text-left p-6 flex items-center justify-between gap-4 font-heading font-bold text-base sm:text-lg text-white"
+            class="w-full text-left p-6 flex items-center justify-between gap-4 font-heading font-bold text-base sm:text-lg text-brand-charcoal"
           >
             <span>{{ faq.question }}</span>
             <div 
-              class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 transition-transform duration-300"
-              :class="openIndex === i && 'rotate-180 bg-brand-accent text-black'"
+              class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300"
+              :class="openIndex === i ? 'rotate-180 bg-brand-accent text-white' : 'bg-brand-charcoal/10 text-brand-charcoal'"
             >
               <Icon name="ph:caret-down-bold" class="w-4 h-4" />
             </div>
@@ -75,7 +75,7 @@ const toggleFaq = (index: number) => {
 
           <div 
             v-if="openIndex === i"
-            class="px-6 pb-6 pt-1 text-sm text-gray-300 leading-relaxed border-t border-white/5 animate-fade-in-up"
+            class="px-6 pb-6 pt-1 text-sm text-brand-charcoal/80 leading-relaxed border-t border-brand-charcoal/10 animate-fade-in-up"
           >
             {{ faq.answer }}
           </div>

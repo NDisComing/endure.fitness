@@ -121,24 +121,24 @@ const handleCancelSession = () => {
     <!-- Quick Food Scanner CTA Banner -->
     <button
       @click="showCamera = true"
-      class="w-full bg-gradient-to-r from-brand-accent/20 via-brand-accent/30 to-brand-accent/10 border-2 border-brand-accent rounded-3xl p-4 flex items-center justify-between shadow-[0_0_25px_rgba(204,255,0,0.25)] hover:scale-102 active:scale-98 transition-all group"
+      class="w-full bg-gradient-to-r from-brand-sand via-brand-gray to-brand-cream border-2 border-brand-accent rounded-3xl p-4 flex items-center justify-between shadow-md hover:scale-102 active:scale-98 transition-all group"
     >
       <div class="flex items-center gap-3 text-left">
-        <div class="w-12 h-12 rounded-2xl bg-brand-accent text-black flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+        <div class="w-12 h-12 rounded-2xl bg-brand-accent text-white flex items-center justify-center shadow-md group-hover:rotate-12 transition-transform">
           <Icon name="ph:camera-fill" class="w-6 h-6" />
         </div>
         <div>
-          <h4 class="font-heading font-black text-sm uppercase text-white">Scan Meal With AI</h4>
-          <p class="text-xs text-brand-accent font-semibold">Gemini Flash Portion & Macro Intake</p>
+          <h4 class="font-heading font-black text-sm uppercase text-brand-charcoal">Scan Meal With AI</h4>
+          <p class="text-xs text-brand-accent font-bold">Gemini Flash Portion & Macro Intake</p>
         </div>
       </div>
-      <div class="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center text-brand-accent">
+      <div class="w-8 h-8 rounded-full bg-brand-charcoal/10 flex items-center justify-center text-brand-charcoal">
         <Icon name="ph:arrow-right-bold" class="w-4 h-4" />
       </div>
     </button>
 
     <!-- Upcoming Scheduled Training Session Badge with Countdown -->
-    <div class="bg-brand-gray border border-white/10 rounded-3xl p-5 relative overflow-hidden">
+    <div class="bg-brand-gray border border-brand-charcoal/10 rounded-3xl p-5 relative overflow-hidden shadow-sm">
       <div class="flex items-center justify-between mb-3">
         <span class="text-[10px] font-bold text-brand-accent uppercase tracking-widest flex items-center gap-1.5">
           <Icon name="ph:calendar-check-fill" class="w-3.5 h-3.5" />
@@ -146,7 +146,7 @@ const handleCancelSession = () => {
         </span>
         <span 
           v-if="store.nextSession.value"
-          class="bg-brand-accent/10 border border-brand-accent/30 text-brand-accent text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full"
+          class="bg-brand-accent/15 border border-brand-accent/40 text-brand-accent text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full"
         >
           ⏱ {{ countdownText }}
         </span>
@@ -155,15 +155,15 @@ const handleCancelSession = () => {
       <div v-if="store.nextSession.value" class="space-y-3">
         <div class="flex items-center justify-between">
           <div>
-            <h4 class="font-heading font-black text-base text-white">
+            <h4 class="font-heading font-black text-base text-brand-charcoal">
               {{ store.nextSession.value.session_type }}
             </h4>
-            <p class="text-xs text-gray-400">
+            <p class="text-xs text-brand-charcoal/70">
               With Coach Marcus Vance • Performance Lab
             </p>
           </div>
           <div class="text-right font-mono">
-            <p class="text-xs font-bold text-white">
+            <p class="text-xs font-bold text-brand-charcoal">
               {{ new Date(store.nextSession.value.start_time).toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' }) }}
             </p>
             <p class="text-xs text-brand-accent font-bold">
@@ -173,16 +173,16 @@ const handleCancelSession = () => {
         </div>
 
         <!-- 12-Hour Cancellation Rule Notice -->
-        <div v-if="cancelWarning" class="p-3 bg-red-500/20 border border-red-500 rounded-xl text-xs text-red-300 flex items-center gap-2">
+        <div v-if="cancelWarning" class="p-3 bg-red-500/15 border border-red-500 rounded-xl text-xs text-red-700 flex items-center gap-2 font-medium">
           <Icon name="ph:warning-bold" class="w-4 h-4 shrink-0" />
           <span>{{ cancelWarning }}</span>
         </div>
 
-        <div class="pt-2 border-t border-white/5 flex items-center justify-between">
-          <span class="text-[10px] text-gray-400">12h Cancellation Policy</span>
+        <div class="pt-2 border-t border-brand-charcoal/10 flex items-center justify-between">
+          <span class="text-[10px] text-brand-charcoal/60">12h Cancellation Policy</span>
           <button 
             @click="handleCancelSession"
-            class="text-[11px] font-bold text-gray-400 hover:text-red-400 transition-colors"
+            class="text-[11px] font-bold text-brand-charcoal/70 hover:text-red-600 transition-colors"
           >
             Reschedule / Cancel
           </button>
@@ -190,10 +190,10 @@ const handleCancelSession = () => {
       </div>
 
       <div v-else class="text-center py-4 space-y-2">
-        <p class="text-xs text-gray-400">You have no upcoming confirmed sessions.</p>
+        <p class="text-xs text-brand-charcoal/70">You have no upcoming confirmed sessions.</p>
         <NuxtLink 
           to="/book" 
-          class="inline-block bg-white/10 hover:bg-white/20 text-white font-bold text-xs py-2 px-4 rounded-xl transition-all"
+          class="inline-block bg-brand-dark hover:bg-brand-charcoal hover:text-white text-brand-charcoal font-bold text-xs py-2 px-4 rounded-xl border border-brand-charcoal/15 transition-all shadow-sm"
         >
           Book 1-on-1 Session
         </NuxtLink>
@@ -201,7 +201,7 @@ const handleCancelSession = () => {
     </div>
 
     <!-- Today's Workout Quick-Launch Card -->
-    <div class="bg-brand-gray border border-white/10 rounded-3xl p-5 space-y-3">
+    <div class="bg-brand-gray border border-brand-charcoal/10 rounded-3xl p-5 space-y-3 shadow-sm">
       <div class="flex items-center justify-between">
         <span class="text-[10px] font-bold text-brand-accent uppercase tracking-widest">Assigned Split</span>
         <NuxtLink to="/client/workouts" class="text-xs font-bold text-brand-accent hover:underline flex items-center gap-1">
@@ -211,33 +211,33 @@ const handleCancelSession = () => {
       </div>
 
       <div class="flex items-center gap-3">
-        <div class="w-12 h-12 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center text-brand-accent">
+        <div class="w-12 h-12 rounded-2xl bg-brand-dark border border-brand-charcoal/10 flex items-center justify-center text-brand-accent shadow-sm">
           <Icon name="ph:barbell-fill" class="w-6 h-6" />
         </div>
         <div>
-          <h4 class="font-heading font-black text-base text-white">Monday: Push Day A</h4>
-          <p class="text-xs text-gray-400">5 Exercises • Chest, Shoulders, Triceps</p>
+          <h4 class="font-heading font-black text-base text-brand-charcoal">Monday: Push Day A</h4>
+          <p class="text-xs text-brand-charcoal/70">5 Exercises • Chest, Shoulders, Triceps</p>
         </div>
       </div>
     </div>
 
     <!-- Daily Hydration Tracker -->
-    <div class="bg-brand-gray border border-white/10 rounded-3xl p-5 flex items-center justify-between gap-4">
+    <div class="bg-brand-gray border border-brand-charcoal/10 rounded-3xl p-5 flex items-center justify-between gap-4 shadow-sm">
       <div class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-2xl bg-sky-500/20 border border-sky-500/40 text-sky-400 flex items-center justify-center shrink-0">
+        <div class="w-11 h-11 rounded-2xl bg-sky-500/15 border border-sky-500/30 text-sky-700 flex items-center justify-center shrink-0">
           <Icon name="ph:drop-fill" class="w-6 h-6" />
         </div>
         <div>
-          <h4 class="font-heading font-black text-sm text-white">Hydration</h4>
-          <p class="text-xs font-mono text-gray-400">
-            <span class="text-white font-bold">{{ store.dailyWaterMl.value }}</span> / 3,500 ml
+          <h4 class="font-heading font-black text-sm text-brand-charcoal">Hydration</h4>
+          <p class="text-xs font-mono text-brand-charcoal/70">
+            <span class="text-brand-charcoal font-bold">{{ store.dailyWaterMl.value }}</span> / 3,500 ml
           </p>
         </div>
       </div>
 
       <button
         @click="store.addWater(250)"
-        class="bg-sky-500/20 hover:bg-sky-500/30 border border-sky-500/40 text-sky-300 font-bold text-xs px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 active:scale-95"
+        class="bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/30 text-sky-800 font-bold text-xs px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 active:scale-95 shadow-sm"
       >
         <Icon name="ph:plus-bold" class="w-3.5 h-3.5" />
         <span>+250 ml</span>

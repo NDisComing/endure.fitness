@@ -65,7 +65,7 @@ const tiers: Tier[] = [
 </script>
 
 <template>
-  <section id="programs" class="py-24 bg-brand-gray border-b border-white/10 relative">
+  <section id="programs" class="py-24 bg-brand-gray border-b border-brand-charcoal/10 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
         <div class="inline-flex items-center gap-2 text-brand-accent font-bold tracking-widest uppercase text-xs">
@@ -73,10 +73,10 @@ const tiers: Tier[] = [
           Training Tiers & Investment
           <span class="w-8 h-px bg-brand-accent"></span>
         </div>
-        <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight">
+        <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal">
           Select Your Path To <span class="text-brand-accent">Dominance.</span>
         </h2>
-        <p class="text-gray-300 text-base sm:text-lg">
+        <p class="text-brand-charcoal/70 text-base sm:text-lg">
           No locking contracts. Transparent monthly pricing with guaranteed progress when you adhere to the protocol.
         </p>
       </div>
@@ -85,35 +85,35 @@ const tiers: Tier[] = [
         <div 
           v-for="tier in tiers" 
           :key="tier.name"
-          class="relative rounded-2xl bg-brand-dark p-8 flex flex-col transition-all duration-300 hover:-translate-y-2 group"
+          class="relative rounded-2xl bg-brand-dark p-8 flex flex-col transition-all duration-300 hover:-translate-y-2 group shadow-md"
           :class="tier.featured 
-            ? 'border-2 border-brand-accent shadow-[0_0_40px_rgba(204,255,0,0.2)]' 
-            : 'border border-white/10 hover:border-white/30'"
+            ? 'border-2 border-brand-accent shadow-[0_8px_30px_rgba(250,129,18,0.22)]' 
+            : 'border border-brand-charcoal/15 hover:border-brand-charcoal/30'"
         >
           <!-- Featured Badge -->
           <div 
             v-if="tier.featured"
-            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-accent text-black font-heading font-black text-xs uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg"
+            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-accent text-white font-heading font-black text-xs uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md"
           >
             Most Popular Choice
           </div>
 
           <!-- Tier Header -->
           <div class="mb-6">
-            <h3 class="font-heading font-black text-2xl uppercase tracking-tight text-white mb-2">
+            <h3 class="font-heading font-black text-2xl uppercase tracking-tight text-brand-charcoal mb-2">
               {{ tier.name }}
             </h3>
-            <p class="text-gray-400 text-xs leading-relaxed min-h-[36px]">
+            <p class="text-brand-charcoal/70 text-xs leading-relaxed min-h-[36px]">
               {{ tier.subtitle }}
             </p>
           </div>
 
           <!-- Price -->
-          <div class="flex items-baseline gap-1.5 mb-8 pb-6 border-b border-white/10">
-            <span class="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">
+          <div class="flex items-baseline gap-1.5 mb-8 pb-6 border-b border-brand-charcoal/10">
+            <span class="font-heading font-black text-4xl sm:text-5xl text-brand-charcoal tracking-tight">
               {{ tier.price }}
             </span>
-            <span class="text-gray-400 text-sm font-medium">{{ tier.cadence }}</span>
+            <span class="text-brand-charcoal/60 text-sm font-medium">{{ tier.cadence }}</span>
           </div>
 
           <!-- Feature List -->
@@ -121,7 +121,7 @@ const tiers: Tier[] = [
             <li 
               v-for="(feat, fIdx) in tier.features" 
               :key="fIdx"
-              class="flex items-start gap-3 text-xs sm:text-sm text-gray-300"
+              class="flex items-start gap-3 text-xs sm:text-sm text-brand-charcoal/80"
             >
               <Icon name="ph:check-bold" class="w-4 h-4 text-brand-accent shrink-0 mt-0.5" />
               <span>{{ feat }}</span>
@@ -131,10 +131,10 @@ const tiers: Tier[] = [
           <!-- CTA Button -->
           <NuxtLink 
             :to="tier.ctaLink"
-            class="w-full py-4 rounded-xl font-heading font-black text-xs uppercase tracking-wider text-center transition-all duration-200"
+            class="w-full py-4 rounded-xl font-heading font-black text-xs uppercase tracking-wider text-center transition-all duration-200 shadow-sm"
             :class="tier.featured 
-              ? 'bg-brand-accent text-black hover:bg-white shadow-[0_0_20px_rgba(204,255,0,0.4)]' 
-              : 'bg-white/10 hover:bg-brand-accent hover:text-black text-white border border-white/10'"
+              ? 'bg-brand-accent text-white hover:bg-brand-charcoal shadow-[0_4px_15px_rgba(250,129,18,0.35)]' 
+              : 'bg-brand-gray hover:bg-brand-accent hover:text-white text-brand-charcoal border border-brand-charcoal/15'"
           >
             {{ tier.ctaText }}
           </NuxtLink>

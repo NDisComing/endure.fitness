@@ -8,7 +8,7 @@ const credentials = [
 </script>
 
 <template>
-  <section id="bio" class="py-24 bg-brand-gray border-b border-white/10 relative overflow-hidden">
+  <section id="bio" class="py-24 bg-brand-gray border-b border-brand-charcoal/10 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <!-- Trainer Portrait Column -->
@@ -18,7 +18,7 @@ const credentials = [
             <div class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/20 to-transparent rounded-3xl blur-2xl -z-10"></div>
 
             <!-- Frame -->
-            <div class="relative rounded-2xl overflow-hidden border-2 border-white/10 bg-brand-dark group shadow-2xl">
+            <div class="relative rounded-2xl overflow-hidden border-2 border-brand-charcoal/10 bg-brand-dark group shadow-xl">
               <img 
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80" 
                 alt="Marcus Vance - Head Coach" 
@@ -26,18 +26,18 @@ const credentials = [
               />
               
               <!-- Overlay badge -->
-              <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent">
+              <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-brand-charcoal/90 via-brand-charcoal/60 to-transparent">
                 <p class="font-heading font-black text-2xl uppercase tracking-tight text-white">Marcus Vance</p>
                 <p class="text-xs font-bold uppercase tracking-widest text-brand-accent">Founder & Head Performance Coach</p>
               </div>
             </div>
 
             <!-- Floating Accent Badge -->
-            <div class="absolute -bottom-6 -right-6 hidden sm:flex items-center gap-3 bg-brand-dark border border-brand-accent/40 px-5 py-3 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            <div class="absolute -bottom-6 -right-6 hidden sm:flex items-center gap-3 bg-brand-dark border border-brand-accent/40 px-5 py-3 rounded-xl shadow-xl">
               <Icon name="ph:medal-military-fill" class="w-8 h-8 text-brand-accent" />
               <div>
-                <p class="font-heading font-black text-sm text-white">Ex-Competitive</p>
-                <p class="text-[11px] text-gray-400">Powerlifting & Athletics</p>
+                <p class="font-heading font-black text-sm text-brand-charcoal">Ex-Competitive</p>
+                <p class="text-[11px] text-brand-charcoal/70">Powerlifting & Athletics</p>
               </div>
             </div>
           </div>
@@ -50,16 +50,16 @@ const credentials = [
             Coach Ethos & Pedigree
           </div>
 
-          <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight leading-tight">
+          <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight leading-tight text-brand-charcoal">
             "No Gimmicks. Just <span class="text-brand-accent">Relentless</span> Execution."
           </h2>
 
-          <p class="text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+          <p class="text-brand-charcoal/80 text-base sm:text-lg leading-relaxed font-normal">
             With over a decade of coaching high-level executives, collegiate athletes, and everyday achievers, 
             my methodology dismantles the noise of quick-fix fitness trends. Every rep, rest period, and macro target is calibrated to your unique physiology and lifestyle demands.
           </p>
 
-          <p class="text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+          <p class="text-brand-charcoal/80 text-base sm:text-lg leading-relaxed font-normal">
             Physical change requires mental durability. We focus on movement quality, progressive overload, and intelligent nutritional periodization so your results endure long past the 12-week mark.
           </p>
 
@@ -68,14 +68,14 @@ const credentials = [
             <div 
               v-for="(cred, i) in credentials" 
               :key="i"
-              class="p-4 rounded-xl bg-brand-dark/60 border border-white/10 flex items-start gap-3 hover:border-brand-accent/40 transition-colors"
+              class="p-4 rounded-xl bg-brand-dark border border-brand-charcoal/10 flex items-start gap-3 hover:border-brand-accent/40 transition-colors shadow-sm"
             >
-              <div class="w-8 h-8 rounded-lg bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center shrink-0 mt-0.5">
+              <div class="w-8 h-8 rounded-lg bg-brand-accent/15 border border-brand-accent/30 flex items-center justify-center shrink-0 mt-0.5">
                 <Icon name="ph:check-circle-bold" class="w-4 h-4 text-brand-accent" />
               </div>
               <div>
-                <p class="font-heading font-bold text-sm text-white">{{ cred.title }}</p>
-                <p class="text-xs text-gray-400">{{ cred.issuer }}</p>
+                <p class="font-heading font-bold text-sm text-brand-charcoal">{{ cred.title }}</p>
+                <p class="text-xs text-brand-charcoal/65">{{ cred.issuer }}</p>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ const credentials = [
           <div class="pt-6">
             <NuxtLink 
               to="/book" 
-              class="inline-flex items-center gap-2 bg-brand-accent hover:bg-white text-black font-heading font-black text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)]"
+              class="inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-charcoal text-white font-heading font-black text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all duration-300 shadow-[0_4px_20px_rgba(250,129,18,0.3)]"
             >
               <span>Schedule 1-on-1 Strategy Session</span>
               <Icon name="ph:arrow-right-bold" class="w-4 h-4" />

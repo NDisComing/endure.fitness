@@ -45,10 +45,10 @@ const emit = defineEmits<{
 <template>
   <div class="space-y-4">
     <div class="text-center md:text-left mb-6">
-      <h3 class="font-heading font-black text-xl uppercase tracking-tight text-white">
+      <h3 class="font-heading font-black text-xl uppercase tracking-tight text-brand-charcoal">
         Step 1: Choose Your Session Type
       </h3>
-      <p class="text-xs text-gray-400 mt-1">
+      <p class="text-xs text-brand-charcoal/70 mt-1">
         Select a session type to view matching coach availability slots.
       </p>
     </div>
@@ -58,12 +58,12 @@ const emit = defineEmits<{
         v-for="service in services" 
         :key="service.id"
         @click="emit('select', service)"
-        class="cursor-pointer rounded-2xl p-5 border transition-all duration-200 flex flex-col justify-between group relative"
+        class="cursor-pointer rounded-2xl p-5 border transition-all duration-200 flex flex-col justify-between group relative shadow-sm"
         :class="selectedService?.id === service.id 
-          ? 'bg-brand-gray border-brand-accent shadow-[0_0_25px_rgba(204,255,0,0.25)]' 
-          : 'bg-brand-gray/50 border-white/10 hover:border-white/25 hover:bg-brand-gray/80'"
+          ? 'bg-brand-gray border-2 border-brand-accent shadow-[0_4px_25px_rgba(250,129,18,0.22)]' 
+          : 'bg-brand-gray/60 border-brand-charcoal/15 hover:border-brand-charcoal/30 hover:bg-brand-gray'"
       >
-        <div v-if="service.badge" class="absolute -top-3 left-4 bg-brand-accent text-black font-heading font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow">
+        <div v-if="service.badge" class="absolute -top-3 left-4 bg-brand-accent text-white font-heading font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow">
           {{ service.badge }}
         </div>
 
@@ -73,26 +73,26 @@ const emit = defineEmits<{
               <Icon name="ph:clock-bold" class="w-3.5 h-3.5" />
               {{ service.durationMinutes }} Minutes
             </span>
-            <span class="font-heading font-black text-sm text-white">
+            <span class="font-heading font-black text-sm text-brand-charcoal">
               {{ service.price }}
             </span>
           </div>
 
-          <h4 class="font-heading font-bold text-base text-white mb-2 leading-tight group-hover:text-brand-accent transition-colors">
+          <h4 class="font-heading font-bold text-base text-brand-charcoal mb-2 leading-tight group-hover:text-brand-accent transition-colors">
             {{ service.name }}
           </h4>
-          <p class="text-xs text-gray-400 leading-relaxed">
+          <p class="text-xs text-brand-charcoal/75 leading-relaxed">
             {{ service.description }}
           </p>
         </div>
 
-        <div class="mt-5 pt-3 border-t border-white/5 flex items-center justify-between">
-          <span class="text-[11px] font-semibold" :class="selectedService?.id === service.id ? 'text-brand-accent' : 'text-gray-400'">
+        <div class="mt-5 pt-3 border-t border-brand-charcoal/10 flex items-center justify-between">
+          <span class="text-[11px] font-semibold" :class="selectedService?.id === service.id ? 'text-brand-accent font-bold' : 'text-brand-charcoal/60'">
             {{ selectedService?.id === service.id ? '✓ Selected' : 'Click to select' }}
           </span>
           <div 
             class="w-6 h-6 rounded-full border flex items-center justify-center transition-all"
-            :class="selectedService?.id === service.id ? 'border-brand-accent bg-brand-accent text-black' : 'border-white/20 text-transparent'"
+            :class="selectedService?.id === service.id ? 'border-brand-accent bg-brand-accent text-white' : 'border-brand-charcoal/20 text-transparent'"
           >
             <Icon name="ph:check-bold" class="w-3.5 h-3.5" />
           </div>

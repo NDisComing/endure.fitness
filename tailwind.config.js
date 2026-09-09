@@ -11,9 +11,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'brand-dark': '#0a0a0a',
-        'brand-gray': '#171717',
-        'brand-accent': '#ccff00', // Neon Green
+        'brand-dark': '#ffffffff',    // Base light canvas (warm cream)
+        'brand-gray': '#F5E7C6',    // Card / surface background (warm sand)
+        'brand-accent': '#FA8112',  // Vibrant warm orange
+        'brand-cream': '#FAF3E1',
+        'brand-sand': '#F5E7C6',
+        'brand-orange': '#FA8112',
+        'brand-charcoal': '#222222',
       },
       fontFamily: {
         heading: ['Montserrat', 'sans-serif'],
@@ -39,8 +43,8 @@ module.exports = {
           '50%': { transform: 'translateY(-10px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(204,255,0,0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(204,255,0,0.6)' },
+          '0%': { boxShadow: '0 0 5px rgba(250,129,18,0.2)' },
+          '100%': { boxShadow: '0 0 20px rgba(250,129,18,0.5)' },
         }
       }
     },

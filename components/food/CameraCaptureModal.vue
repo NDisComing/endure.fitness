@@ -82,7 +82,7 @@ const compressAndEmit = (imgSource: HTMLVideoElement | HTMLImageElement) => {
         imageBase64: compressedBase64,
         mealType: selectedMealType.value
       })
-    }, 1200) // Brief animation delay for scanning radar
+    }, 1200)
   }
 }
 
@@ -105,7 +105,6 @@ const handleFileUpload = (e: Event) => {
   reader.readAsDataURL(file)
 }
 
-// Demo quick-plate generator
 const useSamplePlate = () => {
   isScanning.value = true
   const img = new Image()
@@ -118,34 +117,34 @@ const useSamplePlate = () => {
 <template>
   <div class="fixed inset-0 z-50 flex items-center justify-center p-4">
     <!-- Backdrop -->
-    <div class="fixed inset-0 bg-black/90 backdrop-blur-md" @click="emit('close')"></div>
+    <div class="fixed inset-0 bg-black/70 backdrop-blur-sm" @click="emit('close')"></div>
 
     <!-- Scanner Window -->
-    <div class="relative w-full max-w-lg bg-brand-gray border border-white/20 rounded-3xl overflow-hidden shadow-2xl z-10 flex flex-col">
+    <div class="relative w-full max-w-lg bg-brand-gray border border-brand-charcoal/15 rounded-3xl overflow-hidden shadow-2xl z-10 flex flex-col">
       <!-- Top Bar -->
-      <div class="p-4 bg-brand-dark/80 border-b border-white/10 flex items-center justify-between">
+      <div class="p-4 bg-brand-dark border-b border-brand-charcoal/10 flex items-center justify-between">
         <div class="flex items-center gap-2">
           <div class="w-8 h-8 rounded-lg bg-brand-accent/20 border border-brand-accent flex items-center justify-center text-brand-accent">
             <Icon name="ph:camera-fill" class="w-4 h-4" />
           </div>
           <div>
-            <h3 class="font-heading font-black text-sm uppercase text-white">AI Vision Food Scanner</h3>
-            <p class="text-[10px] text-gray-400">Powered by Google Gemini 1.5 Flash</p>
+            <h3 class="font-heading font-black text-sm uppercase text-brand-charcoal">AI Vision Food Scanner</h3>
+            <p class="text-[10px] text-brand-charcoal/60">Powered by Google Gemini 1.5 Flash</p>
           </div>
         </div>
-        <button @click="emit('close')" class="text-gray-400 hover:text-white p-1.5">
+        <button @click="emit('close')" class="text-brand-charcoal/60 hover:text-brand-charcoal p-1.5">
           <Icon name="ph:x-bold" class="w-5 h-5" />
         </button>
       </div>
 
       <!-- Meal Category Pill Selector -->
-      <div class="p-3 bg-brand-gray/90 border-b border-white/5 flex gap-1.5 overflow-x-auto">
+      <div class="p-3 bg-brand-gray border-b border-brand-charcoal/10 flex gap-1.5 overflow-x-auto">
         <button
           v-for="type in (['Breakfast', 'Lunch', 'Dinner', 'Snack'] as const)"
           :key="type"
           @click="selectedMealType = type"
-          class="flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all whitespace-nowrap"
-          :class="selectedMealType === type ? 'bg-brand-accent text-black shadow-sm' : 'bg-white/5 text-gray-300 hover:bg-white/10'"
+          class="flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all whitespace-nowrap shadow-sm"
+          :class="selectedMealType === type ? 'bg-brand-accent text-white shadow-sm font-bold' : 'bg-brand-dark text-brand-charcoal/80 hover:bg-brand-sand/80'"
         >
           {{ type }}
         </button>
@@ -165,23 +164,23 @@ const useSamplePlate = () => {
 
         <!-- Fallback if camera stream not available -->
         <div v-if="!isCameraActive" class="text-center p-6 space-y-3">
-          <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto text-gray-400">
+          <div class="w-16 h-16 rounded-2xl bg-brand-dark border border-brand-charcoal/10 flex items-center justify-center mx-auto text-brand-charcoal/60 shadow-sm">
             <Icon name="ph:image-square-bold" class="w-8 h-8" />
           </div>
-          <p class="text-xs text-gray-300 max-w-xs mx-auto">
+          <p class="text-xs text-brand-charcoal/80 max-w-xs mx-auto">
             Camera access is optional. Upload a food photo from your gallery or test with an instant healthy meal sample.
           </p>
           <div class="flex flex-wrap justify-center gap-2 pt-2">
             <button
               @click="fileInputRef?.click()"
-              class="bg-white/10 hover:bg-white/20 border border-white/15 text-white font-bold text-xs py-2 px-4 rounded-xl flex items-center gap-2"
+              class="bg-brand-dark hover:bg-brand-sand/80 border border-brand-charcoal/15 text-brand-charcoal font-bold text-xs py-2 px-4 rounded-xl flex items-center gap-2 shadow-sm"
             >
               <Icon name="ph:upload-simple-bold" class="w-4 h-4 text-brand-accent" />
               <span>Choose Photo</span>
             </button>
             <button
               @click="useSamplePlate"
-              class="bg-brand-accent/20 hover:bg-brand-accent/30 border border-brand-accent text-brand-accent font-bold text-xs py-2 px-4 rounded-xl flex items-center gap-2"
+              class="bg-brand-accent/20 hover:bg-brand-accent/30 border border-brand-accent text-brand-accent font-bold text-xs py-2 px-4 rounded-xl flex items-center gap-2 shadow-sm"
             >
               <Icon name="ph:sparkle-fill" class="w-4 h-4" />
               <span>Use Sample Plate</span>
@@ -209,18 +208,18 @@ const useSamplePlate = () => {
         <!-- Scanning Laser Animation Overlay -->
         <div 
           v-if="isScanning"
-          class="absolute inset-0 bg-brand-accent/10 backdrop-blur-[2px] flex flex-col items-center justify-center space-y-3 z-20"
+          class="absolute inset-0 bg-brand-accent/15 backdrop-blur-[2px] flex flex-col items-center justify-center space-y-3 z-20"
         >
           <div class="w-16 h-16 rounded-full border-4 border-brand-accent border-t-transparent animate-spin"></div>
           <p class="font-heading font-black text-sm uppercase tracking-wider text-brand-accent animate-pulse">
             Analyzing Plate with Gemini Flash...
           </p>
-          <p class="text-[11px] text-gray-300">Estimating portion weights & macros</p>
+          <p class="text-[11px] text-brand-charcoal font-bold">Estimating portion weights & macros</p>
         </div>
       </div>
 
       <!-- Bottom Controls -->
-      <div class="p-4 bg-brand-dark/95 border-t border-white/10 flex items-center justify-between gap-3">
+      <div class="p-4 bg-brand-dark border-t border-brand-charcoal/10 flex items-center justify-between gap-3 shadow-sm">
         <!-- Hidden File Input -->
         <input 
           ref="fileInputRef" 
@@ -232,7 +231,7 @@ const useSamplePlate = () => {
 
         <button
           @click="fileInputRef?.click()"
-          class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 flex items-center gap-1.5 text-xs font-bold"
+          class="p-3 rounded-xl bg-brand-gray hover:bg-brand-sand/80 text-brand-charcoal border border-brand-charcoal/10 flex items-center gap-1.5 text-xs font-bold shadow-sm"
           title="Upload from Camera Roll"
         >
           <Icon name="ph:folder-open-bold" class="w-5 h-5 text-brand-accent" />
@@ -243,7 +242,7 @@ const useSamplePlate = () => {
         <button
           @click="isCameraActive ? captureFromVideo() : useSamplePlate()"
           :disabled="isScanning"
-          class="w-16 h-16 rounded-full bg-brand-accent text-black border-4 border-black shadow-[0_0_25px_rgba(204,255,0,0.6)] flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shrink-0 disabled:opacity-50"
+          class="w-16 h-16 rounded-full bg-brand-accent text-white border-4 border-brand-gray shadow-[0_4px_20px_rgba(250,129,18,0.5)] flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shrink-0 disabled:opacity-50"
           title="Snap Photo"
         >
           <Icon name="ph:aperture-bold" class="w-8 h-8" />
@@ -251,7 +250,7 @@ const useSamplePlate = () => {
 
         <button
           @click="useSamplePlate"
-          class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 flex items-center gap-1.5 text-xs font-bold"
+          class="p-3 rounded-xl bg-brand-gray hover:bg-brand-sand/80 text-brand-charcoal border border-brand-charcoal/10 flex items-center gap-1.5 text-xs font-bold shadow-sm"
           title="Instant Sample Plate"
         >
           <Icon name="ph:sparkle-bold" class="w-5 h-5 text-brand-accent" />
