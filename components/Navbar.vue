@@ -1,15 +1,49 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 
 const isMobileMenuOpen = ref(false)
+const route = useRoute()
+const isScrolledPastHero = ref(false)
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 }
+
+const handleScroll = () => {
+  if (route.path !== '/') {
+    isScrolledPastHero.value = true
+    return
+  }
+  // On homepage, only show navbar after scrolling past the hero (e.g. 70% of viewport height)
+  const heroThreshold = typeof window !== 'undefined' ? window.innerHeight * 0.7 : 500
+  isScrolledPastHero.value = window.scrollY > heroThreshold
+}
+
+onMounted(() => {
+  handleScroll()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('scroll', handleScroll)
+  }
+})
+
+watch(() => route.path, () => {
+  handleScroll()
+})
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-earth/10 transition-colors">
+  <header 
+    class="z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-earth/10 transition-all duration-300"
+    :class="[
+      route.path === '/'
+        ? 'fixed top-0 inset-x-0 transform ' + (isScrolledPastHero ? 'translate-y-0 opacity-100 shadow-md pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none')
+        : 'sticky top-0 translate-y-0 opacity-100'
+    ]"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
         <!-- Logo with uploaded Logo-icon.jpeg -->
