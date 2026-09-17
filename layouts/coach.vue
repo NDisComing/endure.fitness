@@ -38,16 +38,16 @@ const switchToClient = () => {
       <div class="p-5 border-b border-brand-charcoal/10">
         <div class="flex items-center gap-3">
           <img 
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" 
-            alt="Marcus Vance" 
-            class="w-12 h-12 rounded-xl object-cover border border-brand-accent shadow-sm"
+            src="/images/coach-yondy.jpeg" 
+            alt="Coach Yondy" 
+            class="w-12 h-12 rounded-xl object-cover object-top border border-brand-sage shadow-sm"
           />
           <div>
-            <h3 class="font-heading font-bold text-sm text-brand-charcoal">Marcus Vance</h3>
-            <p class="text-xs text-brand-accent font-semibold">Head PT & CSCS Coach</p>
+            <h3 class="font-heading font-bold text-sm text-brand-charcoal">Coach Yondy</h3>
+            <p class="text-xs text-brand-accent font-semibold">Founder & Head Coach</p>
             <div class="flex items-center gap-1.5 mt-1 text-[10px] text-brand-charcoal/60">
               <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span>Available for 1-on-1</span>
+              <span>Available for Doorstep PT</span>
             </div>
           </div>
         </div>

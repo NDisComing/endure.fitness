@@ -12,72 +12,73 @@ interface Tier {
 
 const tiers: Tier[] = [
   {
-    name: 'Hybrid App Coaching',
-    subtitle: 'High-accountability remote coaching with our Progressive Web App.',
-    price: '$199',
-    cadence: '/ month',
+    name: '1-on-1 Doorstep PT',
+    subtitle: 'Our flagship in-home personal training delivered directly to your residence.',
+    price: 'RM 180',
+    cadence: '/ session',
     featured: true,
     features: [
-      'Full Endure PWA Portal & Offline App Access',
-      'Unlimited AI Food Scanning & Macro breakdown',
-      'Custom weekly training splits with HD video cues',
-      'Daily coach review of meal photo stream',
-      'Weekly 30m video check-in & form audit',
-      'Direct WhatsApp access to Coach Marcus'
+      'Travel directly to your home or condo gym',
+      'Posture correction & biomechanical screening',
+      'Training equipment provided if your condo lacks gear',
+      'Tailored workout programming & form coaching',
+      'Habit-based nutrition guidance with AI Food Scanner',
+      'Direct WhatsApp access to Coach Yondy'
     ],
-    ctaText: 'Start Hybrid Training',
+    ctaText: 'Book Doorstep Trial',
     ctaLink: '/book'
   },
   {
-    name: '1-on-1 Gym Mastery',
-    subtitle: 'Elite private in-person training sessions for maximum speed.',
-    price: '$449',
-    cadence: '/ month',
+    name: 'Partner Private Gym PT',
+    subtitle: 'Elite coaching inside handpicked private gym facilities in Klang Valley.',
+    price: 'RM 160',
+    cadence: '/ session',
     featured: false,
     features: [
-      'All Hybrid App & AI Food Scanner features',
-      '8x Monthly 1-on-1 in-person gym sessions (60 min)',
-      'Real-time barbell bar-path tracking & spotting',
-      'Bi-weekly InBody body composition scans',
-      'Custom pre & intra-workout supplementation',
-      'VIP booking window with 24h flexibility'
+      'Dedicated training inside uncrowded private gym',
+      'Full suite of specialized barbell & isolation machines',
+      'Heavy progressive overload & hypertrophy focus',
+      'Zero queueing or distractions during sessions',
+      'InBody body recomposition tracking check-ins',
+      'Direct WhatsApp access to Coach Yondy'
     ],
-    ctaText: 'Apply for 1-on-1 PT',
+    ctaText: 'Reserve Private Gym PT',
     ctaLink: '/book'
   },
   {
-    name: 'Nutrition & Macro Protocol',
-    subtitle: 'Pure dietary precision for fat loss, recomp, or athletic fueling.',
-    price: '$99',
-    cadence: '/ month',
+    name: 'Duo In-Home Training',
+    subtitle: 'Train together with your partner, spouse, or friend right at home.',
+    price: 'RM 240',
+    cadence: '/ session (2 pax)',
     featured: false,
     features: [
-      'Personalized caloric & macro target breakdown',
-      'Daily meal photo logging via AI Food Scanner',
-      'Coach meal audits and nutritional adjustments',
-      'Dining out & travel survival guidelines',
-      'Supplement strategy tailored to bloodwork'
+      'Cost-effective shared rate (RM 120 / person)',
+      'Delivered to your condo gym or living room',
+      'Individually tailored exercise regressions & cues',
+      'High-accountability mutual motivation',
+      'Customized nutrition tracking for both partners',
+      'Flexible scheduling across KL & Selangor'
     ],
-    ctaText: 'Join Nutrition Track',
+    ctaText: 'Schedule Duo Training',
     ctaLink: '/book'
   }
 ]
 </script>
 
 <template>
-  <section id="programs" class="py-24 bg-brand-gray border-b border-brand-charcoal/10 relative">
+  <section id="programs" class="py-24 bg-brand-gray border-b border-brand-earth/10 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 text-brand-accent font-bold tracking-widest uppercase text-xs">
-          <span class="w-8 h-px bg-brand-accent"></span>
-          Training Tiers & Investment
-          <span class="w-8 h-px bg-brand-accent"></span>
+        <div class="inline-flex items-center gap-2 text-brand-sage font-bold tracking-widest uppercase text-xs">
+          <span class="w-8 h-px bg-brand-sage"></span>
+          Training Packages & Investment
+          <span class="w-8 h-px bg-brand-sage"></span>
         </div>
         <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal">
-          Select Your Path To <span class="text-brand-accent">Dominance.</span>
+          Transparent Rates. <span class="text-brand-sage">Zero Contracts.</span>
         </h2>
-        <p class="text-brand-charcoal/70 text-base sm:text-lg">
-          No locking contracts. Transparent monthly pricing with guaranteed progress when you adhere to the protocol.
+        <p class="text-brand-muted text-base sm:text-lg leading-relaxed">
+          Flexible package tiers across Kuala Lumpur & Selangor. Clear session-based pricing with guaranteed personal accountability.
         </p>
       </div>
 
@@ -85,17 +86,17 @@ const tiers: Tier[] = [
         <div 
           v-for="tier in tiers" 
           :key="tier.name"
-          class="relative rounded-2xl bg-brand-dark p-8 flex flex-col transition-all duration-300 hover:-translate-y-2 group shadow-md"
+          class="relative rounded-3xl bg-brand-dark p-8 flex flex-col transition-all duration-300 hover:-translate-y-1.5 group shadow-sm"
           :class="tier.featured 
-            ? 'border-2 border-brand-accent shadow-[0_8px_30px_rgba(250,129,18,0.22)]' 
-            : 'border border-brand-charcoal/15 hover:border-brand-charcoal/30'"
+            ? 'border-2 border-brand-sage shadow-[0_8px_30px_rgba(140,157,121,0.22)]' 
+            : 'border border-brand-earth/15 hover:border-brand-sage/40'"
         >
           <!-- Featured Badge -->
           <div 
             v-if="tier.featured"
-            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-accent text-white font-heading font-black text-xs uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md"
+            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-sage text-white font-heading font-black text-xs uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md"
           >
-            Most Popular Choice
+            Flagship Choice
           </div>
 
           <!-- Tier Header -->
@@ -103,17 +104,17 @@ const tiers: Tier[] = [
             <h3 class="font-heading font-black text-2xl uppercase tracking-tight text-brand-charcoal mb-2">
               {{ tier.name }}
             </h3>
-            <p class="text-brand-charcoal/70 text-xs leading-relaxed min-h-[36px]">
+            <p class="text-brand-muted text-xs leading-relaxed min-h-[36px]">
               {{ tier.subtitle }}
             </p>
           </div>
 
           <!-- Price -->
-          <div class="flex items-baseline gap-1.5 mb-8 pb-6 border-b border-brand-charcoal/10">
-            <span class="font-heading font-black text-4xl sm:text-5xl text-brand-charcoal tracking-tight">
+          <div class="flex items-baseline gap-1.5 mb-8 pb-6 border-b border-brand-earth/10">
+            <span class="font-heading font-black text-3xl sm:text-4xl text-brand-charcoal tracking-tight">
               {{ tier.price }}
             </span>
-            <span class="text-brand-charcoal/60 text-sm font-medium">{{ tier.cadence }}</span>
+            <span class="text-brand-muted text-xs sm:text-sm font-medium">{{ tier.cadence }}</span>
           </div>
 
           <!-- Feature List -->
@@ -121,20 +122,20 @@ const tiers: Tier[] = [
             <li 
               v-for="(feat, fIdx) in tier.features" 
               :key="fIdx"
-              class="flex items-start gap-3 text-xs sm:text-sm text-brand-charcoal/80"
+              class="flex items-start gap-3 text-xs sm:text-sm text-brand-charcoal/80 font-medium"
             >
-              <Icon name="ph:check-bold" class="w-4 h-4 text-brand-accent shrink-0 mt-0.5" />
+              <Icon name="ph:check-bold" class="w-4 h-4 text-brand-sage shrink-0 mt-0.5" />
               <span>{{ feat }}</span>
             </li>
           </ul>
 
-          <!-- CTA Button -->
+          <!-- CTA Button (Pill Shape) -->
           <NuxtLink 
             :to="tier.ctaLink"
-            class="w-full py-4 rounded-xl font-heading font-black text-xs uppercase tracking-wider text-center transition-all duration-200 shadow-sm"
+            class="w-full py-4 rounded-full font-heading font-black text-xs uppercase tracking-wider text-center transition-all duration-200 shadow-sm active:scale-95"
             :class="tier.featured 
-              ? 'bg-brand-accent text-white hover:bg-brand-charcoal shadow-[0_4px_15px_rgba(250,129,18,0.35)]' 
-              : 'bg-brand-gray hover:bg-brand-accent hover:text-white text-brand-charcoal border border-brand-charcoal/15'"
+              ? 'bg-brand-earth text-white hover:bg-brand-sage shadow-md' 
+              : 'bg-brand-gray hover:bg-brand-sage hover:text-white text-brand-charcoal border border-brand-earth/15'"
           >
             {{ tier.ctaText }}
           </NuxtLink>

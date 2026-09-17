@@ -11,25 +11,32 @@ export interface ServiceOption {
 const services: ServiceOption[] = [
   {
     id: 'assessment',
-    name: '1st Assessment & Mobility Screen',
+    name: 'In-Home Assessment & Trial',
     durationMinutes: 60,
-    price: 'Free ($0)',
+    price: 'Free (RM 0)',
     badge: 'Recommended for New Clients',
-    description: 'Comprehensive 60-minute movement screen, overhead squat analysis, body composition check, and customized training roadmap.'
+    description: 'Comprehensive 60-minute movement screen, posture check, and trial workout session right at your doorstep.'
   },
   {
-    id: 'pt-1on1',
-    name: 'Regular 1-on-1 Coaching Session',
-    durationMinutes: 45,
-    price: '$80',
-    description: 'Private 45-minute gym session focusing on barbell technique, progressive overload execution, and real-time form cues.'
+    id: 'pt-doorstep',
+    name: '1-on-1 Doorstep PT (Flagship)',
+    durationMinutes: 60,
+    price: 'RM 180',
+    description: 'Private 60-minute in-home or condo gym personal training with posture correction, custom cues, and nutrition support.'
   },
   {
-    id: 'form-check',
-    name: 'Technique & Form Check Call',
-    durationMinutes: 30,
-    price: '$45',
-    description: '30-minute virtual deep-dive analyzing your video lift recordings, joint angles, sticking points, and programming tweaks.'
+    id: 'pt-partner-gym',
+    name: 'Partner Private Gym Session',
+    durationMinutes: 60,
+    price: 'RM 160',
+    description: 'Private 60-minute strength session inside our handpicked private gym partner facilities in Klang Valley.'
+  },
+  {
+    id: 'pt-duo',
+    name: 'Duo In-Home Training (2 Pax)',
+    durationMinutes: 60,
+    price: 'RM 240',
+    description: 'Shared 60-minute session for couples or friends right at your residence or condo gym.'
   }
 ]
 
@@ -49,11 +56,11 @@ const emit = defineEmits<{
         Step 1: Choose Your Session Type
       </h3>
       <p class="text-xs text-brand-charcoal/70 mt-1">
-        Select a session type to view matching coach availability slots.
+        Select a session type to view matching coach availability slots across Kuala Lumpur & Selangor.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div 
         v-for="service in services" 
         :key="service.id"
@@ -71,14 +78,14 @@ const emit = defineEmits<{
           <div class="flex items-center justify-between gap-2 mb-2">
             <span class="text-xs font-bold text-brand-accent uppercase tracking-wider flex items-center gap-1.5">
               <Icon name="ph:clock-bold" class="w-3.5 h-3.5" />
-              {{ service.durationMinutes }} Minutes
+              {{ service.durationMinutes }} Min
             </span>
             <span class="font-heading font-black text-sm text-brand-charcoal">
               {{ service.price }}
             </span>
           </div>
 
-          <h4 class="font-heading font-bold text-base text-brand-charcoal mb-2 leading-tight group-hover:text-brand-accent transition-colors">
+          <h4 class="font-heading font-bold text-sm sm:text-base text-brand-charcoal mb-2 leading-tight group-hover:text-brand-accent transition-colors">
             {{ service.name }}
           </h4>
           <p class="text-xs text-brand-charcoal/75 leading-relaxed">

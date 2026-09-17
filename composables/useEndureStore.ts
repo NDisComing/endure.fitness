@@ -91,14 +91,14 @@ export interface MetricEntry {
 // Initial Mock Seed Data
 const initialCoach: Profile = {
   id: 'coach-1',
-  full_name: 'Marcus Vance',
+  full_name: 'Yondy',
   role: 'coach',
-  phone_number: '+1 (555) 987-6543',
+  phone_number: '+60 12-345 6789',
   target_calories: 2800,
   target_protein: 200,
   target_carbs: 320,
   target_fat: 80,
-  avatar_url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+  avatar_url: '/images/coach-yondy.jpeg',
   injuries_notes: 'None'
 }
 

@@ -11,13 +11,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'brand-dark': '#ffffffff',    // Base light canvas (warm cream)
-        'brand-gray': '#F5E7C6',    // Card / surface background (warm sand)
-        'brand-accent': '#FA8112',  // Vibrant warm orange
-        'brand-cream': '#FAF3E1',
-        'brand-sand': '#F5E7C6',
-        'brand-orange': '#FA8112',
-        'brand-charcoal': '#222222',
+        // Base canvas & surfaces (from client Hygge design palette)
+        'brand-dark': '#FAF8F3',     // Base warm linen cream canvas
+        'brand-gray': '#EFECE4',     // Soft card & panel background
+        'brand-cream': '#F5F2EA',    // Subtle warm accent surface
+        
+        // Exact client swatches:
+        'brand-sage': '#8C9D79',     // #8c9d79 (Olive Sage green)
+        'brand-earth': '#755852',    // #755852 (Earthy chestnut brown)
+        'brand-sand': '#E2C694',     // #e2c694 (Warm golden wheat sand)
+        
+        // Semantic aliases
+        'brand-accent': '#755852',   // Primary earthy CTA button & accent
+        'brand-primary': '#8C9D79',  // Primary wellness & active indicator
+        'brand-charcoal': '#362C28', // Deep espresso brown for headings & text
+        'brand-muted': '#685A55',    // Secondary body text
+        'brand-orange': '#755852',   // Fallback for legacy orange class
       },
       fontFamily: {
         heading: ['Montserrat', 'sans-serif'],
@@ -43,8 +52,8 @@ module.exports = {
           '50%': { transform: 'translateY(-10px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(250,129,18,0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(250,129,18,0.5)' },
+          '0%': { boxShadow: '0 0 5px rgba(140,157,121,0.2)' },
+          '100%': { boxShadow: '0 0 20px rgba(140,157,121,0.5)' },
         }
       }
     },

@@ -11,8 +11,8 @@ export default defineEventHandler(async (event) => {
   return {
     success: true,
     trainer: {
-      name: 'Marcus Vance',
-      role: 'Head Coach & CSCS'
+      name: 'Yondy',
+      role: 'Founder & Head Coach'
     },
     date,
     availableSlots: availableTimes

@@ -9,28 +9,39 @@ const toggleMobileMenu = () => {
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-charcoal/10">
+  <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-earth/10 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <!-- Logo -->
+      <div class="flex items-center justify-between h-20 gap-4">
+        <!-- Logo with uploaded Logo-icon.jpeg -->
         <div class="flex-shrink-0">
-          <NuxtLink to="/" class="inline-flex items-center gap-2.5 group">
-            <div class="w-10 h-10 rounded-xl bg-brand-gray border border-brand-accent/40 flex items-center justify-center group-hover:border-brand-accent shadow-sm transition-all">
-              <Icon name="ph:barbell-fill" class="w-6 h-6 text-brand-accent" />
+          <NuxtLink to="/" class="inline-flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-xl overflow-hidden shadow-sm border border-brand-earth/20 group-hover:border-brand-sage transition-all bg-black flex items-center justify-center shrink-0">
+              <img 
+                src="/images/Logo-icon.jpeg" 
+                alt="Endure Fitness" 
+                class="w-full h-full object-cover"
+              />
             </div>
-            <span class="font-heading font-black text-2xl tracking-tighter uppercase text-brand-charcoal">
-              Endure<span class="text-brand-accent">Fitness</span>
-            </span>
+            <div class="flex flex-col">
+              <span class="font-heading font-black text-xl tracking-tighter uppercase text-brand-charcoal leading-none">
+                Endure<span class="text-brand-sage">Fitness</span>
+              </span>
+              <span class="text-[9px] font-bold uppercase tracking-widest text-brand-muted mt-1 leading-none">
+                KL & Selangor Doorstep PT
+              </span>
+            </div>
           </NuxtLink>
         </div>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center space-x-7">
-          <NuxtLink to="/" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-accent transition-colors">Home</NuxtLink>
-          <NuxtLink to="/#bio" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-accent transition-colors">Trainer Bio</NuxtLink>
-          <NuxtLink to="/#transformations" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-accent transition-colors">Results</NuxtLink>
-          <NuxtLink to="/#programs" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-accent transition-colors">Programs</NuxtLink>
-          <NuxtLink to="/#faq" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-accent transition-colors">FAQ</NuxtLink>
+        <nav class="hidden xl:flex items-center space-x-5 lg:space-x-6">
+          <NuxtLink to="/" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1">Home</NuxtLink>
+          <NuxtLink to="/#bio" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">Coach Yondy</NuxtLink>
+          <NuxtLink to="/#why-in-home" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">Why In-Home</NuxtLink>
+          <NuxtLink to="/#services" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">Core Services</NuxtLink>
+          <NuxtLink to="/#how-it-works" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">How It Works</NuxtLink>
+          <NuxtLink to="/#transformations" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">Transformations</NuxtLink>
+          <NuxtLink to="/#faq" class="text-xs uppercase font-bold tracking-wider text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1">FAQ</NuxtLink>
         </nav>
 
         <!-- Right Portals & CTA -->
@@ -38,24 +49,16 @@ const toggleMobileMenu = () => {
           <!-- Direct App Portals -->
           <NuxtLink 
             to="/client" 
-            class="text-xs font-bold text-brand-charcoal hover:bg-brand-gray px-3 py-2 rounded-lg border border-brand-charcoal/15 transition-all flex items-center gap-1.5 shadow-sm"
+            class="text-xs font-bold text-brand-charcoal hover:bg-brand-gray px-3.5 py-2 rounded-full border border-brand-earth/20 transition-all flex items-center gap-1.5 shadow-sm"
           >
-            <Icon name="ph:device-mobile-camera-bold" class="w-4 h-4 text-brand-accent" />
+            <Icon name="ph:device-mobile-camera-bold" class="w-4 h-4 text-brand-sage" />
             <span>Client PWA</span>
           </NuxtLink>
 
-          <NuxtLink 
-            to="/coach" 
-            class="text-xs font-bold text-brand-charcoal hover:bg-brand-gray px-3 py-2 rounded-lg border border-brand-charcoal/15 transition-all flex items-center gap-1.5 shadow-sm"
-          >
-            <Icon name="ph:shield-star-bold" class="w-4 h-4 text-brand-accent" />
-            <span>Coach Admin</span>
-          </NuxtLink>
-
-          <!-- Primary Booking CTA -->
+          <!-- Primary Booking CTA in Hygge Earth Tone -->
           <NuxtLink 
             to="/book" 
-            class="bg-brand-accent text-white px-5 py-2.5 rounded-xl font-heading font-black text-xs uppercase tracking-wider hover:bg-brand-charcoal transition-all shadow-[0_2px_15px_rgba(250,129,18,0.35)] active:scale-95 flex items-center gap-1.5"
+            class="bg-brand-earth hover:bg-brand-sage text-white px-5 py-2.5 rounded-full font-heading font-black text-xs uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5"
           >
             <Icon name="ph:calendar-check-bold" class="w-4 h-4" />
             <span>Book Assessment</span>
@@ -63,14 +66,14 @@ const toggleMobileMenu = () => {
         </div>
 
         <!-- Mobile menu button -->
-        <div class="lg:hidden flex items-center gap-2">
+        <div class="xl:hidden flex items-center gap-2">
           <NuxtLink 
             to="/book" 
-            class="sm:hidden bg-brand-accent text-white px-3 py-1.5 rounded-lg font-heading font-black text-xs uppercase shadow-sm"
+            class="sm:hidden bg-brand-earth text-white px-3.5 py-1.5 rounded-full font-heading font-black text-xs uppercase shadow-sm"
           >
             Book
           </NuxtLink>
-          <button @click="toggleMobileMenu" class="text-brand-charcoal hover:text-brand-accent p-2">
+          <button @click="toggleMobileMenu" class="text-brand-charcoal hover:text-brand-sage p-2" aria-label="Toggle navigation menu">
             <Icon :name="isMobileMenuOpen ? 'ph:x-bold' : 'ph:list-bold'" class="w-6 h-6" />
           </button>
         </div>
@@ -78,26 +81,28 @@ const toggleMobileMenu = () => {
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div v-show="isMobileMenuOpen" class="lg:hidden bg-brand-gray border-b border-brand-charcoal/10 shadow-lg">
+    <div v-show="isMobileMenuOpen" class="xl:hidden bg-brand-gray border-b border-brand-earth/10 shadow-lg">
       <div class="px-4 pt-3 pb-6 space-y-2">
-        <NuxtLink @click="isMobileMenuOpen = false" to="/" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-accent">Home</NuxtLink>
-        <NuxtLink @click="isMobileMenuOpen = false" to="/#bio" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-accent">Trainer Bio & Credentials</NuxtLink>
-        <NuxtLink @click="isMobileMenuOpen = false" to="/#transformations" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-accent">Transformations Slider</NuxtLink>
-        <NuxtLink @click="isMobileMenuOpen = false" to="/#programs" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-accent">Training Programs</NuxtLink>
-        <NuxtLink @click="isMobileMenuOpen = false" to="/#faq" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-accent">FAQ</NuxtLink>
+        <NuxtLink @click="isMobileMenuOpen = false" to="/" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">Home</NuxtLink>
+        <NuxtLink @click="isMobileMenuOpen = false" to="/#bio" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">About Coach Yondy</NuxtLink>
+        <NuxtLink @click="isMobileMenuOpen = false" to="/#why-in-home" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">Why In-Home Coaching</NuxtLink>
+        <NuxtLink @click="isMobileMenuOpen = false" to="/#services" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">Core Services</NuxtLink>
+        <NuxtLink @click="isMobileMenuOpen = false" to="/#how-it-works" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">How It Works (3 Steps)</NuxtLink>
+        <NuxtLink @click="isMobileMenuOpen = false" to="/#transformations" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">Client Results</NuxtLink>
+        <NuxtLink @click="isMobileMenuOpen = false" to="/#faq" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">FAQ</NuxtLink>
         
-        <div class="pt-4 border-t border-brand-charcoal/10 grid grid-cols-2 gap-2">
+        <div class="pt-4 border-t border-brand-earth/10 grid grid-cols-2 gap-2">
           <NuxtLink 
             @click="isMobileMenuOpen = false" 
             to="/client" 
-            class="text-center py-2.5 px-3 rounded-lg bg-brand-dark border border-brand-charcoal/15 text-xs font-bold text-brand-charcoal hover:bg-brand-gray"
+            class="text-center py-2.5 px-3 rounded-full bg-brand-dark border border-brand-earth/20 text-xs font-bold text-brand-charcoal hover:bg-brand-gray"
           >
             📱 Client PWA
           </NuxtLink>
           <NuxtLink 
             @click="isMobileMenuOpen = false" 
             to="/coach" 
-            class="text-center py-2.5 px-3 rounded-lg bg-brand-dark border border-brand-charcoal/15 text-xs font-bold text-brand-charcoal hover:bg-brand-gray"
+            class="text-center py-2.5 px-3 rounded-full bg-brand-dark border border-brand-earth/20 text-xs font-bold text-brand-charcoal hover:bg-brand-gray"
           >
             👔 Coach Portal
           </NuxtLink>
@@ -107,9 +112,9 @@ const toggleMobileMenu = () => {
           <NuxtLink 
             @click="isMobileMenuOpen = false" 
             to="/book" 
-            class="block text-center bg-brand-accent text-white py-3 rounded-xl font-heading font-black text-xs uppercase tracking-wider shadow-md"
+            class="block text-center bg-brand-earth hover:bg-brand-sage text-white py-3 rounded-full font-heading font-black text-xs uppercase tracking-wider shadow-md"
           >
-            Book Free Assessment Slot
+            Book In-Home Assessment
           </NuxtLink>
         </div>
       </div>

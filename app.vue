@@ -66,7 +66,7 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
       <div class="relative">
         <button
           @click="showQuickSwitcher = !showQuickSwitcher"
-          class="w-12 h-12 rounded-full bg-brand-sand border-2 border-brand-accent text-brand-accent shadow-[0_4px_20px_rgba(250,129,18,0.35)] flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300"
+          class="w-12 h-12 rounded-full bg-brand-sage border-2 border-brand-earth text-white shadow-[0_4px_20px_rgba(140,157,121,0.4)] flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300"
           title="Switch Platform Space"
         >
           <Icon name="ph:arrows-left-right-bold" class="w-6 h-6" />
@@ -144,21 +144,21 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
   left: 0;
   width: 14px;
   height: 14px;
-  background-color: #FA8112;
+  background-color: #8C9D79;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
   opacity: 0.85;
-  box-shadow: 0 0 10px rgba(250, 129, 18, 0.4);
+  box-shadow: 0 0 10px rgba(140, 157, 121, 0.5);
   transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
 
 .custom-cursor.cursor-hover {
   width: 38px;
   height: 38px;
-  background-color: rgba(250, 129, 18, 0.25);
-  border: 2px solid #FA8112;
+  background-color: rgba(140, 157, 121, 0.25);
+  border: 2px solid #8C9D79;
 }
 
 /* Page & Layout Transitions */

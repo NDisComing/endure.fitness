@@ -176,7 +176,7 @@ const getMealsByCategory = (category: string) => {
               <div class="flex items-center justify-between">
                 <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider flex items-center gap-1">
                   <Icon name="ph:check-circle-fill" class="w-3.5 h-3.5 text-brand-accent" />
-                  Coach Marcus Reviewed
+                  Coach Yondy Reviewed
                 </span>
                 <span class="text-[9px] text-brand-charcoal/50 font-mono font-bold">Verified</span>
               </div>

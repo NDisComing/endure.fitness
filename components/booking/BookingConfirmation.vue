@@ -38,10 +38,10 @@ const formattedTime = computed(() => {
 // Google Calendar URL generator
 const googleCalendarUrl = computed(() => {
   const formatGCal = (d: Date) => d.toISOString().replace(/-|:|\.\d\d\d/g, '')
-  const title = encodeURIComponent(`EndureFitness: ${props.booking.session_type} with Marcus Vance`)
+  const title = encodeURIComponent(`Endure Fitness: ${props.booking.session_type} with Coach Yondy`)
   const dates = `${formatGCal(startDate.value)}/${formatGCal(endDate.value)}`
-  const details = encodeURIComponent(`1-on-1 session with Head Coach Marcus Vance at EndureFitness Lab. Please arrive 5 minutes early. Note: 12-hour cancellation policy applies.`)
-  const location = encodeURIComponent(`EndureFitness Performance Lab, Downtown`)
+  const details = encodeURIComponent(`1-on-1 Doorstep PT session with Head Coach Yondy. Please be ready at your residence/condo gym 5 minutes early. Note: 12-hour cancellation policy applies.`)
+  const location = encodeURIComponent(`Client Residence / Condo Gym (KL & Selangor)`)
   return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`
 })
 
@@ -59,9 +59,9 @@ const downloadIcs = () => {
     `DTSTAMP:${formatIcs(new Date())}`,
     `DTSTART:${formatIcs(startDate.value)}`,
     `DTEND:${formatIcs(endDate.value)}`,
-    `SUMMARY:EndureFitness ${props.booking.session_type}`,
-    `DESCRIPTION:1-on-1 Coaching with Marcus Vance. 12-hour cancellation rule applies.`,
-    'LOCATION:EndureFitness Performance Lab',
+    `SUMMARY:Endure Fitness ${props.booking.session_type}`,
+    `DESCRIPTION:1-on-1 Doorstep Coaching with Coach Yondy. 12-hour cancellation rule applies.`,
+    'LOCATION:Client Residence / Condo Gym (KL & Selangor)',
     'STATUS:CONFIRMED',
     'END:VEVENT',
     'END:VCALENDAR'

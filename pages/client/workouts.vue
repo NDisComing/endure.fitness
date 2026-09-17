@@ -12,7 +12,7 @@ definePageMeta({
 useHead({
   title: 'Assigned Workouts & Video Hub | EndureFitness PWA',
   meta: [
-    { name: 'description', content: 'Coach Marcus assigned workout routines with HD biomechanical video cues and set weight tracking.' }
+    { name: 'description', content: 'Coach Yondy assigned workout routines with HD biomechanical video cues and set weight tracking.' }
   ]
 })
 

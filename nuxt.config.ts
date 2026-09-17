@@ -72,18 +72,18 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
-      title: 'EndureFitness | Elite Personal Training & PWA Portal',
+      title: 'Endure Fitness | Elite Personal Training & PWA Portal',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
-        { hid: 'description', name: 'description', content: 'EndureFitness - Elite personal training, AI nutrition scanning, and automated session booking. Push your limits and endure the grind.' },
-        { name: 'theme-color', content: '#0a0a0a' },
+        { hid: 'description', name: 'description', content: 'Endure Fitness - Elite personal training delivered right to your doorstep across Kuala Lumpur & Selangor by Coach Yondy.' },
+        { name: 'theme-color', content: '#FAF8F3' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }
+        { name: 'apple-mobile-web-app-status-bar-style', content: 'default' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'apple-touch-icon', href: '/icons/icon-192.png' },
+        { rel: 'icon', type: 'image/jpeg', href: '/images/Logo-icon.jpeg' },
+        { rel: 'apple-touch-icon', href: '/images/Logo-icon.jpeg' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap' }
       ]
     }

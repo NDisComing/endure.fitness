@@ -10,7 +10,7 @@ definePageMeta({
 useHead({
   title: 'Progress Metrics & Check-Ins | EndureFitness PWA',
   meta: [
-    { name: 'description', content: 'Submit weekly body weight, body fat %, and check-in photos for Coach Marcus audit.' }
+    { name: 'description', content: 'Submit weekly body weight, body fat %, and check-in photos for Coach Yondy audit.' }
   ]
 })
 

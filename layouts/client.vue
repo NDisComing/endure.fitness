@@ -74,7 +74,7 @@ const switchToCoach = () => {
               </span>
             </div>
             <p class="text-xs text-brand-charcoal/65 truncate max-w-[170px]">
-              Coach: Marcus Vance
+              Coach: Yondy (FITM L2)
             </p>
           </div>
         </div>

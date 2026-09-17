@@ -8,24 +8,28 @@ interface Faq {
 
 const faqs: Faq[] = [
   {
-    question: 'How does the AI Food Scanner work in the Client PWA?',
-    answer: 'Simply snap a photo of your meal on your phone. Our integrated Google Gemini Flash vision model analyzes the visual contents, identifies food ingredients, estimates portion weights, and automatically computes total calories, protein, carbs, and fat. You can review and fine-tune gram amounts before saving to your daily diary.'
+    question: 'Which areas in Kuala Lumpur & Selangor do you cover for doorstep PT?',
+    answer: 'We provide direct doorstep personal training across major residential hotspots in Kuala Lumpur and Selangor, including Mont Kiara, Bangsar, KLCC, Damansara, Petaling Jaya, Subang Jaya, Puchong, Bukit Jalil, and nearby townships. Coach Yondy travels straight to your condominium gym or private residence.'
   },
   {
-    question: 'What if I have prior injuries or orthopedic restrictions?',
-    answer: 'Before your first session or program setup, you complete our intake questionnaire detailing your medical history, past injuries, and range of motion. Coach Marcus customizes exercise selections, replaces aggravating lifts with joint-friendly biomechanical equivalents, and includes therapeutic warmups.'
+    question: 'What equipment do I need if I train in my living room or condo gym?',
+    answer: 'If your condominium has a residential gym, we utilize your building’s amenities. If you prefer private training inside your living room or residence, Coach Yondy brings professional portable equipment—including resistance bands, adjustable weights, core sliders, and mobility tools. You do not need to buy any gear to get started.'
   },
   {
-    question: 'How does the Progressive Web App (PWA) install on my iPhone or Android?',
-    answer: 'No app store downloads or fees needed. When browsing our site on your mobile phone, tap "Install App" or use your browser Share menu → "Add to Home Screen". The app installs as a native icon with full-screen experience and offline support.'
+    question: 'What happens during the In-Home Assessment & Trial Session?',
+    answer: 'Our 3-step process begins with an online consultation followed by an in-home assessment. During this 60-minute session at your doorstep, Coach Yondy conducts a biomechanical movement screening, posture check, and injury history review, followed by a calibrated trial workout to map out your customized training roadmap.'
   },
   {
-    question: 'What is your session cancellation and reschedule policy?',
-    answer: 'All 1-on-1 sessions are subject to a strict 12-hour notice window. If you need to reschedule or cancel, you can do so directly in your Client Portal up to 12 hours prior to start time without penalty. Sessions cancelled under 12 hours cannot be credited to respect the coach schedule.'
+    question: 'How does the nutrition coaching work without restrictive crash dieting?',
+    answer: 'We firmly believe fitness shouldn’t feel like punishment. Rather than extreme calorie-cutting that triggers rebound weight gain, Coach Yondy implements practical, habit-based nutrition built around your Malaysian lifestyle and dining preferences. You can log daily meals easily using our integrated AI Food Scanner for swift feedback and continuous guidance.'
   },
   {
-    question: 'Can I do the hybrid workouts in a basic commercial or apartment gym?',
-    answer: 'Yes. Every assigned routine is tailored to the exact equipment you have access to. If you are traveling, the PWA offers dumbbell-only and bodyweight resistance alternatives with full video cues.'
+    question: 'Can I train together with my partner, family member, or friend?',
+    answer: 'Absolutely! Our Duo & Small Group Training is designed specifically for couples, friends, or family who want to build healthy habits together. Coach Yondy tailors exercise cues and regressions individually for each person so both of you make optimal, safe progress.'
+  },
+  {
+    question: 'What is your session cancellation and rescheduling policy?',
+    answer: 'All doorstep and private sessions operate on a flexible 12-hour notice window. If an urgent work meeting or travel arises, you can reschedule your session up to 12 hours before the appointment directly via your Client Portal or WhatsApp without penalty.'
   }
 ]
 
@@ -37,19 +41,19 @@ const toggleFaq = (index: number) => {
 </script>
 
 <template>
-  <section id="faq" class="py-24 bg-brand-dark border-b border-brand-charcoal/10 relative">
+  <section id="faq" class="py-24 bg-brand-dark border-b border-brand-earth/10 relative">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 text-brand-accent font-bold tracking-widest uppercase text-xs">
-          <span class="w-8 h-px bg-brand-accent"></span>
+        <div class="inline-flex items-center gap-2 text-brand-sage font-bold tracking-widest uppercase text-xs">
+          <span class="w-8 h-px bg-brand-sage"></span>
           Clarity & Expectations
-          <span class="w-8 h-px bg-brand-accent"></span>
+          <span class="w-8 h-px bg-brand-sage"></span>
         </div>
         <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal">
-          Frequently Asked <span class="text-brand-accent">Questions.</span>
+          Frequently Asked <span class="text-brand-sage">Questions.</span>
         </h2>
-        <p class="text-brand-charcoal/70 text-sm sm:text-base">
-          Everything you need to know about coaching, the PWA, and session rules.
+        <p class="text-brand-muted text-sm sm:text-base">
+          Everything you need to know about Doorstep PT, condo gym coaching, and booking with Coach Yondy.
         </p>
       </div>
 
@@ -57,8 +61,8 @@ const toggleFaq = (index: number) => {
         <div 
           v-for="(faq, i) in faqs" 
           :key="i"
-          class="rounded-2xl border transition-all duration-200 overflow-hidden shadow-sm"
-          :class="openIndex === i ? 'bg-brand-gray border-brand-accent/60 shadow-md' : 'bg-brand-gray/60 border-brand-charcoal/10 hover:border-brand-charcoal/25'"
+          class="rounded-3xl border transition-all duration-200 overflow-hidden shadow-sm"
+          :class="openIndex === i ? 'bg-brand-gray border-brand-sage shadow-md' : 'bg-brand-gray/60 border-brand-earth/15 hover:border-brand-sage/40'"
         >
           <button 
             @click="toggleFaq(i)"
@@ -67,7 +71,7 @@ const toggleFaq = (index: number) => {
             <span>{{ faq.question }}</span>
             <div 
               class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300"
-              :class="openIndex === i ? 'rotate-180 bg-brand-accent text-white' : 'bg-brand-charcoal/10 text-brand-charcoal'"
+              :class="openIndex === i ? 'rotate-180 bg-brand-sage text-white' : 'bg-brand-earth/10 text-brand-charcoal'"
             >
               <Icon name="ph:caret-down-bold" class="w-4 h-4" />
             </div>
@@ -75,7 +79,7 @@ const toggleFaq = (index: number) => {
 
           <div 
             v-if="openIndex === i"
-            class="px-6 pb-6 pt-1 text-sm text-brand-charcoal/80 leading-relaxed border-t border-brand-charcoal/10 animate-fade-in-up"
+            class="px-6 pb-6 pt-1 text-sm text-brand-muted leading-relaxed border-t border-brand-earth/10 animate-fade-in-up"
           >
             {{ faq.answer }}
           </div>

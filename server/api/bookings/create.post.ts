@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
     `DTSTART:${formatIcs(startTime)}`,
     `DTEND:${formatIcs(endTime)}`,
     `SUMMARY:EndureFitness ${body.session_type}`,
-    `DESCRIPTION:1-on-1 session with Marcus Vance. Notice: 12-hour cancellation policy applies.`,
+    `DESCRIPTION:1-on-1 Doorstep session with Coach Yondy. Notice: 12-hour cancellation policy applies.`,
     'STATUS:CONFIRMED',
     'END:VEVENT',
     'END:VCALENDAR'

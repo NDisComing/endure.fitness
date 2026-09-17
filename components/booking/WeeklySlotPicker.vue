@@ -89,7 +89,7 @@ const selectTimeSlot = (slot: { time: string; fullIso: string; isBooked: boolean
           Step 2: Select Date & Time Slot
         </h3>
         <p class="text-xs text-brand-charcoal/70 mt-1">
-          Live schedule synchronized with Coach Marcus Vance's calendar.
+          Live schedule synchronized with Coach Yondy's training calendar.
         </p>
       </div>
 

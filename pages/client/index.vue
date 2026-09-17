@@ -159,7 +159,7 @@ const handleCancelSession = () => {
               {{ store.nextSession.value.session_type }}
             </h4>
             <p class="text-xs text-brand-charcoal/70">
-              With Coach Marcus Vance • Performance Lab
+              With Coach Yondy • In-Home Doorstep Session
             </p>
           </div>
           <div class="text-right font-mono">

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import HeroSection from '~/components/landing/HeroSection.vue'
 import TrainerBio from '~/components/landing/TrainerBio.vue'
+import WhyInHome from '~/components/landing/WhyInHome.vue'
+import CoreServices from '~/components/landing/CoreServices.vue'
+import HowItWorks from '~/components/landing/HowItWorks.vue'
 import ComparisonSlider from '~/components/landing/ComparisonSlider.vue'
 import PricingTiers from '~/components/landing/PricingTiers.vue'
 import FaqSection from '~/components/landing/FaqSection.vue'
@@ -11,34 +14,51 @@ definePageMeta({
 })
 
 useHead({
-  title: 'EndureFitness | Elite 1-on-1 Personal Training & PWA Portal',
+  title: 'Endure Fitness | Premium Doorstep Personal Training in Kuala Lumpur & Selangor',
   meta: [
     {
       name: 'description',
-      content: 'Transform your body with Coach Marcus Vance. 1-on-1 private gym sessions, AI food scanner nutrition diary, and custom biomechanical workout routines.'
+      content: 'Premium doorstep personal training delivered right to your residence or condo gym across Kuala Lumpur & Selangor by Coach Yondy. Zero traffic, 100% privacy, and science-backed efficiency.'
+    },
+    {
+      property: 'og:title',
+      content: 'Endure Fitness | Premium Doorstep Personal Training (KL & Selangor)'
+    },
+    {
+      property: 'og:description',
+      content: 'Built for busy individuals. 1-on-1 doorstep PT, partner private gyms, and customized science-backed training by Coach Yondy.'
     }
   ]
 })
 </script>
 
 <template>
-  <div class="relative">
-    <!-- Module 1: Hero Section with Proof Stats & CTAs -->
+  <div class="relative bg-brand-dark min-h-screen text-brand-charcoal">
+    <!-- 1. Hero Section: Headline, Tagline & Key Metrics -->
     <HeroSection />
 
-    <!-- Module 1: Trainer Bio & Certifications -->
+    <!-- 2. Meet Coach Yondy: Founder Bio, Philosophy & Credentials (Directly After Hero) -->
     <TrainerBio />
 
-    <!-- Module 1: Side-by-Side Comparison Slider of Progress Photos -->
+    <!-- 3. Why In-Home Coaching: Pain Points Solved & Service Coverage -->
+    <WhyInHome />
+
+    <!-- 4. Core Services: Flagship Doorstep PT, Partner Gym, Duo, Gym Design -->
+    <CoreServices />
+
+    <!-- 5. How It Works: 3 Simple Steps -->
+    <HowItWorks />
+
+    <!-- 6. Client Transformations: Comparison Slider with Real Proof -->
     <ComparisonSlider />
 
-    <!-- Module 1: Program Tier Cards -->
+    <!-- 7. Program Investment & Tiers -->
     <PricingTiers />
 
-    <!-- Module 1: FAQ Accordion Addressing Objections -->
+    <!-- 8. FAQ Section -->
     <FaqSection />
 
-    <!-- Module 1: Floating WhatsApp Quick Chat Widget -->
+    <!-- 9. WhatsApp Quick Chat Widget -->
     <FloatingChatWidget />
   </div>
 </template>

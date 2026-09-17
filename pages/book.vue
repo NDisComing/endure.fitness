@@ -11,11 +11,11 @@ definePageMeta({
 })
 
 useHead({
-  title: 'Book Training Session | EndureFitness Automated Booking Engine',
+  title: 'Book Training Session | Endure Fitness Doorstep Coaching',
   meta: [
     {
       name: 'description',
-      content: 'Reserve your 1-on-1 assessment or personal training session with Coach Marcus Vance. Live slot availability with instant calendar sync.'
+      content: 'Reserve your in-home assessment or personal training session with Coach Yondy. Live slot availability with instant calendar sync.'
     }
   ]
 })
@@ -24,11 +24,11 @@ const store = useEndureStore()
 
 const selectedService = ref<ServiceOption | null>({
   id: 'assessment',
-  name: '1st Assessment & Mobility Screen',
+  name: 'In-Home Assessment & Trial',
   durationMinutes: 60,
-  price: 'Free ($0)',
+  price: 'Free (RM 0)',
   badge: 'Recommended for New Clients',
-  description: 'Comprehensive 60-minute movement screen, overhead squat analysis, body composition check, and customized training roadmap.'
+  description: 'Comprehensive 60-minute movement screen, posture check, and trial workout session right at your doorstep.'
 })
 
 const selectedSlot = ref<{ date: string; time: string; fullIso: string } | null>(null)
@@ -105,7 +105,7 @@ const resetBooking = () => {
         Reserve Your <span class="text-brand-accent">Training Slot.</span>
       </h1>
       <p class="text-brand-charcoal/70 text-sm sm:text-base mt-2">
-        Instant real-time booking directly synced with Coach Marcus's training calendar.
+        Instant real-time booking directly synced with Coach Yondy's training calendar across KL & Selangor.
       </p>
     </div>
 
