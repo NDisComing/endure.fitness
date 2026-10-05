@@ -43,9 +43,9 @@ const coverageHotspots = [
 <template>
   <section id="why-in-home" class="py-10 sm:py-14 lg:py-18 bg-brand-dark border-b border-brand-earth/10 relative overflow-hidden">
     <!-- Top transition gradient aura from the dark Transformation section -->
-    <div class="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[#2A221E]/8 to-transparent pointer-events-none"></div>
+    <div class="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[#010736]/10 to-transparent pointer-events-none"></div>
     <!-- Subtle background ambience -->
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(140,157,121,0.12),transparent_60%)] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(34,57,111,0.10),transparent_60%)] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->

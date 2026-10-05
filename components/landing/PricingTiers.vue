@@ -88,7 +88,7 @@ const tiers: Tier[] = [
           :key="tier.name"
           class="relative rounded-3xl bg-brand-dark p-8 flex flex-col transition-all duration-300 hover:-translate-y-1.5 group shadow-sm"
           :class="tier.featured 
-            ? 'border-2 border-brand-sage shadow-[0_8px_30px_rgba(140,157,121,0.22)]' 
+            ? 'border-2 border-brand-sage shadow-[0_8px_30px_rgba(34,57,111,0.22)]' 
             : 'border border-brand-earth/15 hover:border-brand-sage/40'"
         >
           <!-- Featured Badge -->

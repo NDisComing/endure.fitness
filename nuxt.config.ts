@@ -77,7 +77,7 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
         { hid: 'description', name: 'description', content: 'Endure Fitness - Elite personal training delivered right to your doorstep across Kuala Lumpur & Selangor by Coach Yondy.' },
-        { name: 'theme-color', content: '#FAF8F3' },
+        { name: 'theme-color', content: '#FCF1D0' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'default' }
       ],

@@ -62,7 +62,7 @@ const switchToCoach = () => {
             <img 
               :src="store.currentUser.value.avatar_url || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80'" 
               :alt="store.currentUser.value.full_name"
-              class="w-10 h-10 rounded-full object-cover border-2 border-brand-accent shadow-[0_0_10px_rgba(250,129,18,0.25)]"
+              class="w-10 h-10 rounded-full object-cover border-2 border-brand-accent shadow-[0_0_10px_rgba(34,57,111,0.35)]"
             />
             <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-brand-accent rounded-full ring-2 ring-brand-gray"></span>
           </div>

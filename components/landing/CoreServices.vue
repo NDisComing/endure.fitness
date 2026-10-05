@@ -236,7 +236,7 @@ const onTouchEnd = (e: TouchEvent) => {
               :key="activeService.id"
               class="relative rounded-3xl bg-brand-gray p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-xl"
               :class="activeService.isFlagship 
-                ? 'border-2 border-brand-sage shadow-[0_12px_36px_rgba(140,157,121,0.25)]' 
+                ? 'border-2 border-brand-sage shadow-[0_12px_36px_rgba(34,57,111,0.22)]' 
                 : 'border border-brand-earth/20'"
             >
               <!-- Featured Badge -->
@@ -347,7 +347,7 @@ const onTouchEnd = (e: TouchEvent) => {
           :key="service.id"
           class="relative rounded-3xl bg-brand-gray p-8 sm:p-9 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-sm group"
           :class="service.isFlagship 
-            ? 'border-2 border-brand-sage shadow-[0_8px_30px_rgba(140,157,121,0.22)]' 
+            ? 'border-2 border-brand-sage shadow-[0_8px_30px_rgba(34,57,111,0.22)]' 
             : 'border border-brand-earth/15 hover:border-brand-sage/50'"
         >
           <!-- Featured Badge -->

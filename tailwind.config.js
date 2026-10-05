@@ -11,22 +11,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Base canvas & surfaces (from client Hygge design palette)
-        'brand-dark': '#FAF8F3',     // Base warm linen cream canvas
-        'brand-gray': '#EFECE4',     // Soft card & panel background
-        'brand-cream': '#F5F2EA',    // Subtle warm accent surface
+        // Base canvas & surfaces (Luxury Athletic Navy & Vanilla Palette)
+        'brand-dark': '#FCF1D0',     // Warm vanilla champagne canvas
+        'brand-gray': '#F3E5BE',     // Rich vanilla card & panel background
+        'brand-cream': '#FFFFFF',    // Crisp white surface pop
         
         // Exact client swatches:
-        'brand-sage': '#8C9D79',     // #8c9d79 (Olive Sage green)
-        'brand-earth': '#755852',    // #755852 (Earthy chestnut brown)
-        'brand-sand': '#E2C694',     // #e2c694 (Warm golden wheat sand)
+        'brand-sage': '#22396F',     // #22396F (Steel Athletic Blue - active accents, badges, checkmarks)
+        'brand-earth': '#010736',    // #010736 (Obsidian Deep Navy - primary CTA buttons & deep surfaces)
+        'brand-sand': '#FCF1D0',     // #FCF1D0 (Warm Vanilla Champagne Sand - hero CTA & highlights)
         
         // Semantic aliases
-        'brand-accent': '#755852',   // Primary earthy CTA button & accent
-        'brand-primary': '#8C9D79',  // Primary wellness & active indicator
-        'brand-charcoal': '#362C28', // Deep espresso brown for headings & text
-        'brand-muted': '#685A55',    // Secondary body text
-        'brand-orange': '#755852',   // Fallback for legacy orange class
+        'brand-accent': '#22396F',   // Steel Athletic Blue
+        'brand-primary': '#0D1C42',  // Midnight Marine Blue
+        'brand-charcoal': '#010736', // Obsidian Deep Navy for headings & text
+        'brand-muted': '#48577D',    // Slate navy-tinted secondary text
+        'brand-orange': '#22396F',   // Fallback for legacy class
+        
+        // Direct named swatches
+        'brand-obsidian': '#010736',
+        'brand-marine': '#0D1C42',
+        'brand-steel': '#22396F',
+        'brand-vanilla': '#FCF1D0',
       },
       fontFamily: {
         heading: ['"Special Gothic Condensed One"', 'sans-serif'],
@@ -62,8 +68,8 @@ module.exports = {
           '50%': { transform: 'translateY(-10px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(140,157,121,0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(140,157,121,0.5)' },
+          '0%': { boxShadow: '0 0 5px rgba(34,57,111,0.2)' },
+          '100%': { boxShadow: '0 0 20px rgba(34,57,111,0.45)' },
         }
       }
     },

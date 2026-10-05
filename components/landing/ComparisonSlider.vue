@@ -105,17 +105,17 @@ const onTouchMove = (e: TouchEvent) => {
 </script>
 
 <template>
-  <section id="transformations" class="pt-0 pb-12 sm:pb-16 lg:pb-20 bg-[#2A221E] border-b border-white/10 relative overflow-hidden text-white">
+  <section id="transformations" class="pt-0 pb-12 sm:pb-16 lg:pb-20 bg-[#010736] border-b border-white/10 relative overflow-hidden text-white">
     <!-- Top Section Ambient Glow & Light Cone (Smooth Transition from Core Services) -->
-    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] max-w-full h-[350px] bg-[radial-gradient(ellipse_at_top,_rgba(226,198,148,0.18),transparent_70%)] pointer-events-none blur-3xl -z-0"></div>
-    <div class="absolute top-1/3 -left-32 w-80 h-80 bg-brand-sage/10 rounded-full blur-3xl pointer-events-none -z-0"></div>
-    <div class="absolute bottom-10 -right-32 w-96 h-96 bg-brand-earth/20 rounded-full blur-3xl pointer-events-none -z-0"></div>
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] max-w-full h-[350px] bg-[radial-gradient(ellipse_at_top,_rgba(252,241,208,0.15),transparent_70%)] pointer-events-none blur-3xl -z-0"></div>
+    <div class="absolute top-1/3 -left-32 w-80 h-80 bg-[#22396F]/25 rounded-full blur-3xl pointer-events-none -z-0"></div>
+    <div class="absolute bottom-10 -right-32 w-96 h-96 bg-[#0D1C42]/50 rounded-full blur-3xl pointer-events-none -z-0"></div>
 
     <!-- Glowing Top Accent Line (Luxury Section Divider) -->
     <div class="w-full h-px bg-gradient-to-r from-transparent via-brand-sand/40 to-transparent relative z-10"></div>
 
     <!-- Static Section Transition Ribbon (Single static line of Work Hard Gain Hard) -->
-    <div class="w-full bg-[#1E1715]/95 backdrop-blur-md border-b border-white/10 py-2.5 sm:py-3 mb-8 sm:mb-12 overflow-hidden select-none relative z-10">
+    <div class="w-full bg-[#0D1C42]/95 backdrop-blur-md border-b border-white/10 py-2.5 sm:py-3 mb-8 sm:mb-12 overflow-hidden select-none relative z-10">
       <div class="w-full flex items-center justify-center overflow-hidden">
         <p class="font-heading font-black text-xs sm:text-sm tracking-widest uppercase text-brand-sand/90 whitespace-nowrap select-none hover:text-white transition-colors duration-300">
           Work Hard Gain Hard &nbsp;-&nbsp; Work Hard Gain Hard &nbsp;-&nbsp; Work Hard Gain Hard &nbsp;-&nbsp; Work Hard Gain Hard &nbsp;-&nbsp; Work Hard Gain Hard &nbsp;-&nbsp; Work Hard Gain Hard &nbsp;-&nbsp; Work Hard Gain Hard
@@ -132,7 +132,7 @@ const onTouchMove = (e: TouchEvent) => {
             Real Measured Transformations
           </div>
           <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-white">
-            Proof Over <span class="text-brand-sage">Promises.</span>
+            Proof Over <span class="text-brand-sand">Promises.</span>
           </h2>
           <p class="text-gray-300 mt-2 text-base max-w-xl font-info">
             Drag the interactive slider horizontally to compare verified before-and-after results.
@@ -166,7 +166,7 @@ const onTouchMove = (e: TouchEvent) => {
         <!-- Interactive Comparison Slider Column with Ambient Glow Frame -->
         <div class="lg:col-span-7 flex justify-center relative group/frame">
           <!-- Ambient backlight glow behind slider frame -->
-          <div class="absolute -inset-2 bg-gradient-to-r from-brand-sage/25 via-brand-sand/20 to-brand-earth/25 rounded-[2rem] blur-xl opacity-60 group-hover/frame:opacity-90 transition-opacity duration-700 pointer-events-none -z-0"></div>
+          <div class="absolute -inset-2 bg-gradient-to-r from-brand-sage/30 via-brand-sand/25 to-brand-earth/40 rounded-[2rem] blur-xl opacity-60 group-hover/frame:opacity-90 transition-opacity duration-700 pointer-events-none -z-0"></div>
 
           <div 
             ref="sliderRef"
@@ -206,12 +206,12 @@ const onTouchMove = (e: TouchEvent) => {
 
             <!-- Draggable Divider Line & Knob with Animated Pulse Aura -->
             <div 
-              class="absolute top-0 bottom-0 w-1 bg-brand-sage shadow-[0_0_15px_rgba(140,157,121,0.9)] pointer-events-none"
+              class="absolute top-0 bottom-0 w-1 bg-brand-sand shadow-[0_0_15px_rgba(252,241,208,0.85)] pointer-events-none"
               :style="{ left: `${sliderPosition}%` }"
             >
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-sage text-white flex items-center justify-center shadow-xl border-2 border-white group/knob">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-sand text-brand-charcoal flex items-center justify-center shadow-xl border-2 border-white group/knob">
                 <!-- Gentle pulse breathing ring -->
-                <div class="absolute -inset-2 rounded-full bg-brand-sage/40 animate-pulse pointer-events-none"></div>
+                <div class="absolute -inset-2 rounded-full bg-brand-sand/40 animate-pulse pointer-events-none"></div>
                 <Icon name="ph:arrows-left-right-bold" class="w-5 h-5 relative z-10" />
               </div>
             </div>
@@ -300,7 +300,7 @@ const onTouchMove = (e: TouchEvent) => {
               <div class="pt-2">
                 <NuxtLink 
                   to="/book" 
-                  class="w-full bg-brand-earth hover:bg-brand-sage text-white font-primary text-sm uppercase tracking-wider py-4 px-6 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-brand-sage/25 hover:-translate-y-0.5 active:scale-95 group"
+                  class="w-full bg-[#FCF1D0] hover:bg-white text-[#010736] font-primary text-sm uppercase tracking-wider py-4 px-6 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-[#010736]/40 hover:shadow-[0_0_25px_rgba(252,241,208,0.4)] hover:-translate-y-0.5 active:scale-95 group font-bold"
                 >
                   <span>Get Similar Results — Book Assessment</span>
                   <Icon name="ph:arrow-right-bold" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
@@ -314,7 +314,7 @@ const onTouchMove = (e: TouchEvent) => {
 
     <!-- Bottom Section Transition Gradient (Smooth Handoff into Why In-Home) -->
     <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-black/30 pointer-events-none"></div>
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 max-w-5xl h-px bg-gradient-to-r from-transparent via-brand-sage/30 to-transparent"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 max-w-5xl h-px bg-gradient-to-r from-transparent via-brand-sand/30 to-transparent"></div>
   </section>
 </template>
 

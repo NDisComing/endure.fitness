@@ -94,8 +94,7 @@ const steps: HowItWorksStep[] = [
                 <img 
                   :src="item.gif" 
                   :alt="item.title"
-                  class="w-12 h-12 sm:w-16 sm:h-16 object-contain mix-blend-multiply gif-brand-filter"
-                  style="filter: hue-rotate(270deg) saturate(0.35); -webkit-filter: hue-rotate(270deg) saturate(0.35);"
+                  class="w-12 h-12 sm:w-16 sm:h-16 object-contain mix-blend-multiply"
                 />
               </div>
             </div>

@@ -87,21 +87,21 @@ html, body {
   left: 0;
   width: 14px;
   height: 14px;
-  background-color: #8C9D79;
+  background-color: #22396F;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  opacity: 0.85;
-  box-shadow: 0 0 10px rgba(140, 157, 121, 0.5);
+  opacity: 0.9;
+  box-shadow: 0 0 12px rgba(252, 241, 208, 0.85);
   transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
 
 .custom-cursor.cursor-hover {
   width: 38px;
   height: 38px;
-  background-color: rgba(140, 157, 121, 0.25);
-  border: 2px solid #8C9D79;
+  background-color: rgba(34, 57, 111, 0.2);
+  border: 2px solid #010736;
 }
 
 /* Page & Layout Transitions */
