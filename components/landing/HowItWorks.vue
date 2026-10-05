@@ -49,7 +49,7 @@ const steps: HowItWorksStep[] = [
 </script>
 
 <template>
-  <section id="how-it-works" class="py-24 bg-brand-gray border-b border-brand-earth/10 relative overflow-hidden">
+  <section id="how-it-works" class="py-10 sm:py-14 lg:py-18 bg-brand-gray border-b border-brand-earth/10 relative overflow-hidden">
     <!-- Transparent Sticky Gym Background (Ultra-subtle watermark, fixed scroll) -->
     <div 
       class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-[0.67] mix-blend-multiply pointer-events-none"
@@ -60,7 +60,7 @@ const steps: HowItWorksStep[] = [
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 space-y-3">
         <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs">
           <span class="w-8 h-px bg-brand-sage"></span>
           Simple 3-Step Process
@@ -75,7 +75,7 @@ const steps: HowItWorksStep[] = [
       </div>
 
       <!-- 3 Steps Grid with Sand Circular Number Badges (from Hygge reference) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative items-stretch mb-14">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative items-stretch mb-6 sm:mb-10">
         <div 
           v-for="(item, idx) in steps" 
           :key="idx"

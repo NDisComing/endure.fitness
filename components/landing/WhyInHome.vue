@@ -41,13 +41,15 @@ const coverageHotspots = [
 </script>
 
 <template>
-  <section id="why-in-home" class="py-24 bg-brand-gray border-b border-brand-earth/10 relative overflow-hidden">
+  <section id="why-in-home" class="py-10 sm:py-14 lg:py-18 bg-brand-dark border-b border-brand-earth/10 relative overflow-hidden">
+    <!-- Top transition gradient aura from the dark Transformation section -->
+    <div class="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[#2A221E]/8 to-transparent pointer-events-none"></div>
     <!-- Subtle background ambience -->
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(140,157,121,0.12),transparent_60%)] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 space-y-3">
         <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs">
           <span class="w-8 h-px bg-brand-sage"></span>
           Pain Points Solved
@@ -63,11 +65,11 @@ const coverageHotspots = [
       </div>
 
       <!-- 3 Core Benefits Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-stretch">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 sm:mb-12 items-stretch">
         <div 
           v-for="(item, idx) in benefits" 
           :key="idx"
-          class="rounded-3xl bg-brand-dark p-8 border border-brand-earth/15 hover:border-brand-sage transition-all duration-300 shadow-md hover:-translate-y-1.5 flex flex-col justify-between group"
+          class="rounded-3xl bg-brand-gray p-8 border border-brand-earth/15 hover:border-brand-sage transition-all duration-300 shadow-md hover:-translate-y-1.5 flex flex-col justify-between group"
         >
           <div>
             <!-- Icon Badge in Sage Green -->

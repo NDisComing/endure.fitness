@@ -45,11 +45,11 @@ useHead({
     <!-- 4. Services & Rates: Doorstep PT, Partner Gym, Duo Training, Gym Design -->
     <CoreServices />
 
-    <!-- 5. Why In-Home Coaching: Pain Points Solved & Service Coverage -->
-    <WhyInHome />
-
-    <!-- 6. Client Transformations: Comparison Slider with Real Proof -->
+    <!-- 5. Client Transformations: Comparison Slider with Real Proof -->
     <ComparisonSlider />
+
+    <!-- 6. Why In-Home Coaching: Pain Points Solved & Service Coverage -->
+    <WhyInHome />
 
     <!-- 7. FAQ Section -->
     <FaqSection />

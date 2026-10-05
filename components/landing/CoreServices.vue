@@ -142,10 +142,10 @@ const onTouchEnd = (e: TouchEvent) => {
 </script>
 
 <template>
-  <section id="services" class="py-24 bg-brand-dark border-b border-brand-earth/10 relative">
+  <section id="services" class="py-10 sm:py-14 lg:py-18 bg-brand-dark border-b border-brand-earth/10 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-10 lg:mb-16 space-y-4">
+      <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-10 lg:mb-12 space-y-3">
         <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs">
           <span class="w-8 h-px bg-brand-sage"></span>
           Services & Transparent Rates
@@ -453,7 +453,7 @@ const onTouchEnd = (e: TouchEvent) => {
 
         <div class="shrink-0 w-full md:w-auto">
           <a
-            href="https://wa.me/60123456789?text=Hi%20Coach%20Yondy!%20I%20would%20like%20to%20inquire%20about%20Gym%20Space%20Design%20and%20Equipment%20Consulting."
+            href="https://wa.me/60199850163?text=Hi%20Coach%20Yondy!%20I%20would%20like%20to%20inquire%20about%20Gym%20Space%20Design%20and%20Equipment%20Consulting."
             target="_blank"
             class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-brand-dark hover:bg-brand-sage hover:text-white text-brand-charcoal border border-brand-earth/20 font-primary text-sm uppercase tracking-wider px-6 py-3.5 rounded-full transition-all duration-200 shadow-sm active:scale-95"
           >

@@ -41,9 +41,9 @@ const toggleFaq = (index: number) => {
 </script>
 
 <template>
-  <section id="faq" class="py-24 bg-brand-dark border-b border-brand-earth/10 relative">
+  <section id="faq" class="py-10 sm:py-14 lg:py-18 bg-brand-dark border-b border-brand-earth/10 relative">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 space-y-3">
+      <div class="text-center mb-8 sm:mb-12 space-y-3">
         <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs">
           <span class="w-8 h-px bg-brand-sage"></span>
           Clarity & Expectations

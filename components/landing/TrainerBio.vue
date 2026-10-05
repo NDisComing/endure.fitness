@@ -8,6 +8,9 @@ const expertiseAreas = [
   'Practical & Habit-Based Nutrition Guidance'
 ]
 
+// Multiplied for smooth seamless infinite marquee loop
+const marqueeList = [...expertiseAreas, ...expertiseAreas, ...expertiseAreas, ...expertiseAreas]
+
 const credentials = [
   {
     title: 'FITM Certified PT (Level 2)',
@@ -29,7 +32,26 @@ const credentials = [
 </script>
 
 <template>
-  <section id="bio" class="pt-4 sm:pt-10 lg:pt-20 pb-16 lg:pb-24 bg-brand-dark border-b border-brand-earth/10 relative overflow-hidden">
+  <section id="bio" class="pt-0 pb-8 sm:pb-12 lg:pb-16 bg-brand-dark border-b border-brand-earth/10 relative overflow-hidden">
+    <!-- High-Class Infinite Marquee Ticker (Desktop: Top of Section) -->
+    <div class="hidden lg:block w-full border-b border-brand-earth/15 bg-brand-gray/50 py-3.5 mb-10 overflow-hidden relative group">
+      <div class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+        <div class="animate-marquee flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+          <div 
+            v-for="(area, idx) in marqueeList" 
+            :key="idx"
+            class="inline-flex items-center gap-2.5 sm:gap-3 px-4 py-1.5 sm:py-2 rounded-full bg-brand-dark/95 border border-brand-earth/15 shadow-2xs hover:border-brand-sage transition-all shrink-0 select-none group/item cursor-default"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage animate-pulse shrink-0"></span>
+            <span class="font-primary text-xs sm:text-sm tracking-wider uppercase text-brand-charcoal group-hover/item:text-brand-sage transition-colors">
+              {{ area }}
+            </span>
+            <span class="text-brand-sand font-bold text-xs shrink-0">✦</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Mobile Section Header (Displayed before Coach Yondy's picture on mobile) -->
       <div class="lg:hidden mb-5 sm:mb-8">
@@ -45,7 +67,7 @@ const credentials = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-6 lg:gap-16 items-start">
         <!-- Trainer Portrait Column -->
         <div class="lg:col-span-5 lg:sticky lg:top-28">
           <div class="relative mx-auto max-w-md lg:max-w-none">
@@ -81,13 +103,32 @@ const credentials = [
                 <p class="text-[11px] text-brand-muted">Aligned with Fitness Australia / AUSactive</p>
               </div>
             </div>
+
+            <!-- High-Class Infinite Marquee Ticker (Mobile: Placed below picture & credentials) -->
+            <div class="lg:hidden w-full border-y border-brand-earth/15 bg-brand-gray/50 py-2.5 mt-4 mb-0 overflow-hidden relative group">
+              <div class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+                <div class="animate-marquee flex items-center gap-3 whitespace-nowrap">
+                  <div 
+                    v-for="(area, idx) in marqueeList" 
+                    :key="idx"
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark/95 border border-brand-earth/15 shadow-2xs shrink-0 select-none cursor-default"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-sage animate-pulse shrink-0"></span>
+                    <span class="font-primary text-xs tracking-wider uppercase text-brand-charcoal">
+                      {{ area }}
+                    </span>
+                    <span class="text-brand-sand font-bold text-xs shrink-0">✦</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Bio Content Column -->
-        <div class="lg:col-span-7 space-y-8">
+        <div class="lg:col-span-7 space-y-5 lg:space-y-8">
           <!-- Section Tag (Desktop only, mobile header shown above picture) -->
-          <div class="hidden lg:block">
+          <div class="hidden lg:block mb-6">
             <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs mb-3">
               <span class="w-8 h-px bg-brand-sage"></span>
               Meet Your Coach
@@ -100,26 +141,8 @@ const credentials = [
             </p>
           </div>
 
-          <!-- Core Areas of Expertise -->
-          <div class="space-y-3 pt-2">
-            <h3 class="font-primary text-sm uppercase tracking-widest text-brand-charcoal flex items-center gap-2">
-              <Icon name="ph:target-bold" class="w-4 h-4 text-brand-sage" />
-              <span>Core Areas of Expertise</span>
-            </h3>
-            <div class="flex flex-wrap gap-2.5">
-              <span 
-                v-for="(area, idx) in expertiseAreas" 
-                :key="idx"
-                class="px-3.5 py-2 rounded-xl bg-brand-gray border border-brand-earth/15 text-brand-charcoal text-xs font-medium font-info flex items-center gap-2 shadow-sm hover:border-brand-sage transition-colors"
-              >
-                <span class="w-2 h-2 rounded-full bg-brand-sage"></span>
-                <span>{{ area }}</span>
-              </span>
-            </div>
-          </div>
-
           <!-- Professional Credentials Grid -->
-          <div class="space-y-3 pt-2">
+          <div class="space-y-3 !mt-0 lg:!mt-0">
             <h3 class="font-primary text-sm uppercase tracking-widest text-brand-charcoal flex items-center gap-2">
               <Icon name="ph:medal-bold" class="w-4 h-4 text-brand-sage" />
               <span>Professional Credentials</span>
@@ -152,7 +175,7 @@ const credentials = [
             </NuxtLink>
             
             <a 
-              href="https://wa.me/60123456789?text=Hi%20Coach%20Yondy!%20I%20saw%20your%20bio%20on%20Endure%20Fitness%20and%20want%20to%20ask%20about%20coaching."
+              href="https://wa.me/60199850163?text=Hi%20Coach%20Yondy!%20I%20saw%20your%20bio%20on%20Endure%20Fitness%20and%20want%20to%20ask%20about%20coaching."
               target="_blank"
               class="inline-flex items-center justify-center gap-2 bg-brand-gray hover:bg-brand-sand/50 text-brand-charcoal font-primary text-sm uppercase tracking-wider px-6 py-4 rounded-full border border-brand-earth/20 transition-all shadow-sm"
             >
@@ -165,3 +188,25 @@ const credentials = [
     </div>
   </section>
 </template>
+
+<style scoped>
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+</style>

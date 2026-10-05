@@ -65,7 +65,7 @@ const currentYear = new Date().getFullYear()
           <p class="text-xs text-brand-charcoal font-mono font-bold">yondy@endurefitness.com</p>
           <div class="pt-1">
             <a 
-              href="https://wa.me/60123456789?text=Hi%20Coach%20Yondy!%20I%20would%20like%20to%20inquire%20about%20Endure%20Fitness%20coaching." 
+              href="https://wa.me/60199850163?text=Hi%20Coach%20Yondy!%20I%20would%20like%20to%20inquire%20about%20Endure%20Fitness%20coaching." 
               target="_blank"
               class="inline-flex items-center gap-1.5 text-xs text-brand-earth font-bold hover:text-brand-sage transition-colors"
             >

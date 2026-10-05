@@ -73,8 +73,8 @@ watch(() => route.path, () => {
           <NuxtLink to="/#bio" class="uppercase text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">Coach Yondy</NuxtLink>
           <NuxtLink to="/#how-it-works" class="uppercase text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">How It Works</NuxtLink>
           <NuxtLink to="/#services" class="uppercase text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">Services & Rates</NuxtLink>
-          <NuxtLink to="/#why-in-home" class="uppercase text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">Why In-Home</NuxtLink>
           <NuxtLink to="/#transformations" class="uppercase text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">Transformations</NuxtLink>
+          <NuxtLink to="/#why-in-home" class="uppercase text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1 whitespace-nowrap">Why In-Home</NuxtLink>
           <NuxtLink to="/#faq" class="uppercase text-brand-charcoal/80 hover:text-brand-sage transition-colors py-1">FAQ</NuxtLink>
         </nav>
 
@@ -112,8 +112,8 @@ watch(() => route.path, () => {
         <NuxtLink @click="isMobileMenuOpen = false" to="/#bio" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">About Coach Yondy</NuxtLink>
         <NuxtLink @click="isMobileMenuOpen = false" to="/#how-it-works" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">How It Works (3 Steps)</NuxtLink>
         <NuxtLink @click="isMobileMenuOpen = false" to="/#services" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">Services & Rates</NuxtLink>
-        <NuxtLink @click="isMobileMenuOpen = false" to="/#why-in-home" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">Why In-Home Coaching</NuxtLink>
         <NuxtLink @click="isMobileMenuOpen = false" to="/#transformations" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">Client Results</NuxtLink>
+        <NuxtLink @click="isMobileMenuOpen = false" to="/#why-in-home" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">Why In-Home Coaching</NuxtLink>
         <NuxtLink @click="isMobileMenuOpen = false" to="/#faq" class="block px-3 py-2.5 text-sm font-bold uppercase text-brand-charcoal hover:text-brand-sage">FAQ</NuxtLink>
         
         <div class="pt-4 border-t border-brand-earth/10">
