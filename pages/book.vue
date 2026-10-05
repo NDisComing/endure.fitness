@@ -97,14 +97,14 @@ const resetBooking = () => {
   <div class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header Banner -->
     <div class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 bg-brand-accent/15 border border-brand-accent/40 text-brand-accent font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 rounded-full mb-3 shadow-sm">
+      <div class="inline-flex items-center gap-2 bg-brand-accent/15 border border-brand-accent/40 text-brand-accent font-primary tracking-widest uppercase text-xs px-3.5 py-1.5 rounded-full mb-3 shadow-sm">
         <Icon name="ph:calendar-check-fill" class="w-4 h-4" />
         Automated Reservation Engine
       </div>
       <h1 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal leading-tight">
         Reserve Your <span class="text-brand-accent">Training Slot.</span>
       </h1>
-      <p class="text-brand-charcoal/70 text-sm sm:text-base mt-2">
+      <p class="text-brand-charcoal/70 text-sm sm:text-base mt-2 font-info">
         Instant real-time booking directly synced with Coach Yondy's training calendar across KL & Selangor.
       </p>
     </div>
@@ -152,7 +152,7 @@ const resetBooking = () => {
 
         <button 
           @click="proceedToIntake"
-          class="w-full sm:w-auto bg-brand-accent text-white font-heading font-black text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl hover:bg-brand-charcoal transition-all shadow-[0_4px_20px_rgba(250,129,18,0.35)] active:scale-95 flex items-center justify-center gap-2"
+          class="w-full sm:w-auto bg-brand-accent text-white font-primary text-sm uppercase tracking-wider px-8 py-3.5 rounded-xl hover:bg-brand-charcoal transition-all shadow-[0_4px_20px_rgba(250,129,18,0.35)] active:scale-95 flex items-center justify-center gap-2"
         >
           <span>Continue to Intake Form</span>
           <Icon name="ph:arrow-right-bold" class="w-4 h-4" />

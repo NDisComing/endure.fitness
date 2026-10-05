@@ -147,18 +147,18 @@ const downloadIcs = () => {
       <Icon name="ph:info-bold" class="w-4 h-4 text-brand-accent shrink-0 mt-0.5" />
       <div>
         <span class="font-bold text-brand-charcoal">Cancellation Notice: </span>
-        Sessions locked 12 hours prior to start. You can manage or reschedule this appointment directly in the Client PWA.
+        Sessions locked 12 hours prior to start. Coach Yondy will contact you directly via WhatsApp before your scheduled session.
       </div>
     </div>
 
     <!-- Next Destination -->
     <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
       <NuxtLink 
-        to="/client"
+        to="/"
         class="bg-brand-accent text-white font-heading font-black text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl hover:bg-brand-charcoal transition-all shadow-[0_4px_15px_rgba(250,129,18,0.35)] flex items-center justify-center gap-2"
       >
-        <Icon name="ph:device-mobile-camera-bold" class="w-4 h-4" />
-        <span>Open In Client PWA</span>
+        <Icon name="ph:house-bold" class="w-4 h-4" />
+        <span>Return to Home</span>
       </NuxtLink>
       <button 
         @click="emit('newBooking')"

@@ -44,7 +44,7 @@ const toggleFaq = (index: number) => {
   <section id="faq" class="py-24 bg-brand-dark border-b border-brand-earth/10 relative">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 text-brand-sage font-bold tracking-widest uppercase text-xs">
+        <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs">
           <span class="w-8 h-px bg-brand-sage"></span>
           Clarity & Expectations
           <span class="w-8 h-px bg-brand-sage"></span>
@@ -52,7 +52,7 @@ const toggleFaq = (index: number) => {
         <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal">
           Frequently Asked <span class="text-brand-sage">Questions.</span>
         </h2>
-        <p class="text-brand-muted text-sm sm:text-base">
+        <p class="text-brand-muted text-sm sm:text-base font-info">
           Everything you need to know about Doorstep PT, condo gym coaching, and booking with Coach Yondy.
         </p>
       </div>

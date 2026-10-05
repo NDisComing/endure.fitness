@@ -35,16 +35,16 @@ const transformations: Transformation[] = [
   },
   {
     id: 't-2',
-    name: 'Alex Tan',
-    program: '1-on-1 Doorstep PT (Mont Kiara)',
+    name: 'Nd Lua.',
+    program: '1-on-1 Doorstep PT (Cheras)',
     duration: '16 Weeks',
-    beforeImg: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&auto=format&fit=crop&q=80',
-    afterImg: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop&q=80',
-    quote: "With traffic jams in KL, I could never commit to the gym. Coach Yondy training me right at my condo gym eliminated all excuses. His science-driven programming and sustainable nutrition habits helped me drop 14kg with zero rebound.",
+    beforeImg: '/images/before-2.jpeg',
+    afterImg: '/images/after-2.jpeg',
+    quote: "I was always a skinny fat guy who couldn't gain weight despite eating a lot. Coach Yondy helped me change my mindset and habits, and I finally achieved my dream body.",
     metrics: {
-      weightChange: '-14.2 kg',
-      bodyFat: '23.5% → 12.8%',
-      strengthGain: '+45 kg Squat PR',
+      weightChange: '64kg → 69kg',
+      bodyFat: '20% → 11%',
+      strengthGain: '+50kg Bench Press',
       highlight: 'Visible 6-pack & posture fixed'
     }
   },
@@ -109,14 +109,14 @@ const onTouchMove = (e: TouchEvent) => {
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
-          <div class="inline-flex items-center gap-2 text-brand-sage font-bold tracking-widest uppercase text-xs mb-3">
+          <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs mb-3">
             <span class="w-8 h-px bg-brand-sage"></span>
             Real Measured Transformations
           </div>
           <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal">
             Proof Over <span class="text-brand-sage">Promises.</span>
           </h2>
-          <p class="text-brand-muted mt-2 text-base max-w-xl">
+          <p class="text-brand-muted mt-2 text-base max-w-xl font-info">
             Drag the interactive slider horizontally to compare verified before-and-after results.
           </p>
         </div>
@@ -258,7 +258,7 @@ const onTouchMove = (e: TouchEvent) => {
           <div class="pt-2">
             <NuxtLink 
               to="/book" 
-              class="w-full bg-brand-earth hover:bg-brand-sage text-white font-heading font-black text-xs uppercase tracking-wider py-4 px-6 rounded-full transition-all flex items-center justify-center gap-2 shadow-md active:scale-95"
+              class="w-full bg-brand-earth hover:bg-brand-sage text-white font-primary text-sm uppercase tracking-wider py-4 px-6 rounded-full transition-all flex items-center justify-center gap-2 shadow-md active:scale-95"
             >
               <span>Get Similar Results — Book Assessment</span>
               <Icon name="ph:arrow-right-bold" class="w-4 h-4" />

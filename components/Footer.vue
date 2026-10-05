@@ -16,7 +16,7 @@ const currentYear = new Date().getFullYear()
               <span class="font-heading font-black text-xl tracking-tighter uppercase text-brand-charcoal leading-none block">
                 Endure<span class="text-brand-sage">Fitness</span>
               </span>
-              <span class="text-[9px] font-bold uppercase tracking-widest text-brand-muted block mt-0.5">
+              <span class="text-[9px] font-primary uppercase tracking-widest text-brand-muted block mt-0.5">
                 Kuala Lumpur & Selangor
               </span>
             </div>
@@ -36,22 +36,21 @@ const currentYear = new Date().getFullYear()
           <ul class="space-y-2 text-xs">
             <li><NuxtLink to="/" class="text-brand-muted hover:text-brand-sage transition-colors">Home</NuxtLink></li>
             <li><NuxtLink to="/#bio" class="text-brand-muted hover:text-brand-sage transition-colors">About Coach Yondy</NuxtLink></li>
-            <li><NuxtLink to="/#why-in-home" class="text-brand-muted hover:text-brand-sage transition-colors">Why In-Home Coaching</NuxtLink></li>
-            <li><NuxtLink to="/#services" class="text-brand-muted hover:text-brand-sage transition-colors">Core Services</NuxtLink></li>
             <li><NuxtLink to="/#how-it-works" class="text-brand-muted hover:text-brand-sage transition-colors">How It Works (3 Steps)</NuxtLink></li>
+            <li><NuxtLink to="/#services" class="text-brand-muted hover:text-brand-sage transition-colors">Services & Rates</NuxtLink></li>
+            <li><NuxtLink to="/#why-in-home" class="text-brand-muted hover:text-brand-sage transition-colors">Why In-Home Coaching</NuxtLink></li>
             <li><NuxtLink to="/#transformations" class="text-brand-muted hover:text-brand-sage transition-colors">Transformations Slider</NuxtLink></li>
             <li><NuxtLink to="/#faq" class="text-brand-muted hover:text-brand-sage transition-colors">Frequently Asked Questions</NuxtLink></li>
           </ul>
         </div>
 
-        <!-- Portals & Tools -->
+        <!-- Booking & Coaching -->
         <div class="space-y-3">
-          <h3 class="font-heading font-bold text-xs uppercase tracking-widest text-brand-sage">Client Portals & Booking</h3>
+          <h3 class="font-heading font-bold text-xs uppercase tracking-widest text-brand-sage">Booking & Coaching</h3>
           <ul class="space-y-2 text-xs">
             <li><NuxtLink to="/book" class="text-brand-muted hover:text-brand-sage transition-colors flex items-center gap-1.5"><Icon name="ph:calendar-check-bold" class="w-3.5 h-3.5 text-brand-sage" /> Book In-Home Assessment</NuxtLink></li>
-            <li><NuxtLink to="/client" class="text-brand-muted hover:text-brand-sage transition-colors flex items-center gap-1.5"><Icon name="ph:device-mobile-camera-bold" class="w-3.5 h-3.5 text-brand-sage" /> Client PWA Portal</NuxtLink></li>
-            <li><NuxtLink to="/client/food" class="text-brand-muted hover:text-brand-sage transition-colors flex items-center gap-1.5"><Icon name="ph:camera-fill" class="w-3.5 h-3.5 text-brand-sage" /> AI Food Scanner</NuxtLink></li>
-            <li><NuxtLink to="/client/workouts" class="text-brand-muted hover:text-brand-sage transition-colors flex items-center gap-1.5"><Icon name="ph:barbell-fill" class="w-3.5 h-3.5 text-brand-sage" /> Workout Library</NuxtLink></li>
+            <li><NuxtLink to="/#bio" class="text-brand-muted hover:text-brand-sage transition-colors flex items-center gap-1.5"><Icon name="ph:user-circle-bold" class="w-3.5 h-3.5 text-brand-sage" /> Coach Yondy Bio</NuxtLink></li>
+            <li><NuxtLink to="/#services" class="text-brand-muted hover:text-brand-sage transition-colors flex items-center gap-1.5"><Icon name="ph:barbell-fill" class="w-3.5 h-3.5 text-brand-sage" /> Doorstep PT Programs</NuxtLink></li>
             <li><NuxtLink to="/coach" class="text-brand-muted hover:text-brand-sage transition-colors flex items-center gap-1.5"><Icon name="ph:shield-star-bold" class="w-3.5 h-3.5 text-brand-sage" /> Coach Dashboard</NuxtLink></li>
           </ul>
         </div>

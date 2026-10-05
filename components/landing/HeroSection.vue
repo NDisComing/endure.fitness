@@ -122,7 +122,7 @@ const stats = [
         <div class="flex items-center justify-center">
           <NuxtLink 
             to="/book" 
-            class="inline-flex items-center justify-center bg-brand-sand hover:bg-white text-brand-charcoal font-heading font-black text-xs sm:text-sm uppercase tracking-widest px-10 py-4 rounded-full transition-all duration-300 shadow-2xl hover:scale-105 active:scale-95 border border-white/40 drop-shadow-xl"
+            class="inline-flex items-center justify-center bg-brand-sand hover:bg-white text-brand-charcoal font-primary text-sm sm:text-base uppercase tracking-widest px-10 py-4 rounded-full transition-all duration-300 shadow-2xl hover:scale-105 active:scale-95 border border-white/40 drop-shadow-xl"
           >
             <span>Book In-Home Assessment</span>
           </NuxtLink>
@@ -138,13 +138,13 @@ const stats = [
           :key="idx"
           class="p-4 rounded-2xl bg-brand-gray/60 border border-brand-earth/10 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-sage"
         >
-          <p class="font-heading font-black text-2xl sm:text-3xl text-brand-sage tracking-tight mb-1">
+          <p class="font-primary text-3xl sm:text-4xl text-brand-sage tracking-tight mb-1">
             {{ stat.value }}
           </p>
-          <p class="text-xs uppercase font-bold tracking-wider text-brand-charcoal leading-snug">
+          <p class="text-xs uppercase font-primary tracking-wider text-brand-charcoal leading-snug">
             {{ stat.label }}
           </p>
-          <p class="text-[11px] text-brand-muted mt-0.5 font-medium hidden sm:block">
+          <p class="text-[11px] font-info text-brand-muted mt-0.5 font-medium hidden sm:block">
             {{ stat.subtext }}
           </p>
         </div>

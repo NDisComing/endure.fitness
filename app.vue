@@ -137,6 +137,32 @@ const navigateToView = (path: string, role?: 'client' | 'coach') => {
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&family=Special+Gothic+Condensed+One&display=swap');
+
+/* Font Smoothing & Baseline */
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Nata Sans', sans-serif;
+}
+
+/* Custom Font Utilities: Special Gothic Condensed One (Primary) & Nata Sans (Info) */
+.font-primary,
+.font-heading,
+.font-special,
+.font-bogle,
+.font-hegarty,
+.font-bartle {
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-info,
+.font-body,
+.font-sans {
+  font-family: 'Nata Sans', sans-serif;
+}
+
 /* Custom Cursor Styling */
 .custom-cursor {
   position: fixed;

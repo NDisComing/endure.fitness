@@ -1,18 +1,21 @@
 <script setup lang="ts">
-interface ServiceItem {
+interface ServiceTier {
   id: string
   title: string
   subtitle: string
   badge?: string
   isFlagship?: boolean
   icon: string
+  price: string
+  cadence: string
+  subPrice?: string
   description: string
   features: string[]
   ctaText: string
   ctaLink: string
 }
 
-const services: ServiceItem[] = [
+const serviceTiers: ServiceTier[] = [
   {
     id: 'doorstep-pt',
     title: '1-on-1 Doorstep PT',
@@ -20,69 +23,58 @@ const services: ServiceItem[] = [
     badge: 'Flagship Service',
     isFlagship: true,
     icon: 'ph:house-line-bold',
-    description: 'Professional personal training right at your residence or condo gym—convenient, exclusive, and results-focused.',
+    price: 'RM 180',
+    cadence: '/ session',
+    description: 'Professional personal training right at your residence or condo gym. Zero traffic, 100% privacy, and science-backed efficiency.',
     features: [
       'Direct doorstep travel across KL & Selangor',
-      'Condo gym or living room workout execution',
-      'Training equipment provided if needed',
-      'Customized biomechanical posture correction',
-      'Habit-based nutrition tracking & daily support'
+      'Training equipment provided if your condo lacks gear',
+      'Posture correction & biomechanical movement screen',
+      'Tailored progressive workout programming',
+      'Habit-based nutrition guidance & WhatsApp accountability'
     ],
     ctaText: 'Book Doorstep Assessment',
     ctaLink: '/book'
   },
   {
     id: 'partner-gym',
-    title: 'Partner Private Gym Sessions',
+    title: 'Partner Private Gym PT',
     subtitle: 'Dedicated Training Facility',
-    badge: 'Private Gym Setup',
+    badge: 'Private Facility',
     isFlagship: false,
     icon: 'ph:barbell-bold',
-    description: 'Prefer a gym setup? Train with us at our handpicked partner private gyms across Klang Valley.',
+    price: 'RM 160',
+    cadence: '/ session',
+    description: 'Prefer a dedicated gym setup? Train inside handpicked, distraction-free partner private gym facilities across Klang Valley.',
     features: [
       'Access to elite, uncrowded private gym setups',
-      'Full suite of specialized barbell & machine gear',
-      'Distraction-free environment with zero equipment queues',
-      'Ideal for heavy strength, power, and hypertrophy',
-      'Coached directly by Head Coach Yondy'
+      'Full suite of specialized barbells, racks & machines',
+      'Zero equipment queueing or gym floor distractions',
+      'Heavy progressive overload & hypertrophy focus',
+      'Regular InBody body recomposition check-ins'
     ],
-    ctaText: 'Apply For Gym Sessions',
+    ctaText: 'Book Gym Session',
     ctaLink: '/book'
   },
   {
-    id: 'duo-group',
-    title: 'Duo & Small Group Training',
-    subtitle: 'Couples, Friends & Family',
-    badge: 'High Energy',
+    id: 'duo-training',
+    title: 'Duo In-Home Training',
+    subtitle: 'Couples & Friends',
+    badge: 'Shared Energy',
     isFlagship: false,
     icon: 'ph:users-three-bold',
-    description: 'Perfect for couples, family, or friends who want to train and stay motivated together while cutting costs.',
+    price: 'RM 240',
+    cadence: '/ session (2 pax)',
+    subPrice: 'RM 120 / person',
+    description: 'Train together with your spouse, partner, or friend right at home. Double the motivation and accountability at a shared rate.',
     features: [
-      'Double the accountability and shared motivation',
-      'Individually scaled exercises for differing fitness levels',
-      'Joyful, energetic, and supportive training atmosphere',
-      'Available in-home, at condo gyms, or partner facilities',
-      'Cost-effective per person coaching investment'
+      'Cost-effective shared rate (RM 120 / person)',
+      'Delivered directly to your condo gym or living room',
+      'Individually tailored exercise regressions for both',
+      'High-accountability mutual motivation & fun dynamic',
+      'Personalized nutrition & habit coaching for each partner'
     ],
     ctaText: 'Schedule Duo Trial',
-    ctaLink: '/book'
-  },
-  {
-    id: 'gym-design',
-    title: 'Gym Space Design & Consulting',
-    subtitle: 'Residential & Commercial Fit-Out',
-    badge: 'Specialized Consulting',
-    isFlagship: false,
-    icon: 'ph:compass-tool-bold',
-    description: 'Layout planning, equipment sourcing, and spatial optimization for residential and commercial gyms.',
-    features: [
-      'Condo & bungalow gym layout & 3D flow planning',
-      'Equipment sourcing & supplier procurement advisory',
-      'Biomechanical safety and flooring optimization',
-      'Commercial fitness studio & corporate wellness rooms',
-      'Turnkey equipment placement & maintenance advice'
-    ],
-    ctaText: 'Consult With Coach Yondy',
     ctaLink: '/book'
   }
 ]
@@ -91,36 +83,36 @@ const services: ServiceItem[] = [
 <template>
   <section id="services" class="py-24 bg-brand-dark border-b border-brand-earth/10 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
+      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 text-brand-sage font-bold tracking-widest uppercase text-xs">
+        <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs">
           <span class="w-8 h-px bg-brand-sage"></span>
-          Tailored Fitness Solutions
+          Services & Transparent Rates
           <span class="w-8 h-px bg-brand-sage"></span>
         </div>
         <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal leading-tight">
-          Our Core <span class="text-brand-sage">Services.</span>
+          Tailored Services. <span class="text-brand-sage">Clear Rates.</span>
         </h2>
-        <p class="text-brand-muted text-base sm:text-lg leading-relaxed font-normal">
-          From doorstep coaching at your condo residence to private gym mastery and bespoke home gym design, 
-          every service is crafted for maximum efficiency and lasting results.
+        <p class="text-brand-muted text-base sm:text-lg leading-relaxed font-normal font-info">
+          Transparent, session-based coaching with zero lock-in contracts. 
+          Everything you need for sustainable body recomposition and lifelong fitness.
         </p>
       </div>
 
-      <!-- Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      <!-- Main Services & Packages Grid (3 Columns) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
         <div 
-          v-for="service in services" 
+          v-for="service in serviceTiers" 
           :key="service.id"
           class="relative rounded-3xl bg-brand-gray p-8 sm:p-9 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-sm group"
           :class="service.isFlagship 
-            ? 'border-2 border-brand-sage shadow-[0_8px_30px_rgba(140,157,121,0.2)]' 
+            ? 'border-2 border-brand-sage shadow-[0_8px_30px_rgba(140,157,121,0.22)]' 
             : 'border border-brand-earth/15 hover:border-brand-sage/50'"
         >
-          <!-- Top Badge -->
+          <!-- Featured Badge -->
           <div 
             v-if="service.badge"
-            class="inline-flex items-center gap-1.5 self-start mb-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm"
+            class="inline-flex items-center gap-1.5 self-start mb-4 px-3 py-1 rounded-full text-xs font-primary uppercase tracking-wider shadow-sm"
             :class="service.isFlagship 
               ? 'bg-brand-sage text-white' 
               : 'bg-brand-dark text-brand-charcoal border border-brand-earth/15'"
@@ -130,13 +122,13 @@ const services: ServiceItem[] = [
           </div>
 
           <div>
-            <!-- Header Row -->
-            <div class="flex items-start justify-between gap-4 mb-4">
+            <!-- Header Row: Title & Icon -->
+            <div class="flex items-start justify-between gap-4 mb-3">
               <div>
-                <p class="text-xs font-bold uppercase tracking-widest text-brand-sage mb-1">
+                <p class="text-xs font-primary uppercase tracking-widest text-brand-sage mb-1">
                   {{ service.subtitle }}
                 </p>
-                <h3 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-brand-charcoal">
+                <h3 class="font-heading font-black text-2xl uppercase tracking-tight text-brand-charcoal">
                   {{ service.title }}
                 </h3>
               </div>
@@ -146,16 +138,31 @@ const services: ServiceItem[] = [
             </div>
 
             <!-- Description -->
-            <p class="text-brand-charcoal/90 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+            <p class="text-brand-muted text-xs sm:text-sm leading-relaxed mb-6 font-normal font-info min-h-[44px]">
               {{ service.description }}
             </p>
 
-            <!-- Feature Bullet Points -->
-            <ul class="space-y-3 mb-8 pt-4 border-t border-brand-earth/10">
+            <!-- Price Block -->
+            <div class="mb-6 pb-6 border-b border-brand-earth/10 flex items-baseline justify-between">
+              <div>
+                <span class="font-primary text-3xl sm:text-4xl text-brand-charcoal tracking-tight">
+                  {{ service.price }}
+                </span>
+                <span class="text-brand-muted text-xs sm:text-sm font-info font-medium ml-1.5">
+                  {{ service.cadence }}
+                </span>
+              </div>
+              <span v-if="service.subPrice" class="text-[11px] font-primary text-brand-sage uppercase tracking-wider bg-brand-dark px-2.5 py-1 rounded-lg border border-brand-earth/15">
+                {{ service.subPrice }}
+              </span>
+            </div>
+
+            <!-- Features List -->
+            <ul class="space-y-3 mb-8">
               <li 
                 v-for="(feat, fIdx) in service.features" 
                 :key="fIdx"
-                class="flex items-start gap-3 text-xs sm:text-sm text-brand-muted font-medium"
+                class="flex items-start gap-3 text-xs sm:text-sm text-brand-charcoal/85 font-info font-medium"
               >
                 <Icon name="ph:check-circle-bold" class="w-4 h-4 text-brand-sage shrink-0 mt-0.5" />
                 <span>{{ feat }}</span>
@@ -163,11 +170,11 @@ const services: ServiceItem[] = [
             </ul>
           </div>
 
-          <!-- Bottom Action in Hygge Pill Style -->
+          <!-- Bottom CTA Button (Hygge Pill Style) -->
           <div class="pt-4 border-t border-brand-earth/10">
             <NuxtLink 
               :to="service.ctaLink"
-              class="w-full py-3.5 px-6 rounded-full font-heading font-black text-xs uppercase tracking-wider text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-sm active:scale-95"
+              class="w-full py-4 px-6 rounded-full font-primary text-sm uppercase tracking-wider text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-sm active:scale-95"
               :class="service.isFlagship 
                 ? 'bg-brand-earth text-white hover:bg-brand-sage shadow-md' 
                 : 'bg-brand-dark hover:bg-brand-sage hover:text-white text-brand-charcoal border border-brand-earth/15'"
@@ -176,6 +183,40 @@ const services: ServiceItem[] = [
               <Icon name="ph:arrow-right-bold" class="w-4 h-4" />
             </NuxtLink>
           </div>
+        </div>
+      </div>
+
+      <!-- Bespoke Consulting Banner: Gym Space Design & Setup -->
+      <div class="mt-12 rounded-3xl bg-brand-gray border border-brand-earth/15 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm hover:border-brand-sage/40 transition-colors">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-brand-dark border border-brand-earth/15 flex items-center justify-center text-brand-sage shrink-0 shadow-sm">
+            <Icon name="ph:compass-tool-bold" class="w-6 h-6" />
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-2 mb-1">
+              <span class="text-[10px] font-primary uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-brand-dark border border-brand-earth/15 text-brand-earth">
+                Bespoke Consulting
+              </span>
+              <span class="text-xs font-primary uppercase tracking-widest text-brand-sage">Residential & Commercial</span>
+            </div>
+            <h4 class="font-heading font-black text-xl sm:text-2xl uppercase tracking-tight text-brand-charcoal">
+              Gym Space Design & Equipment Advisory
+            </h4>
+            <p class="text-xs sm:text-sm text-brand-muted mt-1 max-w-2xl font-normal font-info leading-relaxed">
+              Spatial flow 3D planning, equipment sourcing, and biomechanical safety optimization for luxury condo gyms, landed residences, and corporate fitness spaces.
+            </p>
+          </div>
+        </div>
+
+        <div class="shrink-0 w-full md:w-auto">
+          <a
+            href="https://wa.me/60123456789?text=Hi%20Coach%20Yondy!%20I%20would%20like%20to%20inquire%20about%20Gym%20Space%20Design%20and%20Equipment%20Consulting."
+            target="_blank"
+            class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-brand-dark hover:bg-brand-sage hover:text-white text-brand-charcoal border border-brand-earth/20 font-primary text-sm uppercase tracking-wider px-6 py-3.5 rounded-full transition-all duration-200 shadow-sm active:scale-95"
+          >
+            <Icon name="ph:whatsapp-logo-fill" class="w-4 h-4 text-emerald-700" />
+            <span>Inquire Gym Design</span>
+          </a>
         </div>
       </div>
     </div>

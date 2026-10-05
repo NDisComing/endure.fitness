@@ -29,8 +29,18 @@ module.exports = {
         'brand-orange': '#755852',   // Fallback for legacy orange class
       },
       fontFamily: {
-        heading: ['Montserrat', 'sans-serif'],
-        sans: ['Inter', 'sans-serif'],
+        heading: ['"Special Gothic Condensed One"', 'sans-serif'],
+        primary: ['"Special Gothic Condensed One"', 'sans-serif'],
+        display: ['"Special Gothic Condensed One"', 'sans-serif'],
+        special: ['"Special Gothic Condensed One"', 'sans-serif'],
+        sans: ['"Nata Sans"', 'sans-serif'],
+        info: ['"Nata Sans"', 'sans-serif'],
+        body: ['"Nata Sans"', 'sans-serif'],
+        // Legacy class aliases mapped to primary / info
+        bogle: ['"Special Gothic Condensed One"', 'sans-serif'],
+        hegarty: ['"Special Gothic Condensed One"', 'sans-serif'],
+        bartle: ['"Special Gothic Condensed One"', 'sans-serif'],
+        accent: ['"Special Gothic Condensed One"', 'sans-serif'],
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',

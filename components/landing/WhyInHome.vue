@@ -48,7 +48,7 @@ const coverageHotspots = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 text-brand-sage font-bold tracking-widest uppercase text-xs">
+        <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs">
           <span class="w-8 h-px bg-brand-sage"></span>
           Pain Points Solved
           <span class="w-8 h-px bg-brand-sage"></span>
@@ -56,7 +56,7 @@ const coverageHotspots = [
         <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-brand-charcoal leading-tight">
           Why Choose <span class="text-brand-sage">In-Home</span> Coaching?
         </h2>
-        <p class="text-brand-muted text-base sm:text-lg leading-relaxed font-normal">
+        <p class="text-brand-muted text-base sm:text-lg leading-relaxed font-normal font-info">
           Traditional gym memberships fail busy professionals because of friction, crowds, and lack of accountability. 
           We eliminate the barriers so you can focus entirely on sustainable progress.
         </p>
@@ -75,13 +75,13 @@ const coverageHotspots = [
               <Icon :name="item.icon" class="w-7 h-7" />
             </div>
 
-            <p class="text-[11px] font-bold uppercase tracking-widest text-brand-sage mb-1">
+            <p class="text-[11px] font-primary tracking-widest uppercase text-brand-sage mb-1">
               {{ item.subtitle }}
             </p>
             <h3 class="font-heading font-black text-2xl uppercase tracking-tight text-brand-charcoal mb-4">
               {{ item.title }}
             </h3>
-            <p class="text-brand-muted text-sm leading-relaxed mb-6 font-normal">
+            <p class="text-brand-muted text-sm leading-relaxed mb-6 font-normal font-info">
               {{ item.description }}
             </p>
           </div>
@@ -91,7 +91,7 @@ const coverageHotspots = [
             <li 
               v-for="(perk, pIdx) in item.perks" 
               :key="pIdx"
-              class="flex items-center gap-2.5 text-xs text-brand-charcoal font-medium"
+              class="flex items-center gap-2.5 text-xs text-brand-charcoal font-info font-medium"
             >
               <Icon name="ph:check-circle-fill" class="w-4 h-4 text-brand-sage shrink-0" />
               <span>{{ perk }}</span>
@@ -106,14 +106,14 @@ const coverageHotspots = [
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           <div class="lg:col-span-8 space-y-3">
-            <div class="inline-flex items-center gap-2 bg-white/20 px-3.5 py-1 rounded-full text-white font-bold text-xs uppercase tracking-wider backdrop-blur-sm">
+            <div class="inline-flex items-center gap-2 bg-white/20 px-3.5 py-1 rounded-full text-white font-primary text-xs uppercase tracking-wider backdrop-blur-sm">
               <Icon name="ph:map-pin-fill" class="w-4 h-4 text-brand-sand" />
               <span>Service Coverage</span>
             </div>
             <h3 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-white">
               Serving In-Home & Condo Gyms Across <span class="text-brand-sand">Kuala Lumpur & Selangor</span>
             </h3>
-            <p class="text-white/90 text-sm sm:text-base leading-relaxed font-normal">
+            <p class="text-white/90 text-sm sm:text-base leading-relaxed font-normal font-info">
               Coach Yondy travels directly to your residential doorstep or condo gymnasium. All essential training props, mobility gear, and guidance are brought right to you.
             </p>
 
@@ -122,11 +122,11 @@ const coverageHotspots = [
               <span 
                 v-for="spot in coverageHotspots" 
                 :key="spot"
-                class="px-3 py-1 bg-white/15 rounded-full text-xs font-semibold text-white border border-white/20 backdrop-blur-sm"
+                class="px-3 py-1 bg-white/15 rounded-full text-xs font-semibold text-white border border-white/20 backdrop-blur-sm font-info"
               >
                 {{ spot }}
               </span>
-              <span class="px-3 py-1 bg-brand-sand/90 text-brand-charcoal rounded-full text-xs font-bold shadow-sm">
+              <span class="px-3 py-1 bg-brand-sand/90 text-brand-charcoal rounded-full text-xs font-primary shadow-sm">
                 + Surrounding Townships
               </span>
             </div>
@@ -135,16 +135,16 @@ const coverageHotspots = [
           <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
             <NuxtLink 
               to="/book"
-              class="w-full text-center bg-brand-earth hover:bg-brand-charcoal text-white font-heading font-black text-xs uppercase tracking-wider py-4 px-6 rounded-full transition-all shadow-md flex items-center justify-center gap-2 active:scale-95"
+              class="w-full text-center bg-brand-earth hover:bg-brand-charcoal text-white font-primary text-sm uppercase tracking-wider py-4 px-6 rounded-full transition-all shadow-md flex items-center justify-center gap-2 active:scale-95"
             >
               <Icon name="ph:calendar-check-bold" class="w-4 h-4" />
               <span>Check My Area & Book</span>
             </NuxtLink>
             <NuxtLink 
               to="#services"
-              class="w-full text-center bg-white/20 hover:bg-white/30 text-white font-heading font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-full border border-white/30 transition-all flex items-center justify-center gap-2"
+              class="w-full text-center bg-white/20 hover:bg-white/30 text-white font-primary text-sm uppercase tracking-wider py-3.5 px-6 rounded-full border border-white/30 transition-all flex items-center justify-center gap-2"
             >
-              <span>Explore Core Services</span>
+              <span>Explore Services & Rates</span>
               <Icon name="ph:arrow-down-bold" class="w-4 h-4 text-brand-sand" />
             </NuxtLink>
           </div>

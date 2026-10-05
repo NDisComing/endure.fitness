@@ -5,7 +5,6 @@ import WhyInHome from '~/components/landing/WhyInHome.vue'
 import CoreServices from '~/components/landing/CoreServices.vue'
 import HowItWorks from '~/components/landing/HowItWorks.vue'
 import ComparisonSlider from '~/components/landing/ComparisonSlider.vue'
-import PricingTiers from '~/components/landing/PricingTiers.vue'
 import FaqSection from '~/components/landing/FaqSection.vue'
 import FloatingChatWidget from '~/components/landing/FloatingChatWidget.vue'
 
@@ -40,25 +39,22 @@ useHead({
     <!-- 2. Meet Coach Yondy: Founder Bio, Philosophy & Credentials (Directly After Hero) -->
     <TrainerBio />
 
-    <!-- 3. Why In-Home Coaching: Pain Points Solved & Service Coverage -->
-    <WhyInHome />
+    <!-- 3. How It Works: 3 Simple Steps -->
+    <HowItWorks />
 
-    <!-- 4. Core Services: Flagship Doorstep PT, Partner Gym, Duo, Gym Design -->
+    <!-- 4. Services & Rates: Doorstep PT, Partner Gym, Duo Training, Gym Design -->
     <CoreServices />
 
-    <!-- 5. How It Works: 3 Simple Steps -->
-    <HowItWorks />
+    <!-- 5. Why In-Home Coaching: Pain Points Solved & Service Coverage -->
+    <WhyInHome />
 
     <!-- 6. Client Transformations: Comparison Slider with Real Proof -->
     <ComparisonSlider />
 
-    <!-- 7. Program Investment & Tiers -->
-    <PricingTiers />
-
-    <!-- 8. FAQ Section -->
+    <!-- 7. FAQ Section -->
     <FaqSection />
 
-    <!-- 9. WhatsApp Quick Chat Widget -->
+    <!-- 8. WhatsApp Quick Chat Widget -->
     <FloatingChatWidget />
   </div>
 </template>
