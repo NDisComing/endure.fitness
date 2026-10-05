@@ -65,8 +65,8 @@ const stats = [
 
 <template>
   <div>
-    <!-- Clean Minimal Video Hero Section (Matching Client Reference) -->
-    <section class="relative min-h-screen h-screen flex items-center justify-center overflow-hidden bg-black select-none">
+    <!-- Clean Minimal Video Hero Section -->
+    <section class="relative min-h-[92vh] sm:min-h-screen sm:h-screen flex items-center justify-center overflow-hidden bg-black select-none">
       <!-- 1. Dual Video Engine (Crisp Central Video + Ambient Blurred Desktop Sides) -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <ClientOnly>
@@ -130,13 +130,13 @@ const stats = [
       </div>
     </section>
 
-    <!-- Social Proof Bar (Clean transition directly below hero) -->
-    <div class="bg-brand-dark border-b border-brand-earth/10 py-8 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
+    <!-- Social Proof / Testimony Bento Bar (Overlaps the bottom of the hero video slightly) -->
+    <div class="relative z-20 -mt-8 sm:-mt-12 md:-mt-14 px-4 sm:px-6 lg:px-8 pb-3 sm:pb-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center">
         <div 
           v-for="(stat, idx) in stats" 
           :key="idx"
-          class="p-4 rounded-2xl bg-brand-gray/60 border border-brand-earth/10 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-sage"
+          class="p-4 sm:p-5 rounded-2xl bg-brand-gray/95 backdrop-blur-md border border-brand-earth/15 shadow-xl transition-all hover:-translate-y-0.5 hover:border-brand-sage"
         >
           <p class="font-primary text-3xl sm:text-4xl text-brand-sage tracking-tight mb-1">
             {{ stat.value }}

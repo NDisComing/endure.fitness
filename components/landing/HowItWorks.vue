@@ -1,5 +1,14 @@
 <script setup lang="ts">
-const steps = [
+interface HowItWorksStep {
+  step: string
+  title: string
+  subtitle: string
+  description: string
+  details: string[]
+  gif: string
+}
+
+const steps: HowItWorksStep[] = [
   {
     step: '1',
     title: 'Online Consultation',
@@ -10,7 +19,7 @@ const steps = [
       'Injury history and movement restrictions',
       'Target physique & health goals clarification'
     ],
-    icon: 'ph:chat-teardrop-text-bold'
+    gif: '/images/chat.gif'
   },
   {
     step: '2',
@@ -22,7 +31,7 @@ const steps = [
       'Hands-on trial session in your home or condo gym',
       'Equipment check & workout baseline calibration'
     ],
-    icon: 'ph:person-arms-spread-bold'
+    gif: '/images/gym.gif'
   },
   {
     step: '3',
@@ -34,13 +43,21 @@ const steps = [
       'Flexible, non-restrictive nutrition guidance',
       'Continuous WhatsApp support & form check-ins'
     ],
-    icon: 'ph:trend-up-bold'
+    gif: '/images/calendar.gif'
   }
 ]
 </script>
 
 <template>
   <section id="how-it-works" class="py-24 bg-brand-gray border-b border-brand-earth/10 relative overflow-hidden">
+    <!-- Transparent Sticky Gym Background (Ultra-subtle watermark, fixed scroll) -->
+    <div 
+      class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-[0.67] mix-blend-multiply pointer-events-none"
+      style="background-image: url('/images/gym-bg.jpeg');"
+    ></div>
+    <!-- Soft atmospheric gradient wash ensuring high readability -->
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-brand-gray via-transparent to-brand-gray pointer-events-none"></div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -65,14 +82,21 @@ const steps = [
           class="relative rounded-3xl bg-brand-dark p-8 border border-brand-earth/15 hover:border-brand-sage transition-all duration-300 shadow-sm hover:-translate-y-1.5 flex flex-col justify-between group"
         >
           <div>
-            <!-- Step Number Circle (Hygge Style) & Icon Row -->
+            <!-- Step Number Circle & Enlarged Animated GIF Icon Row -->
             <div class="flex items-center justify-between mb-6">
               <!-- Circular sand badge matching the numbered circles in reference -->
-              <div class="w-12 h-12 rounded-full bg-brand-sand text-brand-charcoal font-primary text-xl flex items-center justify-center shadow-sm">
+              <div class="w-12 h-12 rounded-full bg-brand-sand text-brand-charcoal font-primary text-xl flex items-center justify-center shadow-sm shrink-0">
                 {{ item.step }}
               </div>
-              <div class="w-12 h-12 rounded-2xl bg-brand-gray border border-brand-earth/10 text-brand-sage flex items-center justify-center group-hover:bg-brand-sage group-hover:text-white transition-all shadow-sm">
-                <Icon :name="item.icon" class="w-6 h-6" />
+              
+              <!-- Enlarged GIF Icon Container -->
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-brand-gray/80 border border-brand-earth/15 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 group-hover:border-brand-sage transition-all overflow-hidden shrink-0">
+                <img 
+                  :src="item.gif" 
+                  :alt="item.title"
+                  class="w-12 h-12 sm:w-16 sm:h-16 object-contain mix-blend-multiply gif-brand-filter"
+                  style="filter: hue-rotate(270deg) saturate(0.35); -webkit-filter: hue-rotate(270deg) saturate(0.35);"
+                />
               </div>
             </div>
 
@@ -121,3 +145,10 @@ const steps = [
     </div>
   </section>
 </template>
+
+<style scoped>
+.gif-brand-filter {
+  filter: hue-rotate(270deg) saturate(0.35);
+  -webkit-filter: hue-rotate(270deg) saturate(0.35);
+}
+</style>

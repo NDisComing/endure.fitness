@@ -88,8 +88,19 @@ const currentYear = new Date().getFullYear()
       </div>
 
       <div class="border-t border-brand-earth/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-brand-muted">
-        <p>&copy; {{ currentYear }} Endure Fitness. Founder & Head Coach Yondy. FITM Certified Personal Trainer (Level 2).</p>
-        <div class="flex gap-4">
+        <div>
+          <p>&copy; {{ currentYear }} Endure Fitness. Founder & Head Coach Yondy. FITM Certified Personal Trainer (Level 2).</p>
+          <p class="text-[11px] text-brand-muted/70 mt-1">
+            <a 
+              href="https://www.flaticon.com/free-animated-icons/exercise" 
+              title="exercise animated icons" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="hover:text-brand-sage transition-colors underline decoration-brand-earth/30 underline-offset-2"
+            >Exercise animated icons created by Magnific - Flaticon</a>
+          </p>
+        </div>
+        <div class="flex gap-4 flex-wrap">
           <a href="#" class="hover:text-brand-charcoal transition-colors">12-Hour Cancellation Policy</a>
           <a href="#" class="hover:text-brand-charcoal transition-colors">Privacy Policy</a>
           <a href="#" class="hover:text-brand-charcoal transition-colors">Terms of Service</a>

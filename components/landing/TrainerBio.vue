@@ -29,8 +29,22 @@ const credentials = [
 </script>
 
 <template>
-  <section id="bio" class="py-24 bg-brand-dark border-b border-brand-earth/10 relative overflow-hidden">
+  <section id="bio" class="pt-4 sm:pt-10 lg:pt-20 pb-16 lg:pb-24 bg-brand-dark border-b border-brand-earth/10 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Mobile Section Header (Displayed before Coach Yondy's picture on mobile) -->
+      <div class="lg:hidden mb-5 sm:mb-8">
+        <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs mb-2">
+          <span class="w-8 h-px bg-brand-sage"></span>
+          Meet Your Coach
+        </div>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl uppercase tracking-tight leading-tight text-brand-charcoal">
+          Meet Coach <span class="text-brand-sage">Yondy.</span>
+        </h2>
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-earth mt-1 font-primary">
+          Founder & Head Coach of Endure Fitness
+        </p>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         <!-- Trainer Portrait Column -->
         <div class="lg:col-span-5 lg:sticky lg:top-28">
@@ -72,8 +86,8 @@ const credentials = [
 
         <!-- Bio Content Column -->
         <div class="lg:col-span-7 space-y-8">
-          <!-- Section Tag -->
-          <div>
+          <!-- Section Tag (Desktop only, mobile header shown above picture) -->
+          <div class="hidden lg:block">
             <div class="inline-flex items-center gap-2 text-brand-sage font-primary tracking-widest uppercase text-xs mb-3">
               <span class="w-8 h-px bg-brand-sage"></span>
               Meet Your Coach
