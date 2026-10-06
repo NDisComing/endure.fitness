@@ -12,27 +12,27 @@ module.exports = {
     extend: {
       colors: {
         // Base canvas & surfaces (Luxury Athletic Navy & Vanilla Palette)
-        'brand-dark': '#FCF1D0',     // Warm vanilla champagne canvas
-        'brand-gray': '#F3E5BE',     // Rich vanilla card & panel background
+        'brand-dark': '#fffcf4ff',     // Warm vanilla champagne canvas
+        'brand-gray': '#fffcf3ff',     // Rich vanilla card & panel background
         'brand-cream': '#FFFFFF',    // Crisp white surface pop
-        
+
         // Exact client swatches:
         'brand-sage': '#22396F',     // #22396F (Steel Athletic Blue - active accents, badges, checkmarks)
         'brand-earth': '#010736',    // #010736 (Obsidian Deep Navy - primary CTA buttons & deep surfaces)
-        'brand-sand': '#FCF1D0',     // #FCF1D0 (Warm Vanilla Champagne Sand - hero CTA & highlights)
-        
+        'brand-sand': '#fffdf7ff',     // #FCF1D0 (Warm Vanilla Champagne Sand - hero CTA & highlights)
+
         // Semantic aliases
         'brand-accent': '#22396F',   // Steel Athletic Blue
         'brand-primary': '#0D1C42',  // Midnight Marine Blue
         'brand-charcoal': '#010736', // Obsidian Deep Navy for headings & text
         'brand-muted': '#48577D',    // Slate navy-tinted secondary text
         'brand-orange': '#22396F',   // Fallback for legacy class
-        
+
         // Direct named swatches
         'brand-obsidian': '#010736',
         'brand-marine': '#0D1C42',
         'brand-steel': '#22396F',
-        'brand-vanilla': '#FCF1D0',
+        'brand-vanilla': '#fffdf8ff',
       },
       fontFamily: {
         heading: ['"Special Gothic Condensed One"', 'sans-serif'],
