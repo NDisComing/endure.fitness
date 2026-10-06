@@ -49,14 +49,16 @@ const steps: HowItWorksStep[] = [
 </script>
 
 <template>
-  <section id="how-it-works" class="py-10 sm:py-14 lg:py-18 bg-brand-gray border-b border-brand-earth/10 relative overflow-hidden">
-    <!-- Transparent Sticky Gym Background (Ultra-subtle watermark, fixed scroll) -->
-    <div 
-      class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-[0.67] mix-blend-multiply pointer-events-none"
-      style="background-image: url('/images/gym-bg.jpeg');"
-    ></div>
-    <!-- Soft atmospheric gradient wash ensuring high readability -->
-    <div class="absolute inset-0 z-0 bg-gradient-to-b from-brand-gray via-transparent to-brand-gray pointer-events-none"></div>
+  <section id="how-it-works" class="py-10 sm:py-14 lg:py-18 bg-brand-gray border-b border-brand-earth/10 relative">
+    <!-- Sticky Gym Background (Native CSS sticky - works flawlessly on mobile phone & laptop) -->
+    <div class="sticky top-0 -mb-[100vh] h-screen w-full pointer-events-none z-0 overflow-hidden">
+      <div 
+        class="w-full h-full bg-cover bg-[center_top_18%] sm:bg-center bg-no-repeat opacity-75 sm:opacity-[0.67] mix-blend-multiply"
+        style="background-image: url('/images/gym-bg.jpeg');"
+      ></div>
+      <!-- Soft atmospheric gradient wash ensuring high readability -->
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-gray via-transparent to-brand-gray"></div>
+    </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
