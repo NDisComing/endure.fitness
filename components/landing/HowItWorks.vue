@@ -50,14 +50,13 @@ const steps: HowItWorksStep[] = [
 
 <template>
   <section id="how-it-works" class="py-10 sm:py-14 lg:py-18 bg-brand-gray border-b border-brand-earth/10 relative overflow-hidden">
-    <!-- Transparent Gym Background (Ultra-subtle watermark, bg-scroll on mobile to fix iOS Safari bug, md:bg-fixed on laptop) -->
+    <!-- Transparent Sticky Gym Background (Ultra-subtle watermark, fixed scroll) -->
     <div 
-      class="absolute inset-0 z-0 bg-cover bg-[center_top_18%] sm:bg-center bg-no-repeat bg-scroll md:bg-fixed opacity-75 sm:opacity-[0.67] mix-blend-multiply pointer-events-none transform-gpu"
+      class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-[0.67] mix-blend-multiply pointer-events-none"
       style="background-image: url('/images/gym-bg.jpeg');"
     ></div>
-    <!-- Soft top & bottom atmospheric edge fades ensuring seamless section transitions without washing out header -->
-    <div class="absolute inset-x-0 top-0 h-16 sm:h-24 bg-gradient-to-b from-brand-gray to-transparent pointer-events-none z-0"></div>
-    <div class="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-brand-gray to-transparent pointer-events-none z-0"></div>
+    <!-- Soft atmospheric gradient wash ensuring high readability -->
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-brand-gray via-transparent to-brand-gray pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
